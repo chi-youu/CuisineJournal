@@ -1,0 +1,53 @@
+{
+  "required_mods": [
+    "meadow"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "meadow:cheese_form",
+      "adapter": "item_recipe_container",
+      "method": "meadow:cheese",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "meadow:cheese"
+      ]
+    },
+    {
+      "block": "meadow:cooking_cauldron",
+      "adapter": "item_recipe_container",
+      "method": "meadow:cooking",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "meadow:cooking"
+      ]
+    },
+    {
+      "block": "meadow:fondue",
+      "adapter": "item_recipe_container",
+      "method": "meadow:fondue",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "meadow:fondue"
+      ]
+    }
+  ]
+}

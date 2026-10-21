@@ -1,0 +1,6 @@
+{
+  "required_mods": ["aether"],
+  "priority": -100,
+  "workstations": [{"block":"aether:altar","adapter":"furnace","method":"aether:enchanting",
+    "capabilities":["item_input","item_output","fuel_processing","timed_processing","menu_take","automation_extract"],"recipe_types":["aether:enchanting"]}]
+}

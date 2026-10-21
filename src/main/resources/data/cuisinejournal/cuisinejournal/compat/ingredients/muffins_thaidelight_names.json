@@ -1,0 +1,10 @@
+{
+  "required_mods": [
+    "muffins_thaidelight"
+  ],
+  "tag_names": {
+    "muffins_thaidelight:lime": "青柠类",
+    "muffins_thaidelight:raw_papaya": "青木瓜类",
+    "muffins_thaidelight:ripe_papaya": "熟木瓜类"
+  }
+}

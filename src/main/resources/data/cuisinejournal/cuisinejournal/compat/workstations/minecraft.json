@@ -1,0 +1,48 @@
+{
+  "required_mods": ["minecraft"],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "minecraft:crafting_table",
+      "adapter": "crafting",
+      "method": "minecraft:crafting",
+      "capabilities": ["item_input", "item_output", "direct_interaction", "menu_take"],
+      "recipe_types": ["minecraft:crafting"]
+    },
+    {
+      "block": "minecraft:furnace",
+      "adapter": "furnace",
+      "method": "minecraft:smelting",
+      "capabilities": ["item_input", "item_output", "timed_processing", "fuel_processing", "menu_take", "automation_extract"],
+      "recipe_types": ["minecraft:smelting"]
+    },
+    {
+      "block": "minecraft:smoker",
+      "adapter": "furnace",
+      "method": "minecraft:smoking",
+      "capabilities": ["item_input", "item_output", "timed_processing", "fuel_processing", "menu_take", "automation_extract"],
+      "recipe_types": ["minecraft:smoking"]
+    },
+    {
+      "block": "minecraft:blast_furnace",
+      "adapter": "furnace",
+      "method": "minecraft:blasting",
+      "capabilities": ["item_input", "item_output", "timed_processing", "fuel_processing", "menu_take", "automation_extract"],
+      "recipe_types": ["minecraft:blasting"]
+    },
+    {
+      "block": "minecraft:campfire",
+      "adapter": "campfire",
+      "method": "minecraft:campfire_cooking",
+      "capabilities": ["item_input", "item_output", "timed_processing", "direct_interaction", "direct_drop"],
+      "recipe_types": ["minecraft:campfire_cooking"]
+    },
+    {
+      "block": "minecraft:soul_campfire",
+      "adapter": "campfire",
+      "method": "minecraft:campfire_cooking",
+      "capabilities": ["item_input", "item_output", "timed_processing", "direct_interaction", "direct_drop"],
+      "recipe_types": ["minecraft:campfire_cooking"]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "tag_names": {
+    "forge:raw_fishes/perch": "生鲈鱼类",
+    "forge:fish_slices": "生鱼片类",
+    "forge:raw_fishes/bass": "生鲈鱼类",
+    "forge:food/raw_fish": "原版鱼类",
+    "forge:shrimps": "虾类",
+    "forge:cooked_crab_meat": "熟蟹肉类",
+    "forge:raw_clam": "生蛤蜊肉类",
+    "forge:cooked_fishes/cod": "熟鳕鱼类",
+    "minecraft:fishes": "鱼类",
+    "forge:raw_fishes/spinefish": "生棘鱼类",
+    "forge:cooked_fishes/spinefish": "熟棘鱼类",
+    "forge:cooked_fishes/salmon": "熟三文鱼类",
+    "forge:lionfish": "蓑鲉类",
+    "forge:raw_fishes/trout": "鳟鱼类",
+    "forge:raw_fishes/tuna": "金枪鱼类",
+    "forge:raw_fishes/catfish": "鲇鱼类",
+    "forge:raw_fishes/cod": "鳕鱼类",
+    "forge:raw_fishes/eel": "鳗鱼类",
+    "forge:raw_fishes/halibut": "比目鱼类",
+    "forge:raw_fishes/piranha": "锯脂鲤类",
+    "forge:raw_fishes/lionfish": "蓑鲉类",
+    "forge:raw_fishes/salmon": "生三文鱼类",
+    "forge:raw_boar": "生野猪肉类"
+  }
+}

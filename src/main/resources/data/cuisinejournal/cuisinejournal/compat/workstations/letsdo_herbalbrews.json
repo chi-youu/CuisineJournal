@@ -1,0 +1,38 @@
+{
+  "required_mods": [
+    "herbalbrews"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "herbalbrews:tea_kettle",
+      "adapter": "item_recipe_container",
+      "method": "herbalbrews:kettle_brewing",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "herbalbrews:kettle_brewing"
+      ]
+    },
+    {
+      "block": "herbalbrews:copper_tea_kettle",
+      "adapter": "item_recipe_container",
+      "method": "herbalbrews:kettle_brewing",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "herbalbrews:kettle_brewing"
+      ]
+    }
+  ]
+}

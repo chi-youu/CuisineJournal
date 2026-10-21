@@ -1,0 +1,10 @@
+{
+  "required_mods": ["twilightdelight"],
+  "priority": 100,
+  "merge_tags": [{
+    "id": "forge:raw_venison",
+    "name": "生鹿肉类",
+    "tags": ["forge:raw_venison", "c:raw_venison", "twilightdelight:vension_raw"],
+    "types": ["cuisinejournal:meat"]
+  }]
+}

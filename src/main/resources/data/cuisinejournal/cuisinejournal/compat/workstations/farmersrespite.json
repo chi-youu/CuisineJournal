@@ -1,0 +1,6 @@
+{
+  "required_mods": ["farmersrespite"], "priority": -100,
+  "workstations": [
+    {"block":"farmersrespite:kettle","adapter":"item_recipe_container","method":"farmersrespite:brewing","capabilities":["item_input","item_output","fluid_input","fluid_output","container_fill","direct_interaction","menu_take","right_click_take","timed_processing"],"recipe_types":["farmersrespite:brewing","farmersrespite:kettle_pouring"]}
+  ]
+}

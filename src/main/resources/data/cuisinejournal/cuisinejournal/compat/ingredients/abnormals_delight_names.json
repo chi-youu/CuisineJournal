@@ -1,0 +1,9 @@
+{
+  "required_mods": [
+    "abnormals_delight"
+  ],
+  "tag_names": {
+    "abnormals_delight:barbecue_stick_ingredients": "烤串用肉",
+    "abnormals_delight:slabdish_ingredients": "水中植物"
+  }
+}

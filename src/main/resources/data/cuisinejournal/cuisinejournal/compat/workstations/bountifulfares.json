@@ -1,0 +1,6 @@
+{
+  "required_mods": ["bountifulfares"], "priority": -100,
+  "workstations": [
+    {"block":"bountifulfares:gristmill","adapter":"item_recipe_container","method":"bountifulfares:milling","capabilities":["item_input","item_output","direct_interaction","menu_take","timed_processing"],"recipe_types":["bountifulfares:milling"]}
+  ]
+}

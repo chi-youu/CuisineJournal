@@ -1,0 +1,10 @@
+{
+  "required_mods": ["aquaculturedelight"],
+  "tag_names": {
+    "aquaculturedelight:roasted_tambaqui_ingredients": "烤大盖巨脂鲤用料",
+    "aquaculturedelight:fish_chorba_ingredients": "鱼肉乔巴汤用料",
+    "aquaculturedelight:halaszle_ingredients": "匈牙利鱼汤配菜",
+    "aquaculturedelight:trout_steak_ingredients": "鳟鱼排配料",
+    "aquaculturedelight:halaszle_fishes": "匈牙利鱼汤用鱼"
+  }
+}

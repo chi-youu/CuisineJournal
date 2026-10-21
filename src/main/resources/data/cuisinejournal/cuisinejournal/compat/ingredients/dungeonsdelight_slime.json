@@ -1,0 +1,8 @@
+{
+  "required_mods": ["dungeonsdelight"],
+  "priority": 100,
+  "merge_tag_additions": [{
+    "id": "forge:slimeballs",
+    "tags": ["dungeonsdelight:slime_balls"]
+  }]
+}

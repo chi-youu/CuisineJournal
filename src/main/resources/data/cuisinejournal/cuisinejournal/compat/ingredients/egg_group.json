@@ -1,0 +1,7 @@
+{
+  "merge_tags": [{
+    "id": "forge:eggs",
+    "tags": ["forge:eggs", "c:eggs"],
+    "types": ["cuisinejournal:egg"]
+  }]
+}

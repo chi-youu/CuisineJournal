@@ -1,0 +1,17 @@
+{
+  "tag_names": {
+    "forge:cooked_venison": "熟鹿肉类",
+    "forge:cooked_hogham": "熟疣猪兽肉类",
+    "forge:raw_duck": "生鸭肉类",
+    "forge:cooked_duck": "熟鸭肉类",
+    "forge:raw_hoglin": "生疣猪兽肉类",
+    "forge:raw_meat": "生肉类",
+    "forge:raw_meats": "生肉类",
+    "forge:cooked_meats": "熟肉类",
+    "forge:cooked_mutton": "熟羊肉类",
+    "forge:cooked_beef": "熟牛肉类",
+    "forge:cooked_chicken": "熟禽肉类",
+    "forge:raw_fishes": "生鱼类",
+    "forge:cooked_fishes": "熟鱼类"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "required_mods": ["trailandtales_delight"],
+  "portion_origins": {
+    "trailandtales_delight:fried_sniffer_egg": "trailandtales_delight:cooked_sniffer_egg_block"
+  }
+}

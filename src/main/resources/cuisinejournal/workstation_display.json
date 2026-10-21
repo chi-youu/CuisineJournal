@@ -1,0 +1,307 @@
+{
+  "kaleidoscope_cookery:flex_pot": ["kaleidoscope_cookery:pot"],
+  "kaleidoscope_cookery:flex_stockpot": ["kaleidoscope_cookery:stockpot"],
+  "kaleidoscope_cookery:rice_bowl": ["minecraft:bowl"],
+  "kaleidoscope_chinesefood:refrigerating": ["kaleidoscope_chinesefood:freezer"],
+  "kaleidoscope_world_liquor:bamboo_ferment": ["kaleidoscope_world_liquor:bamboo_barrel"],
+  "barbequesdelight:combine": ["barbequesdelight:basin"],
+  "herbalbrews:cauldron_brewing": ["herbalbrews:cauldron"],
+  "farmersrespite:kettle_pouring": ["farmersrespite:kettle"],
+  "brewinandchewin:keg_pouring": ["brewinandchewin:keg"],
+  "kitchenkarrot:plate": ["minecraft:bowl"],
+  "minecraft:stonecutting": ["minecraft:stonecutter"],
+  "minecraft:smithing_transform": ["minecraft:smithing_table"],
+  "aether:enchanting": [
+    "aether:altar"
+  ],
+  "bakery:baking_station": [
+    "bakery:baker_station"
+  ],
+  "barbequesdelight:grilling": [
+    "barbequesdelight:grill"
+  ],
+  "barbequesdelight:skewering": [
+    "barbequesdelight:basin"
+  ],
+  "beachparty:mini_fridge_freezing": [
+    "beachparty:mini_fridge"
+  ],
+  "beachparty:palm_bar_mixing": [
+    "beachparty:palm_bar"
+  ],
+  "bosses_delight:soul_cooking": [
+    "bosses_delight:soul_cooking_pot"
+  ],
+  "bountifulfares:milling": [
+    "bountifulfares:gristmill"
+  ],
+  "braziliandelight:cheese_making": [
+    "braziliandelight:milk_bucket",
+    "minecraft:milk_bucket"
+  ],
+  "braziliandelight:milk_mixing": [
+    "braziliandelight:milk_bucket",
+    "minecraft:milk_bucket"
+  ],
+  "brewery:brewing": [
+    "brewery:wooden_brewingstation",
+    "brewery:copper_brewingstation",
+    "brewery:netherite_brewingstation"
+  ],
+  "brewinandchewin:fermenting": [
+    "brewinandchewin:keg"
+  ],
+  "casualness_delight:deep_frying": [
+    "casualness_delight:deep_frying_pan"
+  ],
+  "cataclysm:amethyst_bless": [
+    "cataclysm:altar_of_amethyst"
+  ],
+  "cosmopolitan:tub_extracting": [
+    "cosmopolitan:frozen_dessert_tub"
+  ],
+  "cosmopolitan:tub_injecting": [
+    "cosmopolitan:frozen_dessert_tub"
+  ],
+  "cosmopolitan:tub_interacting": [
+    "cosmopolitan:frozen_dessert_tub"
+  ],
+  "crockpot:crock_pot_cooking": [
+    "crockpot:crock_pot",
+    "crockpot:portable_crock_pot"
+  ],
+  "cuisinejournal:feast_serving": [
+    "minecraft:bowl"
+  ],
+  "cuisinejournal:unknown": [
+    "minecraft:book"
+  ],
+  "deep_aether:combining": [
+    "deep_aether:combiner"
+  ],
+  "drinkbeer:brewing": [
+    "drinkbeer:beer_barrel"
+  ],
+  "drinkbeer:mixing": [
+    "drinkbeer:bartending_table_normal"
+  ],
+  "dungeonsdelight:monster_cooking": [
+    "dungeonsdelight:monster_pot"
+  ],
+  "farm_and_charm:crafting_bowl": [
+    "farm_and_charm:crafting_bowl"
+  ],
+  "farm_and_charm:drying": [
+    "farm_and_charm:silo_wood",
+    "farm_and_charm:silo_copper"
+  ],
+  "farm_and_charm:mincer": [
+    "farm_and_charm:mincer"
+  ],
+  "farm_and_charm:pot_cooking": [
+    "farm_and_charm:cooking_pot",
+    "bakery:small_cooking_pot",
+    "candlelight:cooking_pot"
+  ],
+  "farm_and_charm:roaster": [
+    "farm_and_charm:roaster",
+    "candlelight:cooking_pan"
+  ],
+  "farm_and_charm:stove": [
+    "farm_and_charm:stove",
+    "candlelight:cobblestone_stove",
+    "candlelight:sandstone_stove",
+    "candlelight:stone_bricks_stove",
+    "candlelight:deepslate_stove",
+    "candlelight:granite_stove",
+    "candlelight:end_stove",
+    "candlelight:mud_stove",
+    "candlelight:quartz_stove",
+    "candlelight:red_nether_bricks_stove",
+    "candlelight:basalt_stove",
+    "candlelight:bamboo_stove"
+  ],
+  "farmers_spell:alchemist_cooking": [
+    "farmers_spell:alchemist_pot"
+  ],
+  "farmersdelight:cooking": [
+    "farmersdelight:cooking_pot",
+    "miners_delight:copper_pot"
+  ],
+  "farmersdelight:cutting": [
+    "farmersdelight:cutting_board"
+  ],
+  "farmersdelight:skillet": [
+    "farmersdelight:skillet"
+  ],
+  "farmersdelight:stove": [
+    "farmersdelight:stove"
+  ],
+  "farmersrespite:brewing": [
+    "farmersrespite:kettle"
+  ],
+  "fruitsdelight:cauldron": [
+    "minecraft:cauldron"
+  ],
+  "herbalbrews:kettle_brewing": [
+    "herbalbrews:tea_kettle",
+    "herbalbrews:copper_tea_kettle"
+  ],
+  "herbalbrews:leaf_drying": [
+    "herbalbrews:green_tea_leaf_block"
+  ],
+  "immortalers_delight:enchantal_cooler": [
+    "immortalers_delight:enchantal_cooler"
+  ],
+  "immortalers_delight:hot_spring": [
+    "minecraft:water_bucket"
+  ],
+  "kaleidoscope_chinesefood:freezing": [
+    "kaleidoscope_chinesefood:freezer"
+  ],
+  "kaleidoscope_chinesefood:pickle_jar": [
+    "kaleidoscope_chinesefood:pickle_jar"
+  ],
+  "kaleidoscope_cookery:bamboo_tray": [
+    "kaleidoscope_cookery:bamboo_tray"
+  ],
+  "kaleidoscope_cookery:chopping_board": [
+    "kaleidoscope_cookery:chopping_board"
+  ],
+  "kaleidoscope_cookery:millstone": [
+    "kaleidoscope_cookery:millstone"
+  ],
+  "kaleidoscope_cookery:pot": [
+    "kaleidoscope_cookery:pot"
+  ],
+  "kaleidoscope_cookery:steamer": [
+    "kaleidoscope_cookery:steamer"
+  ],
+  "kaleidoscope_cookery:stockpot": [
+    "kaleidoscope_cookery:stockpot"
+  ],
+  "kaleidoscope_cookery:teapot": [
+    "kaleidoscope_cookery:teapot"
+  ],
+  "kaleidoscope_grilling:grilling": [
+    "kaleidoscope_grilling:grill"
+  ],
+  "kaleidoscope_grilling:threading": [
+    "minecraft:stick"
+  ],
+  "kaleidoscope_tavern:barrel": [
+    "kaleidoscope_tavern:barrel"
+  ],
+  "kaleidoscope_tavern:pressing_tub": [
+    "kaleidoscope_tavern:pressing_tub"
+  ],
+  "kaleidoscope_tavern:shaker": [
+    "kaleidoscope_tavern:shaker"
+  ],
+  "kaleidoscope_world_liquor:freezer": [
+    "kaleidoscope_world_liquor:freezer"
+  ],
+  "kitchenkarrot:air_compressing": [
+    "kitchenkarrot:air_compressor"
+  ],
+  "kitchenkarrot:brewing_barrel": [
+    "kitchenkarrot:brewing_barrel"
+  ],
+  "kitchenkarrot:cocktail": [
+    "kitchenkarrot:shaker"
+  ],
+  "ltc2:latiao_oven": [
+    "ltc2:latiao_oven"
+  ],
+  "ltc2:mill": [
+    "ltc2:mill"
+  ],
+  "meadow:cheese": [
+    "meadow:cheese_form"
+  ],
+  "meadow:cooking": [
+    "meadow:cooking_cauldron"
+  ],
+  "meadow:fondue": [
+    "meadow:fondue"
+  ],
+  "minecraft:blasting": [
+    "minecraft:blast_furnace"
+  ],
+  "minecraft:campfire_cooking": [
+    "minecraft:campfire"
+  ],
+  "minecraft:crafting": [
+    "minecraft:crafting_table"
+  ],
+  "minecraft:smelting": [
+    "minecraft:furnace"
+  ],
+  "minecraft:smoking": [
+    "minecraft:smoker"
+  ],
+  "muffins_thaidelight:mortar": [
+    "muffins_thaidelight:mortar"
+  ],
+  "neapolitan:milkshake_cauldron": [
+    "neapolitan:milk_cauldron",
+    "minecraft:cauldron"
+  ],
+  "papercraft_magic_decoration:distillation": [
+    "papercraft_magic_decoration:copper_still"
+  ],
+  "papercraft_magic_decoration:mixology": [
+    "papercraft_magic_decoration:copper_bartender"
+  ],
+  "simple_cream:ice_cream_making": [
+    "simple_cream:ice_cream_machine"
+  ],
+  "torchesbecomesunlight:cutting_board": [
+    "torchesbecomesunlight:cutting_board"
+  ],
+  "torchesbecomesunlight:oven": [
+    "torchesbecomesunlight:oven"
+  ],
+  "torchesbecomesunlight:stew_pot": [
+    "torchesbecomesunlight:stew_pot"
+  ],
+  "trailandtales_delight:ice_cream": [
+    "trailandtales_delight:ice_bucket"
+  ],
+  "ubesdelight:baking_mat": [
+    "ubesdelight:baking_mat_bamboo"
+  ],
+  "vinery:apple_fermenting": [
+    "vinery:apple_press"
+  ],
+  "vinery:apple_mashing": [
+    "vinery:apple_press"
+  ],
+  "vinery:wine_fermentation": [
+    "vinery:fermentation_barrel"
+  ],
+  "vintagedelight:cheese_mold": [
+    "vintagedelight:cheese_mold"
+  ],
+  "vintagedelight:fermenting": [
+    "vintagedelight:fermenting_jar"
+  ],
+  "youkaishomecoming:basin": [
+    "youkaishomecoming:wood_basin"
+  ],
+  "youkaishomecoming:cuisine": [
+    "youkaishomecoming:cuisine_board"
+  ],
+  "youkaishomecoming:drying_rack": [
+    "youkaishomecoming:drying_rack"
+  ],
+  "youkaishomecoming:fermentation": [
+    "youkaishomecoming:fermentation_tank"
+  ],
+  "youkaishomecoming:kettle": [
+    "youkaishomecoming:kettle"
+  ],
+  "youkaishomecoming:moka_pot": [
+    "youkaishomecoming:moka_pot"
+  ]
+}

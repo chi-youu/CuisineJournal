@@ -1,0 +1,7 @@
+{
+  "required_mods": ["seeddelight"],
+  "tag_names": {
+    "seeddelight:can_eat_seed": "炒瓜子类",
+    "seeddelight:cant_eat_seed": "生瓜子类"
+  }
+}

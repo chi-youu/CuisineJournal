@@ -1,0 +1,11 @@
+{
+  "required_mods": ["unusual_delight"],
+  "tag_names": {
+    "minecraft:flesh_raw": "血肉类",
+    "minecraft:can_freezeto_frozen_flesh": "冻腐肉用肉",
+    "forge:pale": "苍白食材",
+    "minecraft:donut": "红色甜甜圈",
+    "minecraft:sculkinfest": "幽匿原料",
+    "forge:freeeze_materials": "寒冷原料"
+  }
+}

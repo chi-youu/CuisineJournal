@@ -1,0 +1,11 @@
+{
+  "required_mods": [
+    "arsdelight"
+  ],
+  "tag_names": {
+    "arsdelight:raw_wilden_meat": "生荒野肉类",
+    "arsdelight:barks": "至高树皮",
+    "arsdelight:raw_chimera": "生奇美拉肉类",
+    "arsdelight:leaves": "至高树叶"
+  }
+}

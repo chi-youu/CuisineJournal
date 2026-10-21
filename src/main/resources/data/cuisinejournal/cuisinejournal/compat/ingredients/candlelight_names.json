@@ -1,0 +1,9 @@
+{
+  "required_mods": ["candlelight"],
+  "tag_names": {
+    "candlelight:tomato_soups": "番茄汤类",
+    "candlelight:red_effect": "红葡萄酒",
+    "candlelight:white_effect": "白葡萄酒",
+    "candlelight:all_effects": "葡萄酒"
+  }
+}

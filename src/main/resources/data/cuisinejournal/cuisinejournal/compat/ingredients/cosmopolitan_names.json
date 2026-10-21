@@ -1,0 +1,9 @@
+{
+  "required_mods": [
+    "cosmopolitan"
+  ],
+  "tag_names": {
+    "cosmopolitan:biome_gulimes": "果莱姆",
+    "cosmopolitan:funguis": "菌瓶"
+  }
+}

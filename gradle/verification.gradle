@@ -1,0 +1,134 @@
+// Regression entry points stay explicit so existing task names remain stable.
+def regressionTests = [
+    verifyFoodMath: 'com.chi__you.cuisinejournal.food.CuisineFoodMathTest',
+    verifySolMigration: 'com.chi__you.cuisinejournal.food.CuisineSolMigrationTest',
+    verifyJournalBrowser: 'com.chi__you.cuisinejournal.network.JournalBrowserTest',
+    verifyDishExclusionRules: 'com.chi__you.cuisinejournal.recipe.DishExclusionRuleTest',
+    verifyConfiguredCatalogue: 'com.chi__you.cuisinejournal.recipe.ConfiguredCatalogueTest',
+    verifyDrinkClassification: 'com.chi__you.cuisinejournal.food.CuisineDrinkClassificationTest',
+    verifyEdibilityContract: 'com.chi__you.cuisinejournal.food.CuisineEdibilityContractTest',
+    verifyCreativeFoodOrder: 'com.chi__you.cuisinejournal.client.journal.CreativeFoodOrderTest',
+    verifyClientPresentation: 'com.chi__you.cuisinejournal.client.ClientPresentationTest',
+    verifyIngredientCompat: 'com.chi__you.cuisinejournal.recipe.IngredientCompatTest',
+    verifyProductionLedger: 'com.chi__you.cuisinejournal.tracking.ProductionLedgerTest',
+    verifyWorkstationDefinitions: 'com.chi__you.cuisinejournal.tracking.WorkstationDefinitionsTest',
+    verifyRecipeWorkstationAudit: 'com.chi__you.cuisinejournal.tracking.RecipeWorkstationAuditTest',
+    verifyProductionHooks: 'com.chi__you.cuisinejournal.tracking.ProductionHookContractTest',
+    verifyB005Compatibility: 'com.chi__you.cuisinejournal.tracking.B005CompatibilityTest',
+    verifyB006Compatibility: 'com.chi__you.cuisinejournal.tracking.B006CompatibilityTest',
+    verifyKegPouringLimit: 'com.chi__you.cuisinejournal.tracking.KegPouringLimitTest',
+    verifyFirstOutputStars: 'com.chi__you.cuisinejournal.progression.FirstOutputStarsTest',
+    verifyConfigCleanup: 'com.chi__you.cuisinejournal.config.ConfigCleanupTest',
+    verifyReleaseDataContracts: 'com.chi__you.cuisinejournal.data.ReleaseDataContractTest',
+    verifyInteractionRecipes: 'com.chi__you.foodinteractions.InteractionRecipeTest',
+    verifyInteractionHostContracts: 'com.chi__you.foodinteractions.InteractionHostContractTest',
+    verifyPortionOrigins: 'com.chi__you.cuisinejournal.recipe.PortionOriginsTest',
+    auditPlacedFoodPaths: 'com.chi__you.cuisinejournal.food.PlacedFoodPathAudit',
+    verifyConsumptionScope: 'com.chi__you.cuisinejournal.food.ConsumptionScopeTest',
+    verifyPlacedFoodContracts: 'com.chi__you.cuisinejournal.food.PlacedFoodContractTest',
+    verifyGrowthRules: 'com.chi__you.cuisinejournal.progression.GrowthRulesTest',
+    verifyFlavorSystem: 'com.chi__you.cuisinejournal.food.FlavorSystemTest',
+    verifyNativeFoodEffectTooltip: 'com.chi__you.cuisinejournal.client.tooltip.NativeFoodEffectTooltipTest',
+    verifyFlavorEditorInteraction: 'com.chi__you.cuisinejournal.client.journal.edit.FlavorEditorInteractionTest',
+    verifyFlavorRepairs: 'com.chi__you.cuisinejournal.food.FlavorRepairTest',
+    verifySchemeStore: 'com.chi__you.cuisinejournal.recipe.SchemeStoreTest',
+    verifyBundledSchemes: 'com.chi__you.cuisinejournal.recipe.BundledSchemesTest',
+    verifyTemporaryFood: 'com.chi__you.cuisinejournal.food.TemporaryFoodTest',
+    verifyCuisineEffects: 'com.chi__you.cuisinejournal.food.CuisineEffectsTest',
+    verifyDiscovery: 'com.chi__you.cuisinejournal.progression.DiscoveryTest',
+    verifyFoodModeDefaults: 'com.chi__you.cuisinejournal.config.FoodModeDefaultsTest',
+    verifyHonors: 'com.chi__you.cuisinejournal.challenge.HonorsTest',
+    verifyTodayDish: 'com.chi__you.cuisinejournal.progression.TodayDishTest',
+    verifyDailyChallenges: 'com.chi__you.cuisinejournal.challenge.DailyChallengeTest',
+    verifyDailyCalendar: 'com.chi__you.cuisinejournal.culinary.DailyCalendarTest',
+    verifyCookingSkills: 'com.chi__you.cuisinejournal.skills.CookingSkillsTest',
+    verifyJournalFeatures: 'com.chi__you.cuisinejournal.progression.JournalFeaturesTest',
+    verifyEditVersions: 'com.chi__you.cuisinejournal.network.EditVersionsTest',
+    verifyEditProtection: 'com.chi__you.cuisinejournal.network.EditProtectionTest',
+    verifyCategoryEditVersions: 'com.chi__you.cuisinejournal.network.CategoryEditVersionsTest',
+    verifyB001Compatibility: 'com.chi__you.cuisinejournal.tracking.B001CompatibilityTest',
+    verifyB002Compatibility: 'com.chi__you.cuisinejournal.tracking.B002CompatibilityTest',
+    verifyJournalSync: 'com.chi__you.cuisinejournal.network.JournalSyncTest',
+    verifyB003Compatibility: 'com.chi__you.cuisinejournal.tracking.B003CompatibilityTest',
+    verifyB004Compatibility: 'com.chi__you.cuisinejournal.tracking.B004CompatibilityTest',
+    verifyUnificationReload: 'com.chi__you.cuisinejournal.compat.UnificationReloadTest',
+    verifyNutritionOverflow: 'com.chi__you.cuisinejournal.client.hud.NutritionOverflowTest',
+    verifyUnificationRules: 'com.chi__you.cuisinejournal.compat.UnificationRulesTest',
+    verifyCompatRecipePaths: 'com.chi__you.cuisinejournal.compat.CompatRecipePathPatchTest',
+    verifySquidRecipes: 'com.chi__you.cuisinejournal.compat.SquidRecipeCompatTest',
+    verifyBrazilianDinner: 'com.chi__you.cuisinejournal.compat.BrazilianDinnerCompatPackTest',
+    verifyTagIngredientProgress: 'com.chi__you.cuisinejournal.recipe.TagIngredientProgressTest',
+    verifyUnificationContent: 'com.chi__you.cuisinejournal.compat.UnificationContentTest',
+    verifyScreenReturnSession: 'com.chi__you.cuisinejournal.client.journal.ScreenReturnSessionTest',
+    verifyAuditRegressions: 'com.chi__you.cuisinejournal.network.AuditRegressionTest',
+    verifyCategoryOverlays: 'com.chi__you.cuisinejournal.recipe.CategoryOverlayTest',
+    verifyCompatibilityArchitecture: 'com.chi__you.cuisinejournal.compat.CompatibilityArchitectureTest',
+    verifyLayerDependencies: 'com.chi__you.cuisinejournal.compat.LayerDependenciesTest',
+    verifyOptionalMixinContracts: 'com.chi__you.cuisinejournal.compat.OptionalMixinContractsTest',
+    verifyProductionFrames: 'com.chi__you.cuisinejournal.tracking.ProductionFramesTest',
+    verifyFoodVariantIdentity: 'com.chi__you.cuisinejournal.food.FoodVariantIdentityTest',
+    verifyCatalogueEditCoordinator: 'com.chi__you.cuisinejournal.data.CatalogueEditCoordinatorTest',
+    verifyUnificationExpansion: 'com.chi__you.cuisinejournal.compat.UnificationExpansionTest',
+    verifyTeaSkewerUnification: 'com.chi__you.cuisinejournal.compat.TeaSkewerUnificationTest',
+    verifyCakeTeaCompatibility: 'com.chi__you.cuisinejournal.compat.CakeTeaCompatibilityTest',
+    verifyMilkshakePortions: 'com.chi__you.cuisinejournal.tracking.MilkshakePortionsTest',
+    verifyCompatFallback: 'com.chi__you.cuisinejournal.compat.CompatFallbackTest',
+    verifyWorkstationDisplay: 'com.chi__you.cuisinejournal.compat.WorkstationDisplayTest',
+    verifySquidLootCompatibility: 'com.chi__you.cuisinejournal.compat.SquidLootCompatTest',
+    verifyProductionCodeHygiene: 'com.chi__you.cuisinejournal.compat.ProductionCodeHygieneTest',
+    verifyCookingContext: 'com.chi__you.cuisinejournal.tracking.CookingContextTest'
+]
+
+regressionTests.each { taskName, entryPoint ->
+    tasks.register(taskName, JavaExec) {
+        dependsOn tasks.named('testClasses')
+        classpath = sourceSets.test.runtimeClasspath
+        if (taskName == 'verifyLayerDependencies') {
+            // The verifier reads optional compile-only API headers, never initializes their classes.
+            classpath += sourceSets.main.compileClasspath
+        }
+        mainClass = entryPoint
+        if (taskName == 'verifyProductionCodeHygiene') {
+            systemProperty 'cuisinejournal.productionClasses', sourceSets.main.java.classesDirectory.get().asFile.absolutePath
+        }
+        if (taskName == 'auditPlacedFoodPaths') {
+            onlyIf { System.getenv('CUISINEJOURNAL_COMPAT_MODS') != null }
+        }
+    }
+}
+
+tasks.named('check').configure { dependsOn regressionTests.keySet() }
+tasks.named('test', Test).configure {
+    dependsOn 'verifyFoodMath', 'verifySolMigration'
+}
+
+tasks.register('verifyProductionArtifact') {
+    dependsOn 'reobfJar', 'testClasses'
+    doLast {
+        def testClasses = sourceSets.test.output.classesDirs.files.collectMany { root ->
+            fileTree(root).matching { include '**/*.class' }.files.collect {
+                root.toPath().relativize(it.toPath()).toString().replace('\\', '/')
+            }
+        }.toSet()
+        new java.util.zip.ZipFile(tasks.jar.archiveFile.get().asFile).withCloseable { zip ->
+            zip.entries().each { entry ->
+                if (entry.name.startsWith('com/chi__you/cuisinejournal/food/mixin/')) {
+                    throw new GradleException('Old flat Mixin package remains in artifact: ' + entry.name)
+                }
+                if (entry.name == 'com/chi__you/cuisinejournal/client/journal/JournalBlur.class'
+                        || entry.name == 'assets/cuisinejournal/shaders/post/journal_blur.json') {
+                    throw new GradleException('Removed journal postprocessor remains in artifact: ' + entry.name)
+                }
+                if (testClasses.contains(entry.name) || entry.name.endsWith('.log')
+                        || entry.name.endsWith('.pyc') || entry.name.endsWith('.java')
+                        || entry.name.startsWith('assets/mealmastery/') || entry.name.startsWith('data/mealmastery/')
+                        || entry.name.contains('/b006_')
+                        || entry.name.startsWith('org/junit/') || entry.name.startsWith('org/mockito/')) {
+                    throw new GradleException('Development-only content in production jar: ' + entry.name)
+                }
+            }
+        }
+        println 'ProductionArtifact: no test classes, source files or temporary logs packaged'
+    }
+}
+tasks.named('build').configure { dependsOn 'verifyProductionArtifact' }

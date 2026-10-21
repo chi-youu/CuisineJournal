@@ -1,0 +1,38 @@
+{
+  "required_mods": [
+    "bakery"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "bakery:small_cooking_pot",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:pot_cooking",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:pot_cooking"
+      ]
+    },
+    {
+      "block": "bakery:baker_station",
+      "adapter": "item_recipe_container",
+      "method": "bakery:baking_station",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "bakery:baking_station"
+      ]
+    }
+  ]
+}

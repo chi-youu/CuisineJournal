@@ -1,0 +1,7 @@
+{
+  "excluded_items": [
+    "minecraft:bowl",
+    "minecraft:flower_pot",
+    "minecraft:glass_bottle"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "required_mods": ["farmers_spell"],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "farmers_spell:alchemist_pot",
+      "adapter": "cooking_pot",
+      "method": "farmers_spell:alchemist_cooking",
+      "capabilities": ["item_input", "item_output", "timed_processing", "container_fill", "menu_take", "right_click_take"],
+      "recipe_types": ["farmers_spell:alchemist_cooking", "farmersdelight:cooking"]
+    },
+    {
+      "block": "farmers_spell:cinderous_stove",
+      "adapter": "stove",
+      "method": "minecraft:campfire_cooking",
+      "capabilities": ["item_input", "item_output", "timed_processing", "direct_drop", "direct_interaction"],
+      "recipe_types": ["minecraft:campfire_cooking"]
+    }
+  ]
+}

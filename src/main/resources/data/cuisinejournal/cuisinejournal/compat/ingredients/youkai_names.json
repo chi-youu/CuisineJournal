@@ -1,0 +1,8 @@
+{
+  "required_mods": ["youkaishomecoming"],
+  "tag_names": {
+    "youkaishomecoming:dango": "麻薯与团子",
+    "youkaishomecoming:raw_flesh": "怪肉",
+    "forge:fruits/grape": "葡萄"
+  }
+}

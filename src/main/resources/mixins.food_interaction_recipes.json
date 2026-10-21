@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.chi__you.foodinteractions.mixin",
+  "plugin": "com.chi__you.foodinteractions.mixin.InteractionMixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["LycheeBlockItemDisplayMixin"],
+  "client": ["LycheeJeiBlockClickMixin", "LycheeBlockNameMixin"],
+  "injectors": {"defaultRequire": 1}
+}

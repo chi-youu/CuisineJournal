@@ -1,0 +1,9 @@
+{
+  "required_mods": [
+    "ltc2"
+  ],
+  "tag_names": {
+    "ltc2:nether_peppers": "下界辣椒",
+    "ltc2:pepper_powders": "胡椒粉"
+  }
+}

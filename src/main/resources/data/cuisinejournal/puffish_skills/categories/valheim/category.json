@@ -1,0 +1,43 @@
+{
+  "title": "百味纪 · 生存厨艺",
+  "description": "烹饪等级提供技能点；每处路口选择一侧并解锁对应支线。",
+  "extra_description": "洗点：/cj skills reset，再执行 /cj skills reset confirm。消耗5级原版经验并清空当前食物记录。",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:golden_carrot"
+    }
+  },
+  "background": "minecraft:textures/block/brown_terracotta.png",
+  "unlocked_by_default": false,
+  "starting_points": 0,
+  "erase_on_death": false,
+  "colors": {
+    "connections": {
+      "locked": {
+        "fill": "#6b5a48",
+        "stroke": "#1a120c"
+      },
+      "available": {
+        "fill": "#d8c08a",
+        "stroke": "#1a120c"
+      },
+      "affordable": {
+        "fill": "#ffe39a",
+        "stroke": "#1a120c"
+      },
+      "unlocked": {
+        "fill": "#f0b232",
+        "stroke": "#2a1a06"
+      },
+      "excluded": {
+        "fill": "#b8402e",
+        "stroke": "#1a0806"
+      }
+    },
+    "points": {
+      "fill": "#ffd24a",
+      "stroke": "#2a1a06"
+    }
+  }
+}

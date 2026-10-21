@@ -1,0 +1,10 @@
+{
+  "required_mods": ["mynethersdelight"],
+  "tag_names": {
+    "mynethersdelight:curry_meats": "咖喱用肉",
+    "mynethersdelight:hot_spice": "火热调料",
+    "mynethersdelight:powder_cannon": "火药茎秆类",
+    "mynethersdelight:cooked_hoglin_loin": "熟疣猪兽肉类",
+    "mynethersdelight:loin_hoglin": "疣猪兽肉类"
+  }
+}

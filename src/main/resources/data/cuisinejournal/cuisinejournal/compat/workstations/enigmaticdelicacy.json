@@ -1,0 +1,11 @@
+{
+  "required_mods": ["enigmaticdelicacy"],
+  "priority": -100,
+  "workstations": [{
+    "block": "enigmaticdelicacy:etherium_stove",
+    "adapter": "stove",
+    "method": "minecraft:campfire_cooking",
+    "capabilities": ["item_input", "item_output", "timed_processing", "direct_interaction", "direct_drop", "menu_take", "automation_extract"],
+    "recipe_types": ["minecraft:campfire_cooking", "minecraft:smelting"]
+  }]
+}

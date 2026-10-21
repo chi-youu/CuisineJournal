@@ -1,0 +1,38 @@
+{
+  "required_mods": [
+    "beachparty"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "beachparty:palm_bar",
+      "adapter": "item_recipe_container",
+      "method": "beachparty:palm_bar_mixing",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "beachparty:palm_bar_mixing"
+      ]
+    },
+    {
+      "block": "beachparty:mini_fridge",
+      "adapter": "item_recipe_container",
+      "method": "beachparty:mini_fridge_freezing",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "beachparty:mini_fridge_freezing"
+      ]
+    }
+  ]
+}

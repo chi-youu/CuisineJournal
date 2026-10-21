@@ -1,0 +1,19 @@
+{
+  "required_mods": [
+    "alexsmobsdelight"
+  ],
+  "tag_names": {
+    "alexsmobsdelight:large_cooked_meat": "熟熊肉类",
+    "alexsmobsdelight:cooked_squid_tentacles": "熟大王乌贼触手",
+    "alexsmobsdelight:raw_bear_meat": "生熊肉类",
+    "alexsmobsdelight:cooked_bear_meat": "熟熊肉类",
+    "alexsmobsdelight:raw_moose_meat": "生驼鹿肉类",
+    "alexsmobsdelight:cooked_emu": "熟鸸鹋肉类",
+    "alexsmobsdelight:cooked_froststalker_meat": "熟寒霜潜伏者肉",
+    "alexsmobsdelight:raw_bison_meat": "生野牛肉类",
+    "alexsmobsdelight:raw_tusklin_meat": "生獠牙兽肉类",
+    "alexsmobsdelight:raw_kangaroo_meat": "生袋鼠肉类",
+    "alexsmobsdelight:raw_froststalker_meat": "生寒霜潜伏者肉类",
+    "alexsmobsdelight:mantis_shrimp_tails": "螳螂虾尾"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "required_mods": [
+    "farm_and_charm"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "farm_and_charm:cooking_pot",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:pot_cooking",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:pot_cooking"
+      ]
+    },
+    {
+      "block": "farm_and_charm:roaster",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:roaster",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:roaster"
+      ]
+    },
+    {
+      "block": "farm_and_charm:stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "farm_and_charm:crafting_bowl",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:crafting_bowl",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:crafting_bowl"
+      ]
+    },
+    {
+      "block": "farm_and_charm:mincer",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:mincer",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:mincer"
+      ]
+    },
+    {
+      "block": "farm_and_charm:silo_wood",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:drying",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:drying"
+      ]
+    },
+    {
+      "block": "farm_and_charm:silo_copper",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:drying",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:drying"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "tag_names": {
+    "forge:cooked_fishes/squid": "熟鱿鱼类",
+    "forge:tentacles": "鱿鱼须类",
+    "forge:raw_fishes/calamari": "生鱿鱼类",
+    "cuisinejournal:raw_squid_tentacles": "生鱿鱼须类",
+    "cuisinejournal:glow_squid": "发光鱿鱼类"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "required_mods": [
+    "kitchenkarrot"
+  ],
+  "tag_names": {
+    "kitchenkarrot:cooked_meat": "熟肉类",
+    "kitchenkarrot:grass_spices": "原版草",
+    "kitchenkarrot:meat": "春卷用肉"
+  }
+}

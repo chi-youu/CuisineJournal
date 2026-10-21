@@ -1,0 +1,4 @@
+{"required_mods":["papercraft_magic_decoration"],"priority":-100,"workstations":[
+ {"block":"papercraft_magic_decoration:copper_bartender","adapter":"item_recipe_container","method":"papercraft_magic_decoration:mixology","capabilities":["item_input","item_output","menu_take"],"recipe_types":["papercraft_magic_decoration:mixology"]},
+ {"block":"papercraft_magic_decoration:copper_still","adapter":"item_recipe_container","method":"papercraft_magic_decoration:distillation","capabilities":["item_input","item_output","right_click_take"],"recipe_types":["papercraft_magic_decoration:distillation"]}
+]}

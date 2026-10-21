@@ -1,0 +1,24 @@
+{
+  "required_mods": [
+    "vintagedelight"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "vintagedelight:fermenting_jar",
+      "adapter": "item_recipe_container",
+      "method": "vintagedelight:fermenting",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "timed_processing",
+        "container_fill",
+        "menu_take",
+        "automation_extract"
+      ],
+      "recipe_types": [
+        "vintagedelight:fermenting"
+      ]
+    }
+  ]
+}

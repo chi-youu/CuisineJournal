@@ -1,0 +1,53 @@
+{
+  "required_mods": [
+    "brewery"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "brewery:wooden_brewingstation",
+      "adapter": "item_recipe_container",
+      "method": "brewery:brewing",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "right_click_take"
+      ],
+      "recipe_types": [
+        "brewery:brewing"
+      ]
+    },
+    {
+      "block": "brewery:copper_brewingstation",
+      "adapter": "item_recipe_container",
+      "method": "brewery:brewing",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "right_click_take"
+      ],
+      "recipe_types": [
+        "brewery:brewing"
+      ]
+    },
+    {
+      "block": "brewery:netherite_brewingstation",
+      "adapter": "item_recipe_container",
+      "method": "brewery:brewing",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "right_click_take"
+      ],
+      "recipe_types": [
+        "brewery:brewing"
+      ]
+    }
+  ]
+}

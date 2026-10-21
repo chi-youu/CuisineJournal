@@ -1,0 +1,10 @@
+{
+  "required_mods": ["miners_delight"],
+  "tag_names": {
+    "miners_delight:raw_insect_meat": "生虫肉类",
+    "miners_delight:cooked_insect_meat": "熟虫肉类",
+    "forge:foods/tentacles": "鱿鱼须类",
+    "forge:foods/bat_wing": "蝙蝠翼类",
+    "miners_delight:baked_cave_carrot": "烤洞穴萝卜类"
+  }
+}

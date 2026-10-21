@@ -1,0 +1,7 @@
+{
+  "required_mods": ["kitchenkarrot"], "priority": -100,
+  "workstations": [
+    {"block":"kitchenkarrot:brewing_barrel","adapter":"item_recipe_container","method":"kitchenkarrot:brewing_barrel","capabilities":["item_input","item_output","menu_take"],"recipe_types":["kitchenkarrot:brewing_barrel"]},
+    {"block":"kitchenkarrot:air_compressor","adapter":"item_recipe_container","method":"kitchenkarrot:air_compressing","capabilities":["item_input","item_output","direct_interaction","menu_take","timed_processing"],"recipe_types":["kitchenkarrot:air_compressing"]}
+  ]
+}

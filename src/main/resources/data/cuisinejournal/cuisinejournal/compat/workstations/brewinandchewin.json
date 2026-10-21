@@ -1,0 +1,7 @@
+{
+  "required_mods": ["brewinandchewin"],
+  "priority": -100,
+  "workstations": [{"block":"brewinandchewin:keg","adapter":"item_recipe_container","method":"brewinandchewin:fermenting",
+    "capabilities":["item_input","fluid_input","item_output","fluid_output","timed_processing","menu_take","container_fill","right_click_take","automation_extract"],
+    "recipe_types":["brewinandchewin:fermenting","brewinandchewin:keg_pouring"]}]
+}

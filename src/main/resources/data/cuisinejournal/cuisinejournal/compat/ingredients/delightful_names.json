@@ -1,0 +1,7 @@
+{
+  "required_mods": ["delightful"],
+  "tag_names": {
+    "delightful:patties": "肉饼",
+    "delightful:hot_spices": "爆辣辣椒"
+  }
+}

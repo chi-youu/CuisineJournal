@@ -1,0 +1,6 @@
+{
+  "required_mods": ["cataclysm"],
+  "priority": -100,
+  "workstations": [{"block":"cataclysm:altar_of_amethyst","adapter":"item_recipe_container","method":"cataclysm:amethyst_bless",
+    "capabilities":["item_input","item_output","timed_processing","direct_interaction","right_click_take","direct_drop"],"recipe_types":["cataclysm:amethyst_bless"]}]
+}

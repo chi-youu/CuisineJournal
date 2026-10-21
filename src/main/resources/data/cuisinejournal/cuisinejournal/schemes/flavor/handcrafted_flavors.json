@@ -1,0 +1,2487 @@
+{
+  "name": "手配风味",
+  "description": "来自当前测试实例的手动风味定义及物品、标签绑定；按需载入，不默认启用。",
+  "flavors": {
+    "cuisinejournal_custom:flavor": {
+      "name": "治愈",
+      "description": "",
+      "enabled": true,
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.25,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.5
+          }
+        },
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "fruitsdelight:heal_aura",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.25,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.5
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:heal_aura",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.3,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.4
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:heal_aura",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.5,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.25
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_10": {
+      "name": "明目",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:brightening",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:brightening",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 2,
+          "effects": [
+            {
+              "id": "fruitsdelight:brightening",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:night_vision",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_11": {
+      "name": "解毒",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:recovering",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "fruitsdelight:recovering",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:recovering",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:regeneration",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.4
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:recovering",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:regeneration",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 0.4
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_12": {
+      "name": "消食",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:digesting",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:digesting",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.8
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:digesting",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.7
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:digesting",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_13": {
+      "name": "穿杨",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:leaf_piercing",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:leaf_piercing",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_14": {
+      "name": "循环",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:cycling",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "fruitsdelight:cycling",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.1,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:cycling",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.2,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:cycling",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.4,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_15": {
+      "name": "榴莲味",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:alienating",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:alienating",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": -4,
+            "health_multiplier": 0,
+            "regen_per_second": -0.4,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 2,
+          "effects": [
+            {
+              "id": "fruitsdelight:alienating",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "fruitsdelight:suspicious_smell",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": -2,
+            "health_multiplier": 0,
+            "regen_per_second": -0.2,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:alienating",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "fruitsdelight:suspicious_smell",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_16": {
+      "name": "紫颂",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:chorus_fruit",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:chorus",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "fruitsdelight:chorus",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.1,
+            "regen_multiplier": 0.2,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.05
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:chorus",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.2,
+            "regen_multiplier": 0.3,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.1
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:chorus",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.4,
+            "regen_multiplier": 0.5,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.15
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_17": {
+      "name": "暴躁",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:rage_aura",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:rage_aura",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        },
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "fruitsdelight:rage_aura",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:strength",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.5
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:rage_aura",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:strength",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 0.5
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:rage_aura",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:strength",
+              "level": 3,
+              "duration_seconds": 30,
+              "active_fraction": 0.5
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.6
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_18": {
+      "name": "平安",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:apple",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:absorption",
+              "levels": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:absorption",
+              "levels": 2
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:absorption",
+              "levels": 3
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_19": {
+      "name": "发光",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:glow_berries",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "minecraft:glowing",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_2": {
+      "name": "涩味",
+      "description": "",
+      "enabled": true,
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:astringent",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_20": {
+      "name": "西瓜",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:melon_slice",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:regeneration",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:regeneration",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.2,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_21": {
+      "name": "浆果",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:sweet_berries",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:instant_health",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "minecraft:instant_health",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:instant_health",
+              "level": 3,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_22": {
+      "name": "哈密瓜",
+      "description": "",
+      "enabled": true,
+      "icon": "fruitsdelight:hamimelon_slice",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 3,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_23": {
+      "name": "甜食",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:sugar",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.2
+          }
+        },
+        {
+          "min_stars": 1,
+          "effects": [],
+          "modifiers": {
+            "health_points": 2,
+            "health_multiplier": 0,
+            "regen_per_second": 0.1,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.2,
+            "drink_bonus_multiplier": 0.05
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [],
+          "modifiers": {
+            "health_points": 3,
+            "health_multiplier": 0,
+            "regen_per_second": 0.2,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.2,
+            "drink_bonus_multiplier": 0.05
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "modifiers": {
+            "health_points": 4,
+            "health_multiplier": 0,
+            "regen_per_second": 0.3,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.2,
+            "drink_bonus_multiplier": 0.05
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_24": {
+      "name": "可可",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:cocoa_beans",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.5
+          }
+        },
+        {
+          "min_stars": 2,
+          "effects": [
+            {
+              "id": "minecraft:instant_health",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.5
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:instant_health",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": -0.5
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_25": {
+      "name": "粗粮",
+      "description": "",
+      "enabled": true,
+      "icon": "farmersdelight:rice_panicle",
+      "group": "农夫乐事",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effect_target": "food",
+          "effects": [
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "food_modifiers": {
+            "health_points": 2,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.15
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 4,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.3
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 6,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.45
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_26": {
+      "name": "精面",
+      "description": "",
+      "enabled": true,
+      "icon": "farmersdelight:raw_pasta",
+      "group": "农夫乐事",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effect_target": "food",
+          "effects": [
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "food_modifiers": {
+            "health_points": 1,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.1,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 2,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.3,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 3,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.5,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_27": {
+      "name": "维生素A",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:carrot",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:night_vision",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.2
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "minecraft:night_vision",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.3
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:night_vision",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_28": {
+      "name": "尊贵",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:gold_block",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "minecraft:resistance",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:absorption",
+              "levels": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "minecraft:resistance",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:regeneration",
+              "levels": 1
+            },
+            {
+              "id": "minecraft:absorption",
+              "levels": 2
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:resistance",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:regeneration",
+              "levels": 2
+            },
+            {
+              "id": "minecraft:absorption",
+              "levels": 2
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_29": {
+      "name": "面团",
+      "description": "",
+      "enabled": true,
+      "icon": "farmersdelight:wheat_dough",
+      "group": "农夫乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effect_target": "food",
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "food_modifiers": {
+            "health_points": 1,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:absorption",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 2,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:absorption",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 4,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_3": {
+      "name": "滑行",
+      "description": "",
+      "enabled": true,
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:sliding",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_30": {
+      "name": "面包",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:bread",
+      "group": "农夫乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effect_target": "food",
+          "effects": [
+            {
+              "id": "minecraft:absorption",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "minecraft:absorption",
+              "level": 3,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:absorption",
+              "level": 5,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_31": {
+      "name": "剧毒抵抗",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "smc:poison_resistance",
+      "group": "星喵工艺",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "smc:poison_resistance",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.3
+            }
+          ]
+        },
+        {
+          "min_stars": 2,
+          "effects": [
+            {
+              "id": "smc:poison_resistance",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.3
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "smc:poison_resistance",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_32": {
+      "name": "蛋白",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:egg",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [],
+          "modifiers": {
+            "health_points": 1,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [],
+          "modifiers": {
+            "health_points": 2,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "modifiers": {
+            "health_points": 3,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_33": {
+      "name": "蜂蜜",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:honey_bottle",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.1,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.05
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:speed",
+              "levels": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.2,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.05
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:speed",
+              "levels": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0.3,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.1
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_34": {
+      "name": "麦香",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:wheat",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 2,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:instant_health",
+              "levels": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:instant_health",
+              "levels": 2
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_35": {
+      "name": "干脆",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:dried_kelp",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:instant_health",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_36": {
+      "name": "弹性",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:slime_ball",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:jump_boost",
+              "levels": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:jump_boost",
+              "levels": 2
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_37": {
+      "name": "酱香",
+      "description": "",
+      "enabled": true,
+      "icon": "youkaishomecoming:soy_sauce_bottle",
+      "group": "妖怪们的归家",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.1
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.2
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.3
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_38": {
+      "name": "暖心",
+      "description": "",
+      "enabled": true,
+      "group": "饮酒作乐",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effect_target": "drink",
+          "effects": [
+            {
+              "id": "brewinandchewin:sweet_heart",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_39": {
+      "name": "香醇",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:brown_mushroom",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "youkaishomecoming:mature",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "youkaishomecoming:mature",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.1
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "youkaishomecoming:mature",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "farmersdelight:nourishment",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.2
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_4": {
+      "name": "灵巧",
+      "description": "",
+      "enabled": true,
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:shrinking",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 2,
+          "effects": [
+            {
+              "id": "fruitsdelight:shrinking",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 4,
+          "effects": [
+            {
+              "id": "fruitsdelight:shrinking",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "fruitsdelight:shrinking",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_40": {
+      "name": "怪力",
+      "description": "",
+      "enabled": true,
+      "icon": "fruitsdelight:lychee",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 3,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:strength",
+              "levels": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "effect_level_bonuses": [
+            {
+              "id": "minecraft:strength",
+              "levels": 2
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_41": {
+      "name": "肉类",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:beef",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effect_target": "food",
+          "effects": [],
+          "food_modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.1
+          }
+        },
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.1
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.2
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0.3
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_42": {
+      "name": "牛肉",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:cooked_beef",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_43": {
+      "name": "猪肉",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:cooked_porkchop",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 5,
+          "effects": [
+            {
+              "id": "minecraft:health_boost",
+              "level": 2,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_44": {
+      "name": "羊肉",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:cooked_mutton",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.2,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 3,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.2,
+            "regen_multiplier": 0.15,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0.2,
+            "regen_multiplier": 0.3,
+            "duration_seconds": 0,
+            "duration_multiplier": 0
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_45": {
+      "name": "鸡肉",
+      "description": "",
+      "enabled": true,
+      "icon": "minecraft:cooked_chicken",
+      "group": "Minecraft",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "minecraft:speed",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_5": {
+      "name": "润喉",
+      "description": "",
+      "enabled": true,
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:lozenge",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_6": {
+      "name": "清爽",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:refreshing",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "fruitsdelight:refreshing",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:refreshing",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:haste",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_7": {
+      "name": "开胃",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:appetizing",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": [
+            {
+              "id": "fruitsdelight:appetizing",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_8": {
+      "name": "柠檬片",
+      "description": "",
+      "enabled": true,
+      "icon": "fruitsdelight:lemon_slice",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 0,
+          "effects": []
+        },
+        {
+          "min_stars": 3,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.05
+          }
+        },
+        {
+          "min_stars": 5,
+          "effects": [],
+          "modifiers": {
+            "health_points": 0,
+            "health_multiplier": 0,
+            "regen_per_second": 0,
+            "regen_multiplier": 0,
+            "duration_seconds": 0,
+            "duration_multiplier": 0,
+            "drink_bonus_multiplier": 0.1
+          }
+        }
+      ]
+    },
+    "cuisinejournal_custom:flavor_9": {
+      "name": "甘甜",
+      "description": "",
+      "enabled": true,
+      "icon_effect": "fruitsdelight:sweetening",
+      "group": "果园乐事",
+      "stages": [
+        {
+          "min_stars": 1,
+          "effects": [
+            {
+              "id": "fruitsdelight:sweetening",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        },
+        {
+          "min_stars": 3,
+          "effects": [
+            {
+              "id": "fruitsdelight:sweetening",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            },
+            {
+              "id": "minecraft:speed",
+              "level": 1,
+              "duration_seconds": 30,
+              "active_fraction": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "bindings": {
+    "item_flavor": {
+      "fruitsdelight:peach": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor"
+        ]
+      },
+      "fruitsdelight:persimmon": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_2"
+        ]
+      },
+      "fruitsdelight:mangosteen": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_3"
+        ]
+      },
+      "fruitsdelight:lychee": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_4",
+          "cuisinejournal_custom:flavor_40"
+        ]
+      },
+      "fruitsdelight:pear": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_5"
+        ]
+      },
+      "fruitsdelight:lemon": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_6"
+        ]
+      },
+      "fruitsdelight:lemon_slice": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_8"
+        ]
+      },
+      "fruitsdelight:pineapple_slice": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_9"
+        ]
+      },
+      "fruitsdelight:hawberry": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_7"
+        ]
+      },
+      "fruitsdelight:blueberry": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_10"
+        ]
+      },
+      "fruitsdelight:orange": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_11"
+        ]
+      },
+      "fruitsdelight:fig": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_12"
+        ]
+      },
+      "fruitsdelight:bayberry": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_13"
+        ]
+      },
+      "fruitsdelight:kiwi": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_14"
+        ]
+      },
+      "fruitsdelight:durian_flesh": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_15"
+        ]
+      },
+      "minecraft:chorus_fruit": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_16"
+        ]
+      },
+      "ends_delight:chorus_succulent": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_16"
+        ]
+      },
+      "ends_delight:dried_chorus_flower": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_16"
+        ]
+      },
+      "fruitsdelight:mango": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_17"
+        ]
+      },
+      "minecraft:apple": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_18"
+        ]
+      },
+      "minecraft:glow_berries": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_19"
+        ]
+      },
+      "minecraft:glow_ink_sac": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_19"
+        ]
+      },
+      "minecraft:melon_slice": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_20"
+        ]
+      },
+      "minecraft:sweet_berries": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_38"
+        ]
+      },
+      "twilightforest:torchberries": {
+        "source": true
+      },
+      "fruitsdelight:hamimelon_slice": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_22"
+        ]
+      },
+      "minecraft:sugar": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_23"
+        ]
+      },
+      "minecraft:cocoa_beans": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_24"
+        ]
+      },
+      "farmersdelight:rice": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_25"
+        ]
+      },
+      "farmersdelight:raw_pasta": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_26"
+        ]
+      },
+      "minecraft:carrot": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_27"
+        ]
+      },
+      "minecraft:gold_ingot": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_28"
+        ]
+      },
+      "minecraft:bread": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_30"
+        ]
+      },
+      "smc:broccoli": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_31"
+        ]
+      },
+      "minecraft:egg": {
+        "source": false
+      },
+      "minecraft:turtle_egg": {
+        "source": false
+      },
+      "minecraft:honey_bottle": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_33"
+        ]
+      },
+      "minecraft:wheat": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_34"
+        ]
+      },
+      "minecraft:dried_kelp": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_35"
+        ]
+      },
+      "twilightforest:mushgloom": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_39"
+        ]
+      },
+      "brewinandchewin:jerky": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41"
+        ]
+      }
+    },
+    "tag_flavor": {
+      "forge:berries": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_21"
+        ]
+      },
+      "forge:dough": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_29"
+        ]
+      },
+      "forge:eggs": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_32"
+        ]
+      },
+      "forge:bread": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_30"
+        ]
+      },
+      "forge:slimeballs": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_36"
+        ]
+      },
+      "forge:mushrooms": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_39"
+        ]
+      },
+      "smc:meat_compat": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41"
+        ]
+      },
+      "forge:raw_pork": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_43"
+        ]
+      },
+      "forge:raw_beef": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_42"
+        ]
+      },
+      "forge:raw_chicken": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_45"
+        ]
+      },
+      "forge:raw_mutton": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_44"
+        ]
+      },
+      "cuisinejournal:tag/twilight_spark_delight/raw_bighorn_mutton": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_44"
+        ]
+      },
+      "twilight_spark_delight:wild_boar_meat": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_43"
+        ]
+      },
+      "twilight_spark_delight:chicken_and_hydra_soup_chicken": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_45"
+        ]
+      },
+      "farmersdelight:cabbage_roll_ingredients": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41"
+        ]
+      },
+      "brewinandchewin:horror_meats": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41"
+        ]
+      },
+      "forge:raw_boar": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_43"
+        ]
+      },
+      "twilightdelight:meef_raw": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_42"
+        ]
+      },
+      "forge:cooked_pork": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_43"
+        ]
+      },
+      "forge:cooked_chicken": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_45"
+        ]
+      },
+      "twilightdelight:meef_cooked": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_42"
+        ]
+      },
+      "cuisinejournal:tag/twilight_spark_delight/cooked_bighorn_mutton": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_44"
+        ]
+      },
+      "cuisinejournal:tag/twilight_spark_delight/cooked_wild_boar_meat": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_43"
+        ]
+      },
+      "forge:cooked_mutton": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41",
+          "cuisinejournal_custom:flavor_44"
+        ]
+      },
+      "delightful:patties": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41"
+        ]
+      },
+      "forge:mini_pizza_ingredients": {
+        "source": true,
+        "flavors": [
+          "cuisinejournal_custom:flavor_41"
+        ]
+      }
+    }
+  }
+}

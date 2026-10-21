@@ -1,0 +1,9 @@
+{
+  "required_mods": ["torchesbecomesunlight"],
+  "priority": -100,
+  "workstations": [
+    {"block":"torchesbecomesunlight:oven","adapter":"item_recipe_container","method":"torchesbecomesunlight:oven","capabilities":["item_input","item_output","timed_processing","menu_take"],"recipe_types":["torchesbecomesunlight:oven"]},
+    {"block":"torchesbecomesunlight:stew_pot","adapter":"item_recipe_container","method":"torchesbecomesunlight:stew_pot","capabilities":["item_input","item_output","timed_processing","menu_take"],"recipe_types":["torchesbecomesunlight:stew_pot"]},
+    {"block":"torchesbecomesunlight:cutting_board","adapter":"item_recipe_container","method":"torchesbecomesunlight:cutting_board","capabilities":["item_input","item_output","direct_interaction","menu_take"],"recipe_types":["torchesbecomesunlight:cutting_board"]}
+  ]
+}

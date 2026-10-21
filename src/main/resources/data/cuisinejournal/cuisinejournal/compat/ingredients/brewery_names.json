@@ -1,0 +1,6 @@
+{
+  "required_mods": ["brewery"],
+  "tag_names": {
+    "brewery:beer": "啤酒类"
+  }
+}

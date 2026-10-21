@@ -1,0 +1,9 @@
+{
+  "required_mods": ["youkaishomecoming"],
+  "priority": -100,
+  "workstations": [
+    {"block":"youkaishomecoming:kettle","adapter":"auto","method":"youkaishomecoming:kettle","capabilities":["item_input","fluid_input","fluid_output","timed_processing","container_fill","right_click_take","automation_extract"],"recipe_types":["youkaishomecoming:kettle"]},
+    {"block":"youkaishomecoming:fermentation_tank","adapter":"auto","method":"youkaishomecoming:fermentation","capabilities":["item_input","fluid_input","item_output","fluid_output","timed_processing","container_fill","right_click_take","direct_drop","automation_extract"],"recipe_types":["youkaishomecoming:fermentation"]},
+    {"block":"youkaishomecoming:wood_basin","adapter":"auto","method":"youkaishomecoming:basin","capabilities":["item_input","fluid_input","fluid_output","direct_interaction","container_fill","right_click_take","automation_extract"],"recipe_types":["youkaishomecoming:basin"]}
+  ]
+}

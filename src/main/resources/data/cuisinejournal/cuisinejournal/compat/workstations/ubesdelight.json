@@ -1,0 +1,22 @@
+{
+  "required_mods": [
+    "ubesdelight"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "ubesdelight:baking_mat_bamboo",
+      "adapter": "cutting_board",
+      "method": "ubesdelight:baking_mat",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "direct_drop"
+      ],
+      "recipe_types": [
+        "ubesdelight:baking_mat"
+      ]
+    }
+  ]
+}

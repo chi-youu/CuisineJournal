@@ -1,0 +1,6 @@
+{
+  "required_mods": ["immortalers_delight"],
+  "priority": -100,
+  "workstations": [{"block":"immortalers_delight:enchantal_cooler","adapter":"item_recipe_container","method":"immortalers_delight:enchantal_cooler",
+    "capabilities":["item_input","item_output","timed_processing","menu_take","container_fill","automation_extract"],"recipe_types":["immortalers_delight:enchantal_cooler"]}]
+}

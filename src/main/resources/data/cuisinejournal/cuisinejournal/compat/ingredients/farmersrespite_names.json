@@ -1,0 +1,8 @@
+{
+  "required_mods": [
+    "farmersrespite"
+  ],
+  "tag_names": {
+    "farmersrespite:tea_leaves": "茶叶类"
+  }
+}

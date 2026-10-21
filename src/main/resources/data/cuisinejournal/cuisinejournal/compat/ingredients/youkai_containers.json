@@ -1,0 +1,4 @@
+{
+  "required_mods": ["youkaishomecoming"],
+  "excluded_items": ["youkaishomecoming:sake_bottle"]
+}

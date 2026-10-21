@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    {"id": "culturaldelights:cooked_squid", "required": false},
+    {"id": "culturaldelights:cooked_calamari", "required": false},
+    {"id": "miners_delight:baked_squid", "required": false},
+    {"id": "miners_delight:baked_tentacles", "required": false},
+    {"id": "rusticdelight:cooked_calamari", "required": false},
+    {"id": "rusticdelight:cooked_calamari_slice", "required": false},
+    {"id": "oceanic_delight:grilled_squid_tentacles", "required": false},
+    {"id": "crabbersdelight:cooked_squid_tentacles", "required": false},
+    {"id": "crabbersdelight:cooked_glow_squid_tentacles", "required": false}
+  ]
+}

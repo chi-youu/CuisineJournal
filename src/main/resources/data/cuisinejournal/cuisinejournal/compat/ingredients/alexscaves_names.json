@@ -1,0 +1,10 @@
+{
+  "required_mods": [
+    "alexscaves"
+  ],
+  "tag_names": {
+    "alexscaves:gelatins": "明胶类",
+    "alexscaves:sweet_berries": "甜浆果类",
+    "alexscaves:rock_candies": "冰糖块"
+  }
+}

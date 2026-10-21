@@ -1,0 +1,8 @@
+{
+  "required_mods": ["farm_and_charm"],
+  "tag_names": {
+    "farm_and_charm:dough": "面团类",
+    "farm_and_charm:raw_bacon": "生培根类",
+    "farm_and_charm:wheat": "麦子"
+  }
+}

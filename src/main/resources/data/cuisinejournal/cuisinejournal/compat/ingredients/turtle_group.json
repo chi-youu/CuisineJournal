@@ -1,0 +1,8 @@
+{
+  "required_mods": ["aquaculture"],
+  "merge_tags": [{
+    "id": "aquaculture:turtle",
+    "name": "海龟类",
+    "tags": ["aquaculture:turtle"]
+  }]
+}

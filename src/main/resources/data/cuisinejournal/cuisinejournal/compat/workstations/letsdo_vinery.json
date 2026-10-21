@@ -1,0 +1,39 @@
+{
+  "required_mods": [
+    "vinery"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "vinery:fermentation_barrel",
+      "adapter": "item_recipe_container",
+      "method": "vinery:wine_fermentation",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "vinery:wine_fermentation"
+      ]
+    },
+    {
+      "block": "vinery:apple_press",
+      "adapter": "item_recipe_container",
+      "method": "vinery:apple_fermenting",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "vinery:apple_mashing",
+        "vinery:apple_fermenting"
+      ]
+    }
+  ]
+}

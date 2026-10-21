@@ -1,0 +1,1 @@
+{"required_mods":["drinkbeer"],"priority":-100,"workstations":[{"block":"drinkbeer:beer_barrel","adapter":"item_recipe_container","method":"drinkbeer:brewing","capabilities":["item_input","item_output","menu_take"],"recipe_types":["drinkbeer:brewing"]}]}

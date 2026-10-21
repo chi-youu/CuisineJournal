@@ -1,0 +1,8 @@
+{
+  "required_mods": ["farmersdelight"],
+  "tag_names": {
+    "createaddition:plants": "暮色植物",
+    "farmersdelight:wolf_prey": "狗粮用肉",
+    "farmersdelight:cabbage_roll_ingredients": "肉馅食材"
+  }
+}

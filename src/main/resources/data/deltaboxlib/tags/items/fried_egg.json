@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    {"id": "farmersdelight:fried_egg", "required": false}
+  ],
+  "remove": [
+    "farmersdelight:cooked_rice",
+    "kaleidoscope_cookery:cooked_rice"
+  ]
+}

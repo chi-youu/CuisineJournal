@@ -1,0 +1,5 @@
+{
+  "type": "INGREDIENTS_DISCOVERED",
+  "threshold": 50,
+  "badge": "cuisinejournal:ingredient_explorer"
+}

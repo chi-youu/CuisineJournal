@@ -1,0 +1,6 @@
+{
+  "required_mods": ["deep_aether"],
+  "priority": -100,
+  "workstations": [{"block":"deep_aether:combiner","adapter":"item_recipe_container","method":"deep_aether:combining",
+    "capabilities":["item_input","item_output","timed_processing","menu_take","automation_extract"],"recipe_types":["deep_aether:combining"]}]
+}

@@ -1,0 +1,7 @@
+{
+  "required_mods": ["crockpot"], "priority": -100,
+  "workstations": [
+    {"block":"crockpot:crock_pot","adapter":"item_recipe_container","method":"crockpot:crock_pot_cooking","capabilities":["item_input","item_output","direct_interaction","menu_take","timed_processing"],"recipe_types":["crockpot:crock_pot_cooking"]},
+    {"block":"crockpot:portable_crock_pot","adapter":"item_recipe_container","method":"crockpot:crock_pot_cooking","capabilities":["item_input","item_output","direct_interaction","menu_take","timed_processing"],"recipe_types":["crockpot:crock_pot_cooking"]}
+  ]
+}

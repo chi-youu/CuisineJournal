@@ -1,0 +1,1 @@
+{"required_mods":["simple_cream"],"priority":-100,"workstations":[{"block":"simple_cream:ice_cream_machine","adapter":"item_recipe_container","method":"simple_cream:ice_cream_making","capabilities":["item_input","item_output","menu_take"],"recipe_types":["simple_cream:ice_cream_making"]}]}

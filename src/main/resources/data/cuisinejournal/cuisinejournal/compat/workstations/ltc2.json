@@ -1,0 +1,7 @@
+{
+  "required_mods": ["ltc2"], "priority": -100,
+  "workstations": [
+    {"block":"ltc2:latiao_oven","adapter":"item_recipe_container","method":"ltc2:latiao_oven","capabilities":["item_input","item_output","direct_interaction","menu_take","timed_processing"],"recipe_types":["ltc2:latiao_oven"]},
+    {"block":"ltc2:mill","adapter":"item_recipe_container","method":"ltc2:mill","capabilities":["item_input","item_output","direct_interaction","menu_take","timed_processing"],"recipe_types":["ltc2:mill"]}
+  ]
+}

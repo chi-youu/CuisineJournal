@@ -1,0 +1,9 @@
+{
+  "required_mods": ["ends_delight"],
+  "tag_names": {
+    "forge:roasted_shulker_meat": "熟潜影贝肉类",
+    "forge:shulker_meat": "生潜影贝肉类",
+    "forge:raw_dragon_meat": "生龙肉类",
+    "forge:roasted_dragon_meat": "熟龙肉类"
+  }
+}

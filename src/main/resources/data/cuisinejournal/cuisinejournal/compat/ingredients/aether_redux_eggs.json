@@ -1,0 +1,10 @@
+{
+  "required_mods": ["aether_redux"],
+  "priority": 100,
+  "merge_tag_additions": [
+    {
+      "id": "forge:eggs",
+      "tags": ["aether_redux:eggs_for_blueberry_pie"]
+    }
+  ]
+}

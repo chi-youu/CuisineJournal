@@ -1,0 +1,12 @@
+{
+  "required_mods": [
+    "cavedelight"
+  ],
+  "tag_names": {
+    "cavedelight:slam": "猛汉午餐肉类",
+    "cavedelight:big_dinosaur_egg": "大龙蛋",
+    "cavedelight:radgill": "辐鳃鱼肉类",
+    "cavedelight:small_dinosaur_egg": "小龙蛋",
+    "cavedelight:soylent": "“绿色食品”"
+  }
+}

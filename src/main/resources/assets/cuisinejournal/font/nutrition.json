@@ -1,0 +1,15 @@
+{
+  "providers": [
+    { "type": "reference", "id": "minecraft:include/space" },
+    { "type": "reference", "id": "minecraft:include/default" },
+    { "type": "reference", "id": "minecraft:include/unifont" },
+    {
+      "type": "bitmap",
+      "file": "cuisinejournal:font/nutrition_icons.png",
+      "height": 11,
+      "ascent": 9,
+      "chars": ["\uE100\uE101"]
+    },
+    { "type": "space", "advances": { "\uE102": 1 } }
+  ]
+}

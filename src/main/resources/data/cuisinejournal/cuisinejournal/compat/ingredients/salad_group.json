@@ -1,0 +1,8 @@
+{
+  "merge_tags": [{
+    "id": "forge:salad_ingredients",
+    "name": "卷心菜类",
+    "tags": ["forge:salad_ingredients", "forge:crops/cabbage", "forge:salad_ingredients/cabbage", "farm_and_charm:cabbage", "dumplings_delight:cabbage"],
+    "types": ["cuisinejournal:vegetable"]
+  }]
+}

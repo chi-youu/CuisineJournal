@@ -1,0 +1,6 @@
+{
+  "required_mods": ["brewinandchewin"],
+  "priority": 100,
+  "keep_tags": ["brewinandchewin:raw_meats"],
+  "tag_names": {"brewinandchewin:raw_meats": "肉干用肉"}
+}

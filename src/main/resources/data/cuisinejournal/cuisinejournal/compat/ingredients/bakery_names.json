@@ -1,0 +1,8 @@
+{
+  "required_mods": ["bakery"],
+  "tag_names": {
+    "bakery:dough": "面团类",
+    "bakery:cooked_beef": "熟肉类",
+    "bakery:jam": "果酱"
+  }
+}

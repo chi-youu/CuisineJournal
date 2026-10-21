@@ -1,0 +1,6 @@
+{
+  "required_mods": ["aquamirae_delight"],
+  "portion_origins": {
+    "aquamirae_delight:fishermans_delicacy_slice": "aquamirae_delight:fishermans_delicacy"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "required_mods": ["trailandtales_delight"],
+  "workstations": [{
+    "block": "trailandtales_delight:ice_bucket",
+    "method": "trailandtales_delight:ice_cream",
+    "capabilities": ["item_input", "item_output", "timed_processing", "direct_interaction", "container_fill", "right_click_take"]
+  }]
+}

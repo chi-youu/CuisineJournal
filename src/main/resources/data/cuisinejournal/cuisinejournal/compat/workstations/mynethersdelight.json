@@ -1,0 +1,41 @@
+{
+  "required_mods": [
+    "mynethersdelight"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "mynethersdelight:blazier",
+      "adapter": "campfire",
+      "method": "minecraft:campfire_cooking",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "direct_drop",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "minecraft:campfire_cooking",
+        "minecraft:smelting",
+        "minecraft:smoking",
+        "minecraft:blasting"
+      ]
+    },
+    {
+      "block": "mynethersdelight:nether_stove",
+      "adapter": "stove",
+      "method": "minecraft:campfire_cooking",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "direct_drop",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "minecraft:campfire_cooking"
+      ]
+    }
+  ]
+}

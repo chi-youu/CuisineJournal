@@ -1,0 +1,12 @@
+{
+  "required_mods": ["dungeonsdelight"],
+  "tag_names": {
+    "dungeonsdelight:acidics": "怪物松饼用提取物",
+    "dungeonsdelight:extracts": "怪物提取物",
+    "dungeonsdelight:raw_ghast": "恶魂触须类",
+    "dungeonsdelight:sculk_cheese": "幽匿蓝纹奶酪类",
+    "dungeonsdelight:sea_plants": "海草类",
+    "dungeonsdelight:ancient_flora": "远古植物",
+    "dungeonsdelight:fleshes": "僵尸肉"
+  }
+}

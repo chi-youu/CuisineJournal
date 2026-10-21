@@ -1,0 +1,8 @@
+{
+  "required_mods": [
+    "barbequesdelight"
+  ],
+  "tag_names": {
+    "barbequesdelight:grilled_skewers": "烤串"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    {"id": "ice_and_fire_delight:hydra_venom_soup", "required": false},
+    {"id": "exquisito:nightshade_lollipop", "required": false},
+    {"id": "exquisito:ether_lollipop", "required": false},
+    {"id": "farmersdelight:bone_broth", "required": false},
+    {"id": "kaleidoscope_cookery:pork_bone_soup", "required": false},
+    {"id": "youkaishomecoming:shaved_ice_over_rice", "required": false}
+  ]
+}

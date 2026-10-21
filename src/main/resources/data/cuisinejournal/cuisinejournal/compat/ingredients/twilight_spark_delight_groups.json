@@ -1,0 +1,33 @@
+{
+  "required_mods": ["twilight_spark_delight"],
+  "priority": 100,
+  "tag_names": {
+    "twilight_spark_delight:trail_rations_seasoning": "行军调味类",
+    "twilight_spark_delight:bracken_ingredient": "暮色蕨类",
+    "twilight_spark_delight:cooked_bighorn_mutton": "熟大角山羊肉类",
+    "twilight_spark_delight:cooked_wild_boar_meat": "熟野猪肉类",
+    "twilight_spark_delight:chicken_and_hydra_soup_chicken": "鸡肉类",
+    "twilight_spark_delight:wild_boar_meat": "野猪肉类",
+    "twilight_spark_delight:raw_bighorn_mutton": "生大角羊肉类",
+    "twilight_spark_delight:raw_wild_boar_meat": "生野猪肉类"
+  },
+  "merge_tags": [
+    {
+      "id": "forge:mushrooms",
+      "name": "蘑菇",
+      "tags": ["forge:mushrooms", "twilight_spark_delight:trail_rations_mushroom"]
+    },
+    {
+      "id": "twilightdelight:meef_raw",
+      "name": "生牛头人肉类",
+      "tags": ["twilightdelight:meef_raw", "twilight_spark_delight:raw_meef"],
+      "types": ["cuisinejournal:meat"]
+    },
+    {
+      "id": "twilightdelight:meef_cooked",
+      "name": "熟牛头人肉类",
+      "tags": ["twilightdelight:meef_cooked", "twilight_spark_delight:cooked_meef"],
+      "types": ["cuisinejournal:meat"]
+    }
+  ]
+}

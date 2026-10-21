@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+[[mods]]
+modId="food_interaction_recipes"
+version="0.1.0"
+displayName="Food Interaction Recipes"
+authors="chi__you"
+description='''Displays missing serving and slicing recipes for existing placed foods. Never changes interactions.'''
+[[dependencies.food_interaction_recipes]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.food_interaction_recipes]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.food_interaction_recipes]]
+modId="lychee"
+mandatory=true
+versionRange="[5.2.1,6)"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,17 @@
+{
+  "keep_tags": ["forge:raw_meat", "c:raw_meat"],
+  "merge_tags": [
+    {
+      "id": "forge:cooked_hoglin",
+      "name": "熟疣猪兽肉类",
+      "tags": ["forge:cooked_hoglin", "mynethersdelight:cooked_hoglin", "mynethersdelight:cooked_hoglin_loin"],
+      "types": ["cuisinejournal:meat"]
+    },
+    {
+      "id": "forge:raw_strider",
+      "name": "炽足兽肉",
+      "tags": ["forge:raw_strider", "forge:strider_meat", "nethersdelight:raw_strider"],
+      "types": ["cuisinejournal:meat"]
+    }
+  ]
+}

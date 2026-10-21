@@ -1,0 +1,2048 @@
+{
+  "s1_main_1": {
+    "title": "启灶 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_main_1",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_main_2": {
+    "title": "启灶 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_main_2",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_main_3": {
+    "title": "启灶 · 从容进食",
+    "description": "进食时长－5%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_main_3",
+          "effects": {
+            "eat": -0.05
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_main_4": {
+    "title": "启灶 · 精制",
+    "description": "完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_main_4",
+          "effects": {
+            "perfect": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_main_5": {
+    "title": "启灶 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_main_5",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_a": {
+    "title": "启灶 · 体魄",
+    "description": "生命上限＋2",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_a",
+          "effects": {
+            "health": 2
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_b": {
+    "title": "启灶 · 从容进食",
+    "description": "进食时长－5%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_b",
+          "effects": {
+            "eat": -0.05
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_a_side_1": {
+    "title": "启灶 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_a_side_1",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_a_side_2": {
+    "title": "启灶 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_a_side_2",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_a_side_3": {
+    "title": "启灶 · 体魄",
+    "description": "生命上限＋2",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_a_side_3",
+          "effects": {
+            "health": 2
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_b_side_1": {
+    "title": "启灶 · 从容进食",
+    "description": "进食时长－2%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_b_side_1",
+          "effects": {
+            "eat": -0.02
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_b_side_2": {
+    "title": "启灶 · 从容进食",
+    "description": "进食时长－3%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_b_side_2",
+          "effects": {
+            "eat": -0.03
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_b_side_3": {
+    "title": "启灶 · 从容进食",
+    "description": "进食时长－5%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_b_side_3",
+          "effects": {
+            "eat": -0.05
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_merge_1": {
+    "title": "启灶 · 厨艺突破",
+    "description": "食物星级上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:nether_star"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.2,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_merge_1",
+          "effects": {
+            "stars": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s1_merge_main_1": {
+    "title": "启灶 · 丰盛食谱",
+    "description": "饱食度上限＋4\n饱和度上限＋4",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "size": 1.35,
+    "cost": 5,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s1_merge_main_1",
+          "effects": {
+            "hunger_cap": 4,
+            "saturation_cap": 4
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_main_1": {
+    "title": "匠艺 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_main_1",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_main_2": {
+    "title": "匠艺 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_main_2",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_main_3": {
+    "title": "匠艺 · 精制",
+    "description": "完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_main_3",
+          "effects": {
+            "perfect": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_main_4": {
+    "title": "匠艺 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_main_4",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_main_5": {
+    "title": "匠艺 · 稳手",
+    "description": "保底完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:brush"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_main_5",
+          "effects": {
+            "floor": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_a": {
+    "title": "匠艺 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_a",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_b": {
+    "title": "匠艺 · 批量精作",
+    "description": "批量制作完美率扣减－0.1%。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:bundle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_b",
+          "effects": {
+            "batch": 0.001
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_a_side_1": {
+    "title": "匠艺 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_a_side_1",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_a_side_2": {
+    "title": "匠艺 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_a_side_2",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_a_side_3": {
+    "title": "匠艺 · 火候掌控",
+    "description": "烹饪速度＋20%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_a_side_3",
+          "effects": {
+            "speed": 0.2
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_b_side_1": {
+    "title": "匠艺 · 精制",
+    "description": "完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_b_side_1",
+          "effects": {
+            "perfect": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_b_side_2": {
+    "title": "匠艺 · 稳手",
+    "description": "保底完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:brush"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_b_side_2",
+          "effects": {
+            "floor": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_b_side_3": {
+    "title": "匠艺 · 批量精作",
+    "description": "批量制作完美率扣减－0.1%。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:bundle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_b_side_3",
+          "effects": {
+            "batch": 0.001
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_merge_1": {
+    "title": "匠艺 · 厨艺突破",
+    "description": "食物星级上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:nether_star"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.2,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_merge_1",
+          "effects": {
+            "stars": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s2_merge_main_1": {
+    "title": "匠艺 · 临场补给",
+    "description": "饱食度上限＋4\n饱和度上限＋4",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "size": 1.35,
+    "cost": 5,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s2_merge_main_1",
+          "effects": {
+            "hunger_cap": 4,
+            "saturation_cap": 4
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_main_1": {
+    "title": "择味 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_main_1",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_main_2": {
+    "title": "择味 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_main_2",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_main_3": {
+    "title": "择味 · 从容进食",
+    "description": "进食时长－5%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_main_3",
+          "effects": {
+            "eat": -0.05
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_main_4": {
+    "title": "择味 · 精制",
+    "description": "完美率＋2%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_main_4",
+          "effects": {
+            "perfect": 0.02
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_main_5": {
+    "title": "择味 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_main_5",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_a": {
+    "title": "择味 · 从容进食",
+    "description": "进食时长－5%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_a",
+          "effects": {
+            "eat": -0.05
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_b": {
+    "title": "择味 · 批量精作",
+    "description": "批量制作完美率扣减－0.1%。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:bundle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_b",
+          "effects": {
+            "batch": 0.001
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_a_side_1": {
+    "title": "择味 · 求速弃精",
+    "description": "完美率－3%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:rotten_flesh"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 0.9,
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_a_side_1",
+          "effects": {
+            "perfect": -0.03
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_a_side_2": {
+    "title": "择味 · 从容进食",
+    "description": "进食时长－2%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_a_side_2",
+          "effects": {
+            "eat": -0.02
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_a_side_3": {
+    "title": "择味 · 从容进食",
+    "description": "进食时长－3%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_a_side_3",
+          "effects": {
+            "eat": -0.03
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_a_side_4": {
+    "title": "择味 · 从容进食",
+    "description": "进食时长－5%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_a_side_4",
+          "effects": {
+            "eat": -0.05
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_b_side_1": {
+    "title": "择味 · 慢工细作",
+    "description": "进食时长＋20%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:fermented_spider_eye"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 0.9,
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_b_side_1",
+          "effects": {
+            "eat": 0.2
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_b_side_2": {
+    "title": "择味 · 稳手",
+    "description": "保底完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:brush"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_b_side_2",
+          "effects": {
+            "floor": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_b_side_3": {
+    "title": "择味 · 精制",
+    "description": "完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_b_side_3",
+          "effects": {
+            "perfect": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_b_side_4": {
+    "title": "择味 · 精制",
+    "description": "完美率＋2%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_b_side_4",
+          "effects": {
+            "perfect": 0.02
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_merge_1": {
+    "title": "择味 · 厨艺突破",
+    "description": "食物星级上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:nether_star"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.2,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_merge_1",
+          "effects": {
+            "stars": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s3_merge_main_1": {
+    "title": "择味 · 丰盛食谱",
+    "description": "饱食度上限＋4\n饱和度上限＋4",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "size": 1.35,
+    "cost": 5,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s3_merge_main_1",
+          "effects": {
+            "hunger_cap": 4,
+            "saturation_cap": 4
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_main_1": {
+    "title": "养身 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_main_1",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_main_2": {
+    "title": "养身 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_main_2",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_main_3": {
+    "title": "养身 · 余味",
+    "description": "饱和度回血效率＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_main_3",
+          "effects": {
+            "saturation_regen": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_main_4": {
+    "title": "养身 · 从容进食",
+    "description": "进食时长－5%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_main_4",
+          "effects": {
+            "eat": -0.05
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_main_5": {
+    "title": "养身 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_main_5",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_a": {
+    "title": "养身 · 余味",
+    "description": "饱和度回血效率＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_a",
+          "effects": {
+            "saturation_regen": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_b": {
+    "title": "养身 · 护身",
+    "description": "每10秒将独立护盾补至4点（2心）。\n与金苹果伤害吸收叠加，不无限累计。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:shield"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.15,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_b",
+          "effects": {
+            "shield": 4
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_a_side_1": {
+    "title": "养身 · 余味",
+    "description": "饱和度回血效率＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_a_side_1",
+          "effects": {
+            "saturation_regen": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_a_side_2": {
+    "title": "养身 · 滋养",
+    "description": "饱和度回血效率＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 0.9,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_a_side_2",
+          "effects": {
+            "saturation_regen": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_a_side_3": {
+    "title": "养身 · 临场补给",
+    "description": "饱食度上限＋4\n饱和度上限＋4",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "size": 1.35,
+    "cost": 5,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_a_side_3",
+          "effects": {
+            "hunger_cap": 4,
+            "saturation_cap": 4
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_b_side_1": {
+    "title": "养身 · 体魄",
+    "description": "生命上限＋2",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_b_side_1",
+          "effects": {
+            "health": 2
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_b_side_3": {
+    "title": "养身 · 体魄",
+    "description": "生命上限＋2",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 0.9,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_b_side_3",
+          "effects": {
+            "health": 2
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_b_side_4": {
+    "title": "养身 · 丰盛食谱",
+    "description": "饱食度上限＋4\n饱和度上限＋4",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "size": 1.35,
+    "cost": 5,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_b_side_4",
+          "effects": {
+            "hunger_cap": 4,
+            "saturation_cap": 4
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s4_merge_1": {
+    "title": "养身 · 厨艺突破",
+    "description": "食物星级上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:nether_star"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "size": 1.2,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s4_merge_1",
+          "effects": {
+            "stars": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s5_main_1": {
+    "title": "大成 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s5_main_1",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s5_main_2": {
+    "title": "大成 · 体魄",
+    "description": "生命上限＋1",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s5_main_2",
+          "effects": {
+            "health": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s5_main_3": {
+    "title": "大成 · 批量精作",
+    "description": "批量制作完美率扣减－0.1%。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:bundle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s5_main_3",
+          "effects": {
+            "batch": 0.001
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s5_main_4": {
+    "title": "大成 · 火候掌控",
+    "description": "烹饪速度＋10%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 2,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s5_main_4",
+          "effects": {
+            "speed": 0.1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "s5_main_5": {
+    "title": "大成 · 精制",
+    "description": "完美率＋1%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "size": 1,
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "s5_main_5",
+          "effects": {
+            "perfect": 0.01
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "ending_capacity": {
+    "title": "以食为命",
+    "description": "生命上限减半\n饱和度回血效率翻倍",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:enchanted_golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "size": 1.35,
+    "cost": 5,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "ending_capacity",
+          "effects": {
+            "health_multiplier": -0.5,
+            "regen_double": 1
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  },
+  "ending_speed": {
+    "title": "炉火纯青",
+    "description": "烹饪速度＋50%",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:smoker"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "size": 1.35,
+    "cost": 5,
+    "rewards": [
+      {
+        "type": "cuisinejournal:skill",
+        "data": {
+          "id": "ending_speed",
+          "effects": {
+            "speed": 0.5
+          },
+          "tree": "vanilla"
+        }
+      }
+    ]
+  }
+}

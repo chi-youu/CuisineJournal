@@ -1,0 +1,11 @@
+{
+  "required_mods": ["miners_delight"],
+  "priority": -100,
+  "workstations": [{
+    "block": "miners_delight:copper_pot",
+    "adapter": "cooking_pot",
+    "method": "farmersdelight:cooking",
+    "capabilities": ["item_input", "item_output", "timed_processing", "container_fill", "menu_take", "right_click_take", "automation_extract"],
+    "recipe_types": ["farmersdelight:cooking"]
+  }]
+}

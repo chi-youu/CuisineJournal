@@ -1,0 +1,341 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#forge:cake_slices",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:adzuki_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:banana_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:chocolate_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:mint_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:strawberry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:vanilla_cake_slice",
+      "required": false
+    },
+    {
+      "id": "abnormals_delight:yucca_gateau_slice",
+      "required": false
+    },
+    {
+      "id": "alexsmobsdelight:acacia_blossom_cake_slice",
+      "required": false
+    },
+    {
+      "id": "alexsmobsdelight:mungal_spores_cake_slice",
+      "required": false
+    },
+    {
+      "id": "bakery:bundt_cake_slice",
+      "required": false
+    },
+    {
+      "id": "bakery:chocolate_cake_slice",
+      "required": false
+    },
+    {
+      "id": "bakery:chocolate_gateau_slice",
+      "required": false
+    },
+    {
+      "id": "bakery:linzer_tart_slice",
+      "required": false
+    },
+    {
+      "id": "bakery:strawberry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "bakery:sweetberry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "braziliandelight:carrot_cake_slice",
+      "required": false
+    },
+    {
+      "id": "braziliandelight:carrot_cake_with_chocolate_slice",
+      "required": false
+    },
+    {
+      "id": "cavedelight:slice_of_tectonic_cheesecake",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lime_cake_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:lucuma_cake_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pink_dragon_fruit_cake_slice",
+      "required": false
+    },
+    {
+      "id": "collectorsreap:pomegranate_cake_slice",
+      "required": false
+    },
+    {
+      "id": "dungeonsdelight:monster_cake_slice",
+      "required": false
+    },
+    {
+      "id": "enigmaticdelicacy:cosmic_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:beloved_battenberg_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:chorus_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:enlightened_battenberg_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:ether_bulb_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:exquisite_battenberg_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:jelly_ring_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:nightshade_berry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "exquisito:zure_berry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "farmers_spell:red_velvet_cake_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cake_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:sweet_berry_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:coffee_cake_slice",
+      "required": false
+    },
+    {
+      "id": "galospheric_delight:salted_caramel_cake_slice",
+      "required": false
+    },
+    {
+      "id": "immortalers_delight:scarlet_devils_cake_slice",
+      "required": false
+    },
+    {
+      "id": "jadensnetherexpansiondelight:lightspores_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "jadensnetherexpansiondelight:nightspores_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:annihilation_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:blood_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:cloud_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:cumulonimbus_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:dune_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:haunted_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:mossy_cobblestone_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:primal_ice_cake_slice",
+      "required": false
+    },
+    {
+      "id": "legendary_delicacies:spiky_cake_slice",
+      "required": false
+    },
+    {
+      "id": "meadow:cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "mynethersdelight:magma_cake_slice",
+      "required": false
+    },
+    {
+      "id": "oceanic_delight:sponge_cake_slice",
+      "required": false
+    },
+    {
+      "id": "pineapple_delight:pineapple_cake_slice",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:cherry_blossom_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:coffee_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "rusticdelight:syrup_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "seasonals:beetroot_cake_slice",
+      "required": false
+    },
+    {
+      "id": "seasonals:pumpkin_cake_slice",
+      "required": false
+    },
+    {
+      "id": "seasonals:sweet_berry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "slime_delight:slice_of_grass_block_cake",
+      "required": false
+    },
+    {
+      "id": "smc:astera_cake_slice",
+      "required": false
+    },
+    {
+      "id": "smc:broccoli_cake_slice",
+      "required": false
+    },
+    {
+      "id": "smc:deluxe_cake_slice",
+      "required": false
+    },
+    {
+      "id": "smc:frost_cake_slice",
+      "required": false
+    },
+    {
+      "id": "smc:rainbow_cake_slice",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:cherry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "trailandtales_delight:lantern_fruit_cheesecake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:aurora_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:glacier_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:phytochemical_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:torchberry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "twilightdelight:twilight_cake_slice",
+      "required": false
+    },
+    {
+      "id": "ubesdelight:ube_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:berry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:book_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:carrot_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:chocolate_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:chorus_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:glow_berry_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:ice_cream_cake_slice",
+      "required": false
+    },
+    {
+      "id": "vanillacookbook:rose_cake_slice",
+      "required": false
+    },
+    {
+      "id": "veggiesdelight:carrot_cake_slice",
+      "required": false
+    },
+    {
+      "id": "youkaishomecoming:red_velvet_cake_slice",
+      "required": false
+    }
+  ]
+}

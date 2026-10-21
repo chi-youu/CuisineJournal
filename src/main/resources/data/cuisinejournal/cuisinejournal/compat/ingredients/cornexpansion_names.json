@@ -1,0 +1,8 @@
+{
+  "required_mods": [
+    "cornexpansion"
+  ],
+  "tag_names": {
+    "cornexpansion:corn": "玉米"
+  }
+}

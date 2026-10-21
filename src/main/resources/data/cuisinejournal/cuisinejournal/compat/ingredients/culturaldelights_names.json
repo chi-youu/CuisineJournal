@@ -1,0 +1,9 @@
+{
+  "required_mods": ["culturaldelights"],
+  "tag_names": {
+    "culturaldelights:all_eggplants": "茄子类",
+    "culturaldelights:avocados": "牛油果类",
+    "culturaldelights:regular_eggplants": "生茄子类",
+    "culturaldelights:smoked_regular_eggplants": "熟茄子类"
+  }
+}

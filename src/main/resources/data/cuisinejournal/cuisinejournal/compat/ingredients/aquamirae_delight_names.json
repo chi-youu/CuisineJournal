@@ -1,0 +1,8 @@
+{
+  "required_mods": ["aquamirae_delight", "aquamirae"],
+  "merge_tags": [{
+    "id": "aquamirae_delight:golden_moth_in_a_jar",
+    "name": "金蛾罐子",
+    "tags": ["aquamirae_delight:golden_moth_in_a_jar"]
+  }]
+}

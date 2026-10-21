@@ -1,0 +1,203 @@
+{
+  "required_mods": [
+    "candlelight"
+  ],
+  "priority": -100,
+  "workstations": [
+    {
+      "block": "candlelight:cooking_pot",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:pot_cooking",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:pot_cooking"
+      ]
+    },
+    {
+      "block": "candlelight:cooking_pan",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:roaster",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:roaster"
+      ]
+    },
+    {
+      "block": "candlelight:cobblestone_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:sandstone_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:stone_bricks_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:deepslate_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:granite_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:end_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:mud_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:quartz_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:red_nether_bricks_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:basalt_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    },
+    {
+      "block": "candlelight:bamboo_stove",
+      "adapter": "item_recipe_container",
+      "method": "farm_and_charm:stove",
+      "capabilities": [
+        "item_input",
+        "item_output",
+        "direct_interaction",
+        "menu_take",
+        "timed_processing"
+      ],
+      "recipe_types": [
+        "farm_and_charm:stove"
+      ]
+    }
+  ]
+}

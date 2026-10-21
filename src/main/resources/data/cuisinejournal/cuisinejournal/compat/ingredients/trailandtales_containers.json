@@ -1,0 +1,4 @@
+{
+  "required_mods": ["trailandtales_delight"],
+  "excluded_items": ["trailandtales_delight:pottery_bowl"]
+}

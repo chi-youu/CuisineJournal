@@ -1,0 +1,10 @@
+{
+  "required_mods": [
+    "endersdelight"
+  ],
+  "tag_names": {
+    "endersdelight:shulker_loot": "潜影贝柱类",
+    "endersdelight:enderman_sight": "末影人眼球类",
+    "endersdelight:enderman_loot": "末影珍珠类"
+  }
+}

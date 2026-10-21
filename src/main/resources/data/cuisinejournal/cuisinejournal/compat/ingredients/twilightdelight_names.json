@@ -1,0 +1,12 @@
+{
+  "required_mods": ["twilightdelight"],
+  "tag_names": {
+    "twilightdelight:naga_cooked": "熟娜迦肉类",
+    "twilightdelight:naga_raw": "生娜迦肉类",
+    "twilightdelight:meef_raw": "生牛头人肉类",
+    "twilightdelight:vension_cooked": "熟鹿肉类",
+    "twilightdelight:vension_raw": "生鹿肉类",
+    "twilightdelight:hydra_meat": "九头蛇肉",
+    "twilightdelight:meef_cooked": "熟牛头人肉类"
+  }
+}

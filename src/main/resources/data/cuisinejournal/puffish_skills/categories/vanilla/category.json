@@ -1,0 +1,43 @@
+{
+  "title": "百味纪 · 原版厨艺",
+  "description": "",
+  "extra_description": "",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:golden_carrot"
+    }
+  },
+  "background": "minecraft:textures/block/brown_terracotta.png",
+  "unlocked_by_default": false,
+  "starting_points": 0,
+  "erase_on_death": false,
+  "colors": {
+    "connections": {
+      "locked": {
+        "fill": "#6b5a48",
+        "stroke": "#1a120c"
+      },
+      "available": {
+        "fill": "#d8c08a",
+        "stroke": "#1a120c"
+      },
+      "affordable": {
+        "fill": "#ffe39a",
+        "stroke": "#1a120c"
+      },
+      "unlocked": {
+        "fill": "#f0b232",
+        "stroke": "#2a1a06"
+      },
+      "excluded": {
+        "fill": "#b8402e",
+        "stroke": "#1a0806"
+      }
+    },
+    "points": {
+      "fill": "#ffd24a",
+      "stroke": "#2a1a06"
+    }
+  }
+}

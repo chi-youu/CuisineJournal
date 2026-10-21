@@ -1,0 +1,4 @@
+{
+  "required_mods": ["brewinandchewin"],
+  "excluded_items": ["brewinandchewin:tankard"]
+}

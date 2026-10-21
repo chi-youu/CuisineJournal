@@ -1,0 +1,6 @@
+{
+  "required_mods": ["deltaboxlib"],
+  "tag_names": {
+    "deltaboxlib:dough/wheat": "面团类"
+  }
+}

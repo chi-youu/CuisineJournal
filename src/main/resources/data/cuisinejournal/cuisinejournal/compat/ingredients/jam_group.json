@@ -1,0 +1,9 @@
+{
+  "required_mods": ["fruitsdelight"],
+  "priority": 100,
+  "merge_tags": [{
+    "id": "forge:jams",
+    "name": "果酱",
+    "tags": ["forge:jams", "fruitsdelight:jelly"]
+  }]
+}
