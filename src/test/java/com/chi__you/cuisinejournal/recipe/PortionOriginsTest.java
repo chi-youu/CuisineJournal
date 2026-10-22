@@ -30,6 +30,7 @@ public final class PortionOriginsTest {
         RecipeEntry repack = recipe("repack", whole, slice);
         check(PortionOrigins.preparations(whole,List.of(preparation,repack),Map.of(slice,whole)).equals(List.of(preparation)),
                 "only genuine whole preparation is exposed, not assembling its own slices");
+        packedServings();
         var newPages = new LinkedHashMap<ResourceLocation,List<RecipeEntry>>();
         var admitted = PortionOrigins.admit(newPages,Map.of(whole,List.of(preparation)),Map.of(slice,whole));
         check(admitted.equals(Map.of(slice,whole)) && newPages.containsKey(slice) && newPages.get(slice).isEmpty(),
@@ -139,6 +140,34 @@ public final class PortionOriginsTest {
         System.out.println("PortionOriginsTest: "+checks+" checks passed");
     }
     private static ResourceLocation id(String path){return ResourceLocation.parse("test:"+path);}
+    private static void packedServings() {
+        var apple=ResourceLocation.parse("minecraft:apple");
+        var platter=ResourceLocation.parse("kaleidoscope_cookery:apple_platter");
+        var bowl=ResourceLocation.parse("minecraft:bowl");
+        var ingredients=new ArrayList<RecipeEntry.IngredientSlot>();
+        for(int i=0;i<4;i++)ingredients.add(new RecipeEntry.IngredientSlot(List.of(apple)));
+        ingredients.add(new RecipeEntry.IngredientSlot(List.of(bowl)));
+        var packing=new RecipeEntry(id("apple_platter"),ResourceLocation.parse("minecraft:crafting"),CookingMethod.CRAFTING,
+                platter,1,List.copyOf(ingredients),"kaleidoscope_cookery");
+        check(PortionOrigins.packedServing(platter,apple,List.of(packing)),"four apples and bowl are packing, not cooking an apple");
+        check(PortionOrigins.preparations(platter,List.of(packing),Map.of(apple,platter)).isEmpty(),"container cannot keep a repacking recipe alive as a preparation");
+        var cake=id("cake");var slice=id("slice");var flour=id("flour");
+        var baking=recipe("bake_cake",cake,flour);
+        check(!PortionOrigins.packedServing(cake,slice,List.of(baking)),"baked cake still admits its real slice");
+        check(!PortionOrigins.packedServing(platter,apple,List.of()),"unknown preparation is not guessed to be packing");
+        check(!PortionOrigins.packedServing(platter,apple,List.of(packing,recipe("genuine",platter,flour))),
+                "independent genuine preparation remains a valid source");
+        var sugar=id("sugar");ingredients.add(new RecipeEntry.IngredientSlot(List.of(sugar)));
+        var transformed=new RecipeEntry(id("sweeten"),id("crafting"),CookingMethod.CRAFTING,platter,1,List.copyOf(ingredients),"test");
+        check(!PortionOrigins.packedServing(platter,apple,List.of(transformed)),"extra ingredient prevents false packing inference");
+        for(String container:List.of("bowl","glass_bottle","bucket")){
+            var packageRecipe=new RecipeEntry(id("package_"+container),id("crafting"),CookingMethod.CRAFTING,platter,1,
+                    List.of(new RecipeEntry.IngredientSlot(List.of(apple)),new RecipeEntry.IngredientSlot(List.of(ResourceLocation.parse("minecraft:"+container)))),"test");
+            check(PortionOrigins.packedServing(platter,apple,List.of(packageRecipe)),"recognized packaging container: "+container);
+        }
+        var cooking=new RecipeEntry(id("cook"),id("cooking"),CookingMethod.COOKING_POT,platter,1,packing.ingredients(),"test");
+        check(!PortionOrigins.packedServing(platter,apple,List.of(cooking)),"actual cooking route is not discarded as crafting packaging");
+    }
     private static RecipeEntry recipe(String path,ResourceLocation target,ResourceLocation input) {
         return new RecipeEntry(id(path),id("crafting"),CookingMethod.CRAFTING,target,1,
                 List.of(new RecipeEntry.IngredientSlot(List.of(input))),"test");

@@ -46,6 +46,9 @@ public final class FoodInteractionScanner {
         List<String> report=new ArrayList<>(rules.problems());
         for(Block block:BuiltInRegistries.BLOCK) {
             ResourceLocation id=BuiltInRegistries.BLOCK.getKey(block);
+            if (InteractionAvailability.disabled(BuiltInRegistries.ITEM.getKey(block.asItem()))) {
+                report.add(id+"\tskipped_disabled_item\tblock item in cuisinejournal:disabled_items");continue;
+            }
             if(id.toString().equals("farmersdelight:rice_roll_medley_block")) {
                 report.add(id+"	skipped	sushi platter excluded"); continue;
             }
@@ -69,6 +72,9 @@ public final class FoodInteractionScanner {
                                                 family(block,COMMON_CAKE)!=null?commonCake(block):
                                                         family(block,COSMIC_CAKE)!=null?cosmicCake(block):B001InteractionAdapter.read(block);
                 for(InteractionDisplay entry:found) {
+                    if (!InteractionAvailability.visible(entry, InteractionAvailability::disabled)) {
+                        report.add(entry.recipeId()+"\tskipped_disabled_item\tsource or output in cuisinejournal:disabled_items");continue;
+                    }
                     if(!BuiltInRegistries.ITEM.containsKey(entry.output())||entry.count()<1)
                         throw new IllegalArgumentException("missing/invalid output: "+entry.output());
                     entries.putIfAbsent(entry.recipeId(),entry);

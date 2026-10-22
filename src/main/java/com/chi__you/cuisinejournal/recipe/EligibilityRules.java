@@ -109,7 +109,7 @@ public final class EligibilityRules {
                             ResourceLocation itemId,
                             boolean edible,
                             java.util.function.Predicate<TagKey<Item>> hasTag) {
-        if (HostItemAvailability.hiddenByUnification(itemId)
+        if (HostItemAvailability.hiddenFromCatalogue(itemId)
                 || deniedRecipes.contains(recipeId) || deniedRecipeTypes.contains(recipeTypeId)) {
             return Verdict.EXCLUDED;
         }
@@ -127,7 +127,7 @@ public final class EligibilityRules {
         if (itemId == null) {
             return Verdict.NOT_FOOD;
         }
-        if (HostItemAvailability.hiddenByUnification(itemId)) return Verdict.EXCLUDED;
+        if (HostItemAvailability.hiddenFromCatalogue(itemId)) return Verdict.EXCLUDED;
         if ("delightful".equals(itemId.getNamespace())
                 && net.minecraft.core.registries.BuiltInRegistries.ITEM.containsKey(itemId)
                 && !HostItemAvailability.enabled(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(itemId))) {

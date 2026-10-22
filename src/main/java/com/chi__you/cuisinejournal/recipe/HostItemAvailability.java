@@ -13,6 +13,7 @@ public final class HostItemAvailability {
     public static final net.minecraft.resources.ResourceLocation UNITED =
             net.minecraft.resources.ResourceLocation.parse("kaleidoscope_cookery:united");
     private static volatile java.util.Set<net.minecraft.resources.ResourceLocation> unifiedHidden = java.util.Set.of();
+    private static volatile java.util.Set<net.minecraft.resources.ResourceLocation> disabledItems = java.util.Set.of();
     private static final Map<Item, Boolean> ENABLED = new IdentityHashMap<>();
     private static Method delightfulEnabled;
     private static boolean resolved;
@@ -20,21 +21,27 @@ public final class HostItemAvailability {
 
     private HostItemAvailability() {}
     public static synchronized Runnable rollbackPoint() {
-        var hidden=unifiedHidden; var enabled=new IdentityHashMap<>(ENABLED);
-        return () -> { synchronized(HostItemAvailability.class) { unifiedHidden=hidden; ENABLED.clear(); ENABLED.putAll(enabled); } };
+        var hidden=unifiedHidden; var disabled=disabledItems; var enabled=new IdentityHashMap<>(ENABLED);
+        return () -> { synchronized(HostItemAvailability.class) { unifiedHidden=hidden; disabledItems=disabled; ENABLED.clear(); ENABLED.putAll(enabled); } };
     }
 
     public static synchronized void rebuild() {
         ENABLED.clear();
         var hidden = new java.util.HashSet<net.minecraft.resources.ResourceLocation>();
-        for (Item item : BuiltInRegistries.ITEM)
+        var disabled = new java.util.HashSet<net.minecraft.resources.ResourceLocation>();
+        for (Item item : BuiltInRegistries.ITEM) {
             if (hiddenByUnification(id -> item.builtInRegistryHolder().tags().anyMatch(tag -> tag.location().equals(id))))
                 hidden.add(BuiltInRegistries.ITEM.getKey(item));
+            if (com.chi__you.foodinteractions.InteractionAvailability.disabled(BuiltInRegistries.ITEM.getKey(item)))
+                disabled.add(BuiltInRegistries.ITEM.getKey(item));
+        }
         unifiedHidden = java.util.Set.copyOf(hidden);
+        disabledItems = java.util.Set.copyOf(disabled);
     }
 
     public static synchronized boolean enabled(Item item) {
         if (item == null) return false;
+        if (com.chi__you.foodinteractions.InteractionAvailability.disabled(BuiltInRegistries.ITEM.getKey(item))) return false;
         if (hiddenByUnification(id -> item.builtInRegistryHolder().tags().anyMatch(tag -> tag.location().equals(id))))
             return false;
         var id = BuiltInRegistries.ITEM.getKey(item);
@@ -71,5 +78,9 @@ public final class HostItemAvailability {
     public static boolean hiddenByUnification(net.minecraft.resources.ResourceLocation id) {
         if (id == null) return false;
         return unifiedHidden.contains(id);
+    }
+
+    public static boolean hiddenFromCatalogue(net.minecraft.resources.ResourceLocation id) {
+        return id != null && (hiddenByUnification(id) || disabledItems.contains(id));
     }
 }

@@ -1,0 +1,16 @@
+{
+  "required_mods": ["youkaisfeasts"],
+  "priority": -100,
+  "workstations": [
+    {"block":"youkaisfeasts:cuisine_board","adapter":"auto","method":"youkaisfeasts:cuisine","capabilities":["item_input","item_output","direct_interaction","right_click_take","direct_drop"],"recipe_types":["youkaisfeasts:cuisine"]},
+    {"block":"youkaisfeasts:drying_rack","adapter":"campfire","method":"youkaisfeasts:drying_rack","capabilities":["item_input","item_output","timed_processing","direct_interaction","direct_drop"],"recipe_types":["youkaisfeasts:drying_rack"]},
+    {"block":"youkaisfeasts:kettle","adapter":"auto","method":"youkaisfeasts:kettle","capabilities":["item_input","fluid_input","fluid_output","timed_processing","container_fill","right_click_take","automation_extract"],"recipe_types":["youkaisfeasts:kettle"]},
+    {"block":"youkaisfeasts:fermentation_tank","adapter":"auto","method":"youkaisfeasts:fermentation","capabilities":["item_input","fluid_input","item_output","fluid_output","timed_processing","container_fill","right_click_take","direct_drop","automation_extract"],"recipe_types":["youkaisfeasts:fermentation","youkaisfeasts:simple_fermentation"]},
+    {"block":"youkaisfeasts:wood_basin","adapter":"auto","method":"youkaisfeasts:basin","capabilities":["item_input","fluid_input","fluid_output","direct_interaction","container_fill","right_click_take","automation_extract"],"recipe_types":["youkaisfeasts:basin","youkaisfeasts:simple_basin"]},
+    {"block":"youkaisfeasts:cooking_small_iron_pot","adapter":"auto","method":"youkaisfeasts:pot_cooking","recipe_types":["youkaisfeasts:pot_cooking","youkaisfeasts:soup_base"]},
+    {"block":"youkaisfeasts:cooking_short_iron_pot","adapter":"auto","method":"youkaisfeasts:pot_cooking","recipe_types":["youkaisfeasts:pot_cooking","youkaisfeasts:soup_base"]},
+    {"block":"youkaisfeasts:cooking_stockpot","adapter":"auto","method":"youkaisfeasts:pot_cooking","recipe_types":["youkaisfeasts:pot_cooking","youkaisfeasts:soup_base"]},
+    {"block":"youkaisfeasts:steamer_pot","adapter":"auto","method":"youkaisfeasts:steaming","recipe_types":["youkaisfeasts:steaming"]},
+    {"block":"youkaisfeasts:steamer_rack","adapter":"auto","method":"youkaisfeasts:steaming","recipe_types":["youkaisfeasts:steaming"]}
+  ]
+}

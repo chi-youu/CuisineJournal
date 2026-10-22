@@ -40,6 +40,8 @@ public final class Network {
         DECODERS.put(com.chi__you.cuisinejournal.skills.SkillPackets.Sync.ID,com.chi__you.cuisinejournal.skills.SkillPackets.Sync::read);
         DECODERS.put(com.chi__you.cuisinejournal.skills.SkillPackets.Open.ID, com.chi__you.cuisinejournal.skills.SkillPackets.Open::read);
         DECODERS.put(CuisineFoodSnapshot.ID, CuisineFoodSnapshot::read);
+        DECODERS.put(com.chi__you.cuisinejournal.food.CuisineRegenPackets.Combat.ID,
+                com.chi__you.cuisinejournal.food.CuisineRegenPackets.Combat::read);
         DECODERS.put(CuisineFoodInfoPackets.Batch.ID, CuisineFoodInfoPackets.Batch::read);
         DECODERS.put(CuisineFoodInfoPackets.FruitRequest.ID, CuisineFoodInfoPackets.FruitRequest::read);
         DECODERS.put(CuisineFoodInfoPackets.FruitResponse.ID, CuisineFoodInfoPackets.FruitResponse::read);

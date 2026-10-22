@@ -16,6 +16,8 @@ public final class CuisineFoodEvents {
     private static final Map<ServerPlayer, FoodCombatTiming> LAST_COMBAT = new IdentityHashMap<>();
     private static final Map<ServerPlayer, Boolean> LAST_ACTIVE = new IdentityHashMap<>();
     private static final Map<ServerPlayer,Integer> LAST_CAPACITY=new IdentityHashMap<>();
+    private record RegenState(long readyAt, int interval) {}
+    private static final Map<ServerPlayer,RegenState> LAST_REGEN_READY=new IdentityHashMap<>();
 
     private CuisineFoodEvents() {
     }
@@ -23,6 +25,7 @@ public final class CuisineFoodEvents {
     public static void tick(ServerPlayer player) {
         if (!CuisineFoodRuntime.active()) {
             LAST_COMBAT.remove(player);
+            syncCombat(player, false);
             LAST_CAPACITY.remove(player);
             CuisineFoodEffects.clear(player);
             removeHealthModifier(player);
@@ -42,6 +45,7 @@ public final class CuisineFoodEvents {
             }
             removeHealthModifier(player);
             LAST_COMBAT.remove(player);
+            syncCombat(player, false);
             return;
         }
 
@@ -63,6 +67,7 @@ public final class CuisineFoodEvents {
         }
         if (state.isReadOnly()) {
             removeHealthModifier(player);
+            syncCombat(player, false);
             return;
         }
         synchronizeHealth(player, state);
@@ -71,6 +76,7 @@ public final class CuisineFoodEvents {
         long now = player.server.overworld().getGameTime();
         boolean delayElapsed = LAST_COMBAT.computeIfAbsent(player, key -> new FoodCombatTiming()).ready(now,
                 CuisineFoodConfig.REGEN_DELAY_TICKS.get(), CuisineEffectAdapters.warmHeart(player));
+        syncCombat(player, false);
         if (player.tickCount % CuisineFoodStats.regenIntervalTicks() == 0) {
             var recovery = CuisineEffectAdapters.recovery(player);
             float ordinary = CuisineFoodStats.healPerPulse(state, player);
@@ -110,12 +116,33 @@ public final class CuisineFoodEvents {
         if (CuisineFoodRuntime.active()) {
             LAST_COMBAT.computeIfAbsent(player, key -> new FoodCombatTiming())
                     .enter(player.server.overworld().getGameTime());
+            syncCombat(player, false);
         }
     }
 
     public static void saturation(ServerPlayer player) {
-        if (CuisineFoodRuntime.active()) LAST_COMBAT.computeIfAbsent(player, key -> new FoodCombatTiming())
-                .saturation(player.server.overworld().getGameTime());
+        if (CuisineFoodRuntime.active()) {
+            LAST_COMBAT.computeIfAbsent(player, key -> new FoodCombatTiming())
+                    .saturation(player.server.overworld().getGameTime());
+            syncCombat(player, false);
+        }
+    }
+
+    public static int combatTicksLeft(ServerPlayer player) {
+        if (!CuisineFoodRuntime.active() || player.isDeadOrDying() || CuisineFoodService.state(player).isReadOnly()) return 0;
+        var timing = LAST_COMBAT.get(player);
+        return timing == null ? 0 : timing.remaining(player.server.overworld().getGameTime(),
+                CuisineFoodConfig.REGEN_DELAY_TICKS.get(), CuisineEffectAdapters.warmHeart(player));
+    }
+
+    public static void syncCombat(ServerPlayer player, boolean force) {
+        int remaining = combatTicksLeft(player);
+        long readyAt = remaining == 0 ? 0 : player.server.overworld().getGameTime() + remaining;
+        int interval = CuisineFoodStats.regenIntervalTicks();
+        var state = new RegenState(readyAt, interval);
+        var previous = LAST_REGEN_READY.put(player, state);
+        if (force || !state.equals(previous))
+            com.chi__you.cuisinejournal.network.Network.toPlayer(player, new CuisineRegenPackets.Combat(remaining, interval));
     }
 
     public static void clonePlayer(PlayerEvent.Clone event) {
@@ -125,6 +152,7 @@ public final class CuisineFoodEvents {
         }
         CuisineSolMigration.copyHistory(original.getPersistentData(), replacement.getPersistentData());
         LAST_CAPACITY.remove(original);
+        LAST_REGEN_READY.remove(original);
         for(String key:new String[]{"cuisinejournal:ordinary_capacity_bonus","cuisinejournal:temporary_capacity_bonus"})
             replacement.getPersistentData().putInt(key,original.getPersistentData().getInt(key));
         if (!CuisineFoodRuntime.active()) {
@@ -163,6 +191,7 @@ public final class CuisineFoodEvents {
     }
 
     public static void leave(ServerPlayer player) {
+        LAST_REGEN_READY.remove(player);
         LAST_CAPACITY.remove(player);
         CuisineFoodEffects.clear(player);
         if (CuisineFoodRuntime.active()) {
@@ -174,6 +203,7 @@ public final class CuisineFoodEvents {
     }
 
     public static void stop() {
+        LAST_REGEN_READY.clear();
         LAST_CAPACITY.clear();
         CuisineFoodEffects.clearAll();
         LAST_COMBAT.clear();

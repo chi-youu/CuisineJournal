@@ -56,6 +56,7 @@ public final class ForgeClientBridge {
             return;
         }
         CuisineFoodClientState.tick();
+        com.chi__you.cuisinejournal.client.hud.CuisineRegenHud.tick(net.minecraft.client.Minecraft.getInstance());
         var nutritionPlayer=net.minecraft.client.Minecraft.getInstance().player;
         if(nutritionPlayer!=null)((com.chi__you.cuisinejournal.skills.VanillaSkillNutrition.NutritionOwner)nutritionPlayer.getFoodData()).cuisinejournal$owner(nutritionPlayer);
         CuisineJournalClient.tick();
@@ -122,6 +123,7 @@ public final class ForgeClientBridge {
 
     @SubscribeEvent
     public static void onLoggedOut(ClientPlayerNetworkEvent.LoggingOut event) {
+        com.chi__you.cuisinejournal.client.hud.CuisineRegenHud.clear();
         com.chi__you.cuisinejournal.client.compat.UnificationDisplayRefresh.clear();
         CuisineFoodClientState.clear();
         CuisineFoodTooltip.clear();

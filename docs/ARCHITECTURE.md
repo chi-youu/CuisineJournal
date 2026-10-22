@@ -56,6 +56,7 @@ LayerDependenciesTest约束recipe不指向network/client，并使用ASM SimpleVe
 | 可选类族/反射 | compat/HostClasses、HostReflection；读取不依赖工作站布局 |
 | 工作站布局 | tracking/VerifiedWorkstations、LetsDoStations、ItemRecipeWorkstations |
 | 共用实际来源 | food/IngredientProvenance |
+| 整合包禁用物品 | 物品标签cuisinejournal:disabled_items；recipe/HostItemAvailability保存目录快照，foodinteractions/InteractionAvailability作共享只读判定 |
 | 变体身份和键策略 | food/FoodVariantIdentity：领取、盘子切份、pending输出和忽略记账比较各有明确集合 |
 | 放置完整变体 | tracking/PlacedFoodVariants |
 | 菜单/加速上下文 | tracking/CookingContextTracker；不负责真实制作归属 |
@@ -65,6 +66,8 @@ LayerDependenciesTest约束recipe不指向network/client，并使用ASM SimpleVe
 | 外部食物API | CuisineFoodAPI，CYS确有调用，保留其公开签名 |
 
 ## 操作边界
+
+禁用物品共享标签只是资源契约，独立展示源码不引用CJ类；目录读禁用/统一隐藏快照，展示扫描直接读当前标签。重载移除旧自动关系后重建；不以SOL加血过滤或客户端JEI隐藏推定服务器禁用，不把展示过滤变成食用禁令。
 
 CatalogueEditCoordinator是唯一忙状态与租约所有者，EDIT/EXPORT/UNIFICATION是阶段，不是三把独立锁。
 每份租约具有对象身份和会话代次；停服使旧租约失效，迟到回调不能解锁新操作。
@@ -80,12 +83,17 @@ ProductionFrames注册全部tracking临时线程状态，tick末/停服在当前
 拥有设备身份的结束操作按FrameStacks/ProductionFrames.take匹配，不弹无关外层；被跳过的内层用无效帧隔离外层。
 能包住同步宿主动作时使用run/finally；HEAD/RETURN注入若宿主中途抛错，仍依赖tick末兜底，不能声称全宿主异常严格事务。
 
-## 宿主版本降级
+## 可选适配降级
 
 CuisineMixinPlugin只预检可选宿主的Pseudo适配，不关闭原版/Forge核心注入校验。
 方法、回调参数、Shadow字段或INVOKE/FIELD调用点不匹配时跳过该完整Mixin并警告，避免只装一半begin/end。
+同一宿主类上有一项适配被契约预检拒绝时，其余可选同伴也在acceptTargets阶段停用，避免生产和领取留下半套逻辑。
+准备完全部Mixin配置后，对共享宿主读取已选中（不是已应用）的第三方Mixin：整段Overwrite命中CJ所用方法、已合并的外部替换标记、Redirect争用同一实际调用/字段指令时，删除本配置对该宿主类的整组目标映射并WARN。
+普通Inject、不同重载/指令序号或不同字段读写不自动视为冲突；不靠补丁名/模组ID黑名单，也不修改第三方Mixin。代价是该宿主类上的CJ生产/领取/加速等适配一起缺席，其他宿主保留。
+SelectedTargetMixins集中隔离Mixin0.8的只读getMixins反射（公开getMixinsForClass只给已应用列表，时机太晚）；拿不到共享宿主的准备信息则整组降级并警告。
+移除目标利用acceptTargets的live mixinMapping.keySet；所依赖的库字段/准备顺序有ASM回归。只在原版/Forge之外、整组均为可选的目标使用，必需同伴不静默停用。
 宿主继续原生运行，但被跳过的制作追踪/品质/加速不算覆盖；不使用全局require=0把失败静默隐藏。
-预检不是未来任意版本兼容保证，未知注入类型/其他模组变换仍需构建及实际启动验证。
+预检不是未来任意版本兼容保证；反射读取不是稳定公共API。未知注入类型、别名/refmap转换、取消式HEAD钩子或更晚动态变换仍可能超出识别范围，需实际启动验证，不在半应用后吞异常假装恢复。
 
 ## 命名与长期契约
 
@@ -100,7 +108,7 @@ Mixin独立根包为com.chi__you.cuisinejournal.mixin，同一配置以相对子
 | speed | 进度、等待及厨具加速 | 49 |
 | unification | 物品统一、数据包来源、配方及掉落纠错 | 17 |
 | food | 准入、营养、效果、食用生命周期与访问器 | 33 |
-| client | 客户端HUD、提示、语言和界面跳转；仅client数组注册 | 13 |
+| client | 客户端HUD、提示、语言和界面跳转；仅client数组注册 | 15 |
 
 少数森罗处理站在同一对回调里同时追踪产出和修改进度，按事务所有者归production，不为目录迁移拆开其时机。
 客户端创造栏统一访问器仍归client，职责与加载侧隔离优先；独立交互配方模块的Mixin不参与本项目迁移。

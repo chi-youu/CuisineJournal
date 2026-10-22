@@ -34,7 +34,7 @@ public final class InPlaceProductionTracker {
     public static void end(Object data) {
         Snapshot snapshot=COOKING.remove(data);if(snapshot==null)return;
         ItemStack after=stack(data);if(ItemStack.isSameItemSameTags(snapshot.before,after)||after.isEmpty())return;
-        var ledger=ledger(snapshot.be);var batch=ledger.produce(Map.of(snapshot.index,snapshot.before.getCount()),identity(after),after.getCount(),"youkaishomecoming:steaming");
+        var ledger=ledger(snapshot.be);var batch=ledger.produce(Map.of(snapshot.index,snapshot.before.getCount()),identity(after),after.getCount(),YoukaiWorkstations.method(snapshot.be,"steaming"));
         ledger.append(snapshot.index,batch);ledger.adoptInput(snapshot.index,identity(after),after.getCount(),batch);save(snapshot.be,ledger);
     }
     public static void inserted(Object data,BlockEntity be,ItemStack before,ServerPlayer player) {
@@ -42,7 +42,7 @@ public final class InPlaceProductionTracker {
         int index=index(be,data);if(index<0)return;ItemStack after=stack(data);var ledger=ledger(be);
         int held=ItemStack.isSameItemSameTags(before,after)?before.getCount():0;
         ledger.syncInput(index,identity(after),held,null);ledger.syncInput(index,identity(after),after.getCount(),player==null?null:player.getUUID());
-        if(held==0)ledger.syncOutput(index,identity(after),0,"youkaishomecoming:steaming");save(be,ledger);
+        if(held==0)ledger.syncOutput(index,identity(after),0,YoukaiWorkstations.method(be,"steaming"));save(be,ledger);
     }
     public static ItemStack claim(BlockEntity be,Object rack,int slot,ServerPlayer player,ItemStack item) {
         Object racks=HostReflection.field(be,"racks");if(!(racks instanceof List<?> list))return item;
@@ -57,7 +57,7 @@ public final class InPlaceProductionTracker {
     public static void withdrawn(BlockEntity be,Object rack,int slot) {
         Object raw=HostReflection.field(be,"racks");if(!(raw instanceof List<?> racks))return;
         int r=racks.indexOf(rack);if(r<0)return;var ledger=ledger(be);int index=r*4+slot;
-        ledger.syncInput(index,"",0,null);ledger.syncOutput(index,"",0,"youkaishomecoming:steaming");save(be,ledger);
+        ledger.syncInput(index,"",0,null);ledger.syncOutput(index,"",0,YoukaiWorkstations.method(be,"steaming"));save(be,ledger);
     }
     public static void removedRack(BlockEntity be) {
         Object raw=HostReflection.field(be,"racks");if(!(raw instanceof List<?> racks)||racks.isEmpty())return;

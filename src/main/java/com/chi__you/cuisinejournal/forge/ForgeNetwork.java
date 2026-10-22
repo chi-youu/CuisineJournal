@@ -29,7 +29,7 @@ import java.util.function.Supplier;
  * registration.</p>
  */
 public final class ForgeNetwork implements Network.Transport {
-    private static final String PROTOCOL = "46";
+    private static final String PROTOCOL = "47";
     private static final java.util.concurrent.atomic.AtomicLong TRANSFERS = new java.util.concurrent.atomic.AtomicLong();
     private static final com.chi__you.cuisinejournal.network.RequestBudget<java.util.UUID> INBOUND =
             new com.chi__you.cuisinejournal.network.RequestBudget<>();

@@ -286,7 +286,7 @@ public final class FlavorRepairTest {
     private static RecipeEntry.IngredientSlot slot(ResourceLocation item){return new RecipeEntry.IngredientSlot(List.of(item));}
     private static void contractTests() throws Exception {
         String protocol=java.nio.file.Files.readString(java.nio.file.Path.of("src/main/java/com/chi__you/cuisinejournal/forge/ForgeNetwork.java"));
-        check(protocol.contains("PROTOCOL = "+(char)34+"46"+(char)34),"settings sync rejects older clients");
+        check(protocol.contains("PROTOCOL = "+(char)34+"47"+(char)34),"settings and regeneration sync reject older clients");
         for(String type:List.of("food/CuisineFoodEffects","food/CuisineFoodCatalogueSync","network/FlavorEditHandler")) {
             var node=compiled(type);boolean shared=false;
             for(var method:node.methods)for(var instruction:method.instructions)

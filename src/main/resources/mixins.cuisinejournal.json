@@ -212,6 +212,8 @@
     "production.HandheldSkilletProductionMixin"
   ],
   "client": [
+    "client.JournalAdvancementToastMixin",
+    "client.FancyJournalToastMixin",
     "client.JournalSkillsReturnMixin",
     "client.TwilightOverflowHudMixin",
     "client.TwilightAppleSkinOverflowMixin",

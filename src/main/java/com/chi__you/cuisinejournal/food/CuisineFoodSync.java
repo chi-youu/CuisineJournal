@@ -17,6 +17,7 @@ public final class CuisineFoodSync {
                 CuisineFoodConfig.EAT_AGAIN_PERCENTAGE.get(),
                 foods, state.drink() == null ? null : slot(state.drink()), state.temporaryFoods().stream().map(CuisineFoodSync::slot).toList(),
                 active?CuisineFoodCapacity.temporary(player):0));
+        CuisineFoodEvents.syncCombat(player, true);
     }
 
     private static CuisineFoodSnapshot.Slot slot(CuisineFoodEntry entry) {

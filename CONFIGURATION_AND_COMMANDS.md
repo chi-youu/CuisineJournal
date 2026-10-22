@@ -17,6 +17,7 @@
 - 编辑独占状态现在归data/CatalogueEditCoordinator：EDIT/EXPORT/UNIFICATION是同一租约的阶段；旧EditVersions.busy和两个Handler的busy查询只作视图，不各保布尔锁。分类/风味/设置/方案/命令用同一租约与checkpoint/rollback；导出包交换、统一包来源的异步恢复仍保专用事务，不承诺第三方副作用全局原子。停服使旧Lease失效，过期close不能解锁新操作。
 - tracking临时线程状态统一注册ProductionFrames，服务器tick末及停服清当前线程全部已注册帧；end按设备身份匹配，妖怪料理被跳过的begin压无效帧，防end误弹外层。能包装宿主调用的入口用finally；HEAD/RETURN若宿主抛错仍需tick末兜底，不把它称为所有异常即时恢复。
 - 可选宿主Mixin新增CuisineMixinPlugin预检：Pseudo宿主方法/回调/字段/调用点不符时跳过完整适配并WARN，保原生运行；原版/Forge核心不宽松。厨房1.3.0缺applyRecipe/applyFlexRecipe、千古1.1.9温泉用spawnItemEntity而非splitIntoStacks已读JAR确认。源码与当前/旧宿主专项已编译检查通过，但未实际启动，不能宣称所有旧版可用。
+- 可选适配再经过共享目标检查：第三方Overwrite命中所用方法、既有外部替换标记或Redirect争同一指令时，应用前停用同宿主类的整组CJ钩子并WARN；原契约预检拒绝的同宿主同伴也一起停用。无需新配置/补丁黑名单，保第三方行为但该组生产/品质/加速不算覆盖；普通追加Inject不自动关闭。核心/必需注入仍严格，未知动态变换不承诺容错；具体边界见docs/ARCHITECTURE。
 
 ## 图鉴大数据同步
 
@@ -71,7 +72,7 @@ Minecraft配方/标签变更用/reload，/cj reload不能替代。旧server/clie
 有效模式第一次应用或改变时：Valheim风味开/营养关，Vanilla风味关/营养开；原生药水独立默认开，首次应用和模式切换均不改已有选择。foodModeDefaults.lastAppliedMode确保同模式重载/重启保留风味/营养手动覆盖，不每tick强制改写。本轮暂停制作默认风味/分类内容，不删系统或用户方案。
 
 两种“百味纪默认”均为空，不内置自动生效的分类/风味。可选方案位于data/cuisinejournal/cuisinejournal/schemes/：category/basic_categories（基础料理分类，4大类/23小类/304归属）和flavor/handcrafted_flavors（手配风味，45定义/41物品绑定/26标签绑定）。保原ID/阶段/数值；前者保其他饮品自动兜底。新配置schemes.defaultFlavorScheme/defaultCategoryScheme仍为空，不自动载入；已有实例配置与外部启用数据包不被本次源码更新清除。
-common.foodSystem是唯一食物模式入口；安装sol_valheim时回退Vanilla。服务器设置通过CuisineJournalServer.setFoodSystem切换、重建并同步，已接管理员玩法设置；首发前移除旧experimentalRuntime隐藏开关。
+common.foodSystem是唯一食物模式入口，新生成配置默认vanilla；已有文件中的显式valheim选择不被更新强改，需在服务器设置手动切换。安装sol_valheim时回退Vanilla。服务器设置通过CuisineJournalServer.setFoodSystem切换、重建并同步，已接管理员玩法设置；首发前移除旧experimentalRuntime隐藏开关。
 
 百味纪侧栏技能树入口保存当前JournalScreen实例作为本次访问返回目标，Skills界面Esc关闭时回该实例，保留页签、选择和滚动；独立K键、宿主命令打开不建立返回路由。请求10秒未开/已离开原界面、跳到其他界面、死亡或断线时丢弃路由；模式切换重开Skills仍沿原返回目标。不改网络包/协议、存档或宿主技能树JAR。
 营养tooltip固定优先级：有Obscure API仅用它的饥饿/饱和行，无Obscure用百味纪自有图标行；安装AppleSkin/Diet等不再阻止百味纪回退。AppleSkin的shouldShowTooltip恒false、Quark的makeTooltip第一个布尔参数（鸡腿图标）恒false，保第二参数控制的“小吃/全餐”等文字。营养总开关关闭时Obscure及CJ最终营养行均隐藏，不强制打开第三方自有配置，不修改其文件；AppleSkin HUD逻辑不受此tooltip优先级变化。自有图标行放在星级下方、不要求Shift。图标为原版半鸡腿，以及AppleSkin饱和叠层改琥珀金/黑描边版本；独立nutrition字体11px/ascent9、两个图标各占12px（半鸡腿11+1补宽），数值紧随字形、两组无额外空格，饱和系数乘100截断取整数（0.4→40%），零值组不显示。详情栏使用同一format。两种芭菲在有Obscure API时只扩展其buildIcons食物显示判定，直接复用原图标行；没有Obscure时保留独立兜底。资源可用性不依赖第三方，生成脚本tools/generate_nutrition_icons.ps1，来源/Unlicense见assets/cuisinejournal/NUTRITION_ICON_SOURCES.txt；不含Obscure代码/贴图，不加硬依赖、不修改物品isEdible。
@@ -79,11 +80,17 @@ common.foodSystem是唯一食物模式入口；安装sol_valheim时回退Vanilla
 
 ## 数值与成长
 
+妖怪们的飨宴youkaisfeasts工作站单独按其注册命名空间映射：料理台、晒干架、煮锅、汤底、蒸笼、茶壶、木盆、发酵桶八种方式及十种设备方块，不读取原youkaishomecoming图标ID。原Java料理族输入解析沿共享宿主类，显示/定义/制作记录按实际设备区分两版；不将移除战斗的版本推断为所有原版功能均兼容。
+
+放置食物份额关联会排除纯装盘/合回路线：若整份可读制作路线都仅由同种份额与碗/瓶/桶组成，不把该原食物关联成新料理切片（例如四苹果+碗→苹果拼盘不能成为苹果的制作配方）。有独立真实制作路线仍保留，额外其他原料不按装盘猜测；不改实际宿主配方或旧玩家记录。
+
+整合包禁用物品接口：物品标签 `cuisinejournal:disabled_items` 默认空、两模式均生效、不依赖统一开关。统一排除CJ料理/食材目录及显示候选，并禁止自动交互展示使用禁用来源/产物；不改原物品食用属性/注册、普通配方或历史记录，不自动套用SOL/JEI黑名单。每次标签重载重建，撤除标签可恢复；接入方式见INGREDIENT_COMPAT_DATAPACK.md“整合包禁用物品”。
+
 ### 双模式技能树
 
-Skills数据包入口config.json只写version/categories，不得放模组配置专用的show_warnings；0.19.2将其视为Unused field并拒绝整个数据包。打开入口在树缺失时会给出加载失败提示。测试需先走PackConfig解析，再解析类别，不能只验证readCategory。
+Skills数据包入口config.json只写version/categories，不得放模组配置专用的show_warnings；0.18.3和0.19.2均将其视为Unused field并拒绝整个数据包。打开入口在树缺失时会给出加载失败提示。测试需先走PackConfig解析，再解析类别，不能只验证readCategory。
 
-强制前置Pufferfish’s Skills 0.19.2（Forge，版本范围[0.19.2,0.20)），不内嵌宿主；独立food-interaction-recipes产物不新增此依赖。技能树ID cuisinejournal:valheim与cuisinejournal:vanilla，数据在data/cuisinejournal/puffish_skills/config.json及categories/<mode>/，使用category.json/definitions.json/skills.json/connections.json（不是general.json）。各68节点、同坐标/ID/连接，四处通路互斥加两个互斥结局；选通路开放对应侧支，任一通路可进入汇合，单向连接不允许回绕另一侧。模式切换锁定/隐藏另一棵树、保留其配点，奖励以tree/id分别记录且仅当前模式生效；档案skillMode防止离线与切换过渡读取另一模式聚合。
+强制前置Pufferfish’s Skills（1.20 Forge，版本范围[0.18.3,0.20)），不内嵌宿主；编译用0.19.2，两版自动回归分别核0.18.3/0.19.2，不等同任意整合包实机通过；独立food-interaction-recipes产物不新增此依赖。技能树ID cuisinejournal:valheim与cuisinejournal:vanilla，数据在data/cuisinejournal/puffish_skills/config.json及categories/<mode>/，使用category.json/definitions.json/skills.json/connections.json（不是general.json）。各68节点、同坐标/ID/连接，四处通路互斥加两个互斥结局；选通路开放对应侧支，任一通路可进入汇合，单向连接不允许回绕另一侧。模式切换锁定/隐藏另一棵树、保留其配点，奖励以tree/id分别记录且仅当前模式生效；档案skillMode防止离线与切换过渡读取另一模式聚合。
 护盾支线两生命节点合并为s4_b_side_1生命+2、费用2，移除s4_b_side_2并直接接s4_b_side_3。档案skillTreeRevision记录一次性迁移：通过Skills官方export/import保留其余树与点数来源；原两节点都买过保留合并节点，部分购买取消并返还占用点数。
 
 - /cj skills或图鉴技能入口：打开当前模式树，K宿主入口也只显示已解锁当前树；界面打开时模式切换随宿主同步刷新。
@@ -240,9 +247,11 @@ Compat隐藏联动：百味纪读取已加载`kaleidoscope_cookery:united`物品
 journal：defaultPage、recentActivityLines、allFoodsView、sidePanel（ALWAYS/CULINARY/OFF，个人背包/创造栏排除）。
 foodHud：useLargeFoodIcons。cookingHud：enabled默认false、onlyWhileActive默认true、visibleTicks/anchor/offset/scale；名称等级经验HUD，与食物槽无关。showPinnedRecipes已接菜谱追踪HUD，独立于经验条是否显示，位置/缩放复用。
 Vanilla溢出HUD不再显示饱食度/饱和度数字。超过20的饱食度用用户指定鸡腿叠在原栏，饱和度用橙色四档轮廓；每个位置2点，饱和余量(0,.5]/(.5,1]/(1,2)/2分别选四帧。超过40继续向上增加每20点一行并预留HUD高度。技能护盾原显示保留，不改实际营养/进食/回血。饱和度和手持预览受nutritionDisplay.enabled控制，原版鸡腿及额外饱食度属于基础状态，不因营养显示关闭而消失；装AppleSkin时再遵守其SHOW_SATURATION_OVERLAY/SHOW_FOOD_VALUES_OVERLAY及副手预览偏好，没有AppleSkin仍能显示实际溢出饱和度但无手持预览。Valheim不显示此HUD。同时安装暮光乐事时仅在百味纪接管的Vanilla显示路径避让其额外鸡腿及AppleSkin扩展层，不改宿主数值或复制其贴图。
-notifications：发现/升星/升级/挑战/里程碑、经验弹出、通知音效与合并/频率。上述事件使用原版AdvancementToast（可由FancyToasts等进度通知模组接管），仅客户端临时展示，不注册/授予额外进度或奖励；经验仍使用合并后的动作栏提示。按钮音效另行管理。
+notifications：发现/升星/升级/挑战/里程碑、经验弹出、通知音效与合并/频率。上述事件使用原版AdvancementToast外观/队列，临时JournalNotification.Display携带独立事件标题；原版渲染仅对这个子类替换FrameType标题，下行只显示菜品/目标名，无对象时显示百味纪。普通进度不变。FancyToasts可选桥仅为这类显示替换getAnnouncement，沿宿主布局；其他通知美化模组如完全替代原版绘制须另核。不注册/授予额外进度或奖励；经验仍用合并后的动作栏提示。按钮音效另行管理。
 
 图鉴与设置背景沿原版Screen.renderBackground，不创建独立模糊PostChain。1.20.1原版背景只变暗；模糊效果由已装界面模组及其配置决定，百味纪不另外处理光影渲染目标。
+
+Valheim回血速率HUD：foodHud.showRegenRate默认true，客户端设置“界面”分区控制。快捷栏右侧十字与每秒红心值，四档颜色、满血淡化、手持可吃食物的增减预估，窄屏先省增量后省单位。战斗等待由独立服务端regen_combat同步剩余tick与regenIntervalTicks；进入战斗/饱和立即同步，结束时间、甜蜜之心或间隔变化时纠正，完整食物同步也补发。客户端只按未暂停tick倒数，死亡/离线/停用模式清理，不读hurt动画或客户端自行判定攻击。滋养战斗折算/普通战斗灰色倒数保留；速率及手持增量从权威食物属性估算，不能保证覆盖第三方最终回血事件的临时修改，非额外治疗来源。协议号查CURRENT_STATUS，须两端一致更新。
 cozyMode/showNewIndicator/showStars及旧熟练度/制作次数等零散开关删除，正常数字/品质信息统一显示。client.tooltips.requireModifier默认true：制作记录和概率明细按Shift展开，关闭后常显；星级、食物属性和药水效果不折叠。设置页有对应本机入口，旧同名字段可继续读入。
 营养统一使用server.nutritionDisplay.enabled，不另加旧showNutrition。管理员设置页显示“营养值显示”，通过SetNutritionDisplay请求，服务端检查multiplayer.adminPermissionLevel、保存server TOML并广播SyncRules；普通玩家不显示这个全服设置。保留既有Valheim/Vanilla默认组合与同模式手动覆盖，不改写第三方自有偏好。
 

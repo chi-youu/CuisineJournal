@@ -16,7 +16,8 @@ Build dependencies are resolved from publisher-hosted Modrinth Maven artifacts,
 not redistributed as repository JARs or nested mod dependencies:
 
 - Just Enough Items 15.49.0.188: https://modrinth.com/mod/jei (MIT).
-- Pufferfish's Skills 0.19.2: https://modrinth.com/mod/skills (custom license).
+- Pufferfish's Skills 0.19.2 (compile) and 0.18.3 (compatibility regression only):
+  https://modrinth.com/mod/skills (custom license).
 - Just Enough Effect Descriptions 1.20-2.2.6:
   https://modrinth.com/mod/just-enough-effect-descriptions-jeed (All Rights Reserved).
 

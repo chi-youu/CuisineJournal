@@ -46,8 +46,25 @@ public final class PortionOrigins {
         return recipes.stream().filter(recipe -> {
             Set<ResourceLocation> inputs = new LinkedHashSet<>();
             recipe.ingredients().forEach(slot -> inputs.addAll(slot.items()));
-            return inputs.isEmpty() || !portions.containsAll(inputs);
+            if (inputs.isEmpty()) return true;
+            if (portions.containsAll(inputs)) return false;
+            // A bowl or bottle does not turn assembling the same servings into cooking.
+            boolean packing = recipe.method().equals(CookingMethod.CRAFTING)
+                    && recipe.ingredients().stream().allMatch(slot -> !slot.items().isEmpty()
+                        && slot.items().stream().allMatch(item -> portions.contains(item) || container(item)))
+                    && recipe.ingredients().stream().anyMatch(slot -> !slot.items().isEmpty()
+                        && portions.containsAll(slot.items()));
+            return !packing;
         }).toList();
+    }
+
+    /** Raw food returned from a plate is not a newly prepared slice of that plate. */
+    public static boolean packedServing(ResourceLocation whole, ResourceLocation serving, List<RecipeEntry> recipes) {
+        return !recipes.isEmpty() && preparations(whole, recipes, Map.of(serving, whole)).isEmpty();
+    }
+
+    private static boolean container(ResourceLocation item) {
+        return Set.of("minecraft:bowl", "minecraft:glass_bottle", "minecraft:bucket").contains(item.toString());
     }
 
     /** Only portions with a genuine parent recipe enter the catalogue through this path. */

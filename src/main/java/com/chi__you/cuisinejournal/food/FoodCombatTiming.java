@@ -16,7 +16,13 @@ public final class FoodCombatTiming {
     }
 
     public boolean ready(long now, int delay, boolean warmHeart) {
-        return now < protectedUntil || CuisineFoodMath.combatRecoveryReady(now, lastCombat,
-                warmHeart ? (Math.max(0, delay) + 1) / 2 : delay);
+        return remaining(now, delay, warmHeart) == 0;
+    }
+
+    public int remaining(long now, int delay, boolean warmHeart) {
+        if (now < protectedUntil || lastCombat == Long.MIN_VALUE) return 0;
+        int effective = warmHeart ? (Math.max(0, delay) + 1) / 2 : Math.max(0, delay);
+        if (now < lastCombat) return Math.max(1, effective);
+        return (int) Math.max(0, effective - (now - lastCombat));
     }
 }

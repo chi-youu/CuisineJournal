@@ -126,11 +126,17 @@ repositories {
     }
 }
 
+configurations {
+    skillsLegacy { transitive = false }
+}
+
 dependencies {
     // Optional JEI API: the client plugin is only discovered when JEI is installed.
     // Immutable Modrinth version IDs; see docs/BUILDING.md for versions and licenses.
     compileOnly 'maven.modrinth:u6dRKJwZ:hVXQAD0D'
     implementation fg.deobf('maven.modrinth:hqQqvaa4:zfbPzmtb')
+    // Use the publisher's slug alias so ForgeGradle keeps the two remapping inputs distinct.
+    skillsLegacy fg.deobf('maven.modrinth:skills:eLDXb816')
     compileOnly 'maven.modrinth:EO27GKs1:6zbEptBe'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     // Specify the version of Minecraft to use.

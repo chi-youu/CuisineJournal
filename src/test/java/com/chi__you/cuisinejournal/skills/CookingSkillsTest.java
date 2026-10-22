@@ -97,9 +97,19 @@ public final class CookingSkillsTest {
         check(incoming.get("s4_a_side_3").equals(List.of("s4_a_side_2")),"second temporary slot needs half-duration penalty");
         check(incoming.get("s4_b_side_4").equals(List.of("s4_b_side_3")),"fifth ordinary slot needs temporary penalty");
         hostParser();
-        System.out.println("CookingSkillsTest: "+checks+" checks passed");
+        System.out.println("CookingSkillsTest: "+checks+" checks passed (Skills "
+                +System.getProperty("cuisinejournal.skillsVersion","classpath default")+")");
     }
     private static void hostParser() throws Exception {
+        String expectedVersion=System.getProperty("cuisinejournal.skillsVersion");
+        if(expectedVersion!=null){
+            var location=Path.of(net.puffish.skillsmod.SkillsMod.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+            try(var jar=new java.util.jar.JarFile(location.toFile())){
+                String metadata;try(var input=jar.getInputStream(jar.getJarEntry("META-INF/mods.toml"))){metadata=new String(input.readAllBytes(),java.nio.charset.StandardCharsets.UTF_8);}
+                var version=java.util.regex.Pattern.compile("(?m)^\s*version\s*=\s*\"([^\"]+)\"").matcher(metadata);
+                check(version.find()&&version.group(1).equals(expectedVersion),"test runs actual Skills "+expectedVersion+", not the other classpath version");
+            }
+        }
         net.minecraft.SharedConstants.tryDetectVersion();
         // Standalone JavaExec has no Forge launcher event transformation.
         var bootstrap=net.minecraft.server.Bootstrap.class.getDeclaredField("isBootstrapped");
@@ -143,7 +153,7 @@ public final class CookingSkillsTest {
             var categories=reader.readCategories("cuisinejournal",pack.getSuccess().orElseThrow().categories(),0,context);
             check(categories.getSuccess().isPresent(),"data-pack category list resolves all shipped definitions: "+categories.getFailure());
             var result=reader.readCategory("cuisinejournal","valheim",0,context);
-            check(result.getSuccess().isPresent(),"actual Skills 0.19.2 parser accepts tree: "+result.getFailure());
+            check(result.getSuccess().isPresent(),"actual host parser accepts tree: "+result.getFailure());
             var config=result.getSuccess().orElseThrow();
             var vanillaResult=reader.readCategory("cuisinejournal","vanilla",1,context);
             check(vanillaResult.getSuccess().isPresent(),"actual host parser accepts Vanilla tree: "+vanillaResult.getFailure());

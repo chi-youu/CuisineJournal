@@ -11,6 +11,11 @@ public final class FoodModeDefaultsTest {
     private static int checks;
     public static void main(String[] args) throws Exception {
         var config=new ServerConfig();
+        check(com.chi__you.cuisinejournal.food.CuisineFoodConfig.FOOD_SYSTEM.getDefault().equals("vanilla"),
+                "fresh common config defaults to Vanilla");
+        var fresh=new ServerConfig();
+        check(FoodModeDefaults.apply(fresh,"vanilla")&&!fresh.flavors.enabled&&fresh.nutritionDisplay.enabled
+                &&fresh.foodEffects.enabled,"fresh Vanilla applies nutrition on, flavors off, native effects on");
         check(!config.compatibility.unifiedMode, "unification defaults off");
         check(com.chi__you.cuisinejournal.compat.KaleidoscopeUnificationCompat.datapackMode(false).equals("COMPAT")
                 && com.chi__you.cuisinejournal.compat.KaleidoscopeUnificationCompat.datapackMode(true).equals("UNITE"),

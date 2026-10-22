@@ -1,5 +1,7 @@
 package com.chi__you.cuisinejournal.food;
 
+import com.chi__you.cuisinejournal.client.hud.CuisineRegenHud;
+
 import com.chi__you.cuisinejournal.config.ConfigManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -66,8 +68,9 @@ public final class CuisineFoodHud {
         pose.scale(HUD_SCALE, HUD_SCALE, 1);
         pose.translate(-right, -y - size, 0);
         int rows, topLocal;
+        Preview preview;
         try {
-            Preview preview = preview(snapshot);
+            preview = preview(snapshot);
             rows = renderOrdinary(graphics, snapshot, preview, right, y, size, rowStep, large);
             topLocal = y - (rows - 1) * rowStep;
             List<CuisineFoodSnapshot.Slot> temps = active(snapshot.temporaryFoods());
@@ -90,6 +93,9 @@ public final class CuisineFoodHud {
         } finally {
             pose.popPose();
         }
+        // Regeneration readout: right of the hotbar, centred on the (scaled) ordinary row.
+        int rowCentre = Math.round((y + size) - size / 2F * HUD_SCALE);
+        CuisineRegenHud.render(graphics, client, snapshot, right + 4, rowCentre, width, regenDelta(snapshot, preview));
         // Tell Forge how tall the right-hand HUD stack is, so air bubbles etc. sit above it.
         if (gui != null) {
             int topScreen = Math.round((y + size) - (y + size - topLocal) * HUD_SCALE);
@@ -167,6 +173,37 @@ public final class CuisineFoodHud {
             need -= foods.get(index).slotCost();
         }
         return new Preview(stack, cost, false, false, CuisineFoodPlacement.REJECT, false, wait, false, -1, Set.of());
+    }
+
+    /** Hearts per second gained (or lost) by eating the previewed food; NaN when it would not be eaten. */
+    private static float regenDelta(CuisineFoodSnapshot snapshot, Preview preview) {
+        if (preview == null) return Float.NaN;
+        var player = Minecraft.getInstance().player;
+        List<CuisineFoodSnapshot.Slot> foodSlots = active(snapshot.foods()), tempSlots = active(snapshot.temporaryFoods());
+        List<ItemStack> foods = new ArrayList<>(foodSlots.stream().map(CuisineFoodSnapshot.Slot::displayStack).toList());
+        List<ItemStack> temps = new ArrayList<>(tempSlots.stream().map(CuisineFoodSnapshot.Slot::displayStack).toList());
+        ItemStack drink = CuisineRegenHud.drink(snapshot);
+        float before = CuisineRegenHud.hearts(player, foods, temps, drink);
+        ItemStack held = preview.stack().copyWithCount(1);
+        if (preview.drink()) {
+            if (!preview.drinkOk()) return Float.NaN;
+            drink = held;
+        } else if (preview.ordinaryOk()) {
+            int at = preview.ordinary();
+            if (at >= 0 && at < foods.size()) foods.set(at, held);
+            else foods.add(held);
+        } else if (preview.temporary()) {
+            if (preview.sameTemporary() >= 0) temps.set(preview.sameTemporary(), held);
+            else {
+                List<ItemStack> kept = new ArrayList<>();
+                for (int i = 0; i < temps.size(); i++) if (!preview.replaced().contains(i)) kept.add(temps.get(i));
+                kept.add(held);
+                temps = kept;
+            }
+        } else {
+            return Float.NaN;
+        }
+        return CuisineRegenHud.hearts(player, foods, temps, drink) - before;
     }
 
     // ------------------------------------------------------------------ rows

@@ -46,6 +46,8 @@ pass-with-notes：上述范围和职责已明确，可以实现。反射调用�
 
 ## 数据包与查看
 
+整合包可用物品标签 `cuisinejournal:disabled_items` 阻止禁用来源/产物被补出交互展示，内置与独立版均支持且不依赖CJ运行。每次重载先移除上次自动展示，再按新标签生成，移出可恢复；不删除作者的普通配方或真实互动。接入KubeJS现有名单与数据包写法见[通用禁用标签](INGREDIENT_COMPAT_DATAPACK.md#整合包禁用物品)，审计原因为 `skipped_disabled_item`。
+
 规则位置：data/<namespace>/food_interaction_recipes/compat/*.json。相同文件资源路径按 Minecraft 数据包优先级整文件覆盖，不同文件按资源 ID 排序，后面的同方块规则替换前面的规则；删除文件后重载重新构建，无持久覆盖残留。
 
     {

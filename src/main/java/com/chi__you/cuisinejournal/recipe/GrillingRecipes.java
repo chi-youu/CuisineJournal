@@ -64,11 +64,11 @@ public final class GrillingRecipes {
             if(tag){tags.add(id);BuiltInRegistries.ITEM.getTag(ItemTags.create(id)).ifPresent(members->members.forEach(item->items.add(BuiltInRegistries.ITEM.getKey(item.value()))));}
             else if(BuiltInRegistries.ITEM.containsKey(id)){direct.add(id);items.add(id);}
         }
-        items.removeIf(HostItemAvailability::hiddenByUnification);
+        items.removeIf(HostItemAvailability::hiddenFromCatalogue);
         return new RecipeEntry.IngredientSlot(List.copyOf(items),List.copyOf(direct),List.copyOf(tags));
     }
     private static void add(List<RecipeEntry> result,ResourceLocation output,String method,List<RecipeEntry.IngredientSlot> inputs){
-        if(output==null||!BuiltInRegistries.ITEM.containsKey(output)||HostItemAvailability.hiddenByUnification(output))return;
+        if(output==null||!BuiltInRegistries.ITEM.containsKey(output)||HostItemAvailability.hiddenFromCatalogue(output))return;
         var type=id("kaleidoscope_grilling:"+method);
         result.add(new RecipeEntry(id("cuisinejournal:grilling/"+method+"/"+output.getNamespace()+"/"+output.getPath()),
                 type,CookingMethod.of(type),output,1,List.copyOf(inputs),output.getNamespace()));

@@ -233,14 +233,14 @@ public final class CulinaryRegistry {
     // --------------------------------------------------------------- queries
 
     public MealEntry entry(ResourceLocation target) {
-        if (HostItemAvailability.hiddenByUnification(target)) return null;
+        if (HostItemAvailability.hiddenFromCatalogue(target)) return null;
         target=DishServingVariants.target(target,byTarget.keySet());
         MealEntry entry=byTarget.get(target);
         return entry==null?preparationOnly.get(target):entry;
     }
 
     public boolean isTracked(ResourceLocation target) {
-        if (HostItemAvailability.hiddenByUnification(target)) return false;
+        if (HostItemAvailability.hiddenFromCatalogue(target)) return false;
         target=DishServingVariants.target(target,byTarget.keySet());
         return byTarget.containsKey(target)||preparationOnly.containsKey(target);
     }
@@ -527,6 +527,7 @@ public final class CulinaryRegistry {
         for(var relation:PlacedServingRelations.read()) {
             var source=relation.whole();var portion=relation.serving();
             if(allPreparations.getOrDefault(source,List.of()).isEmpty()||!BuiltInRegistries.ITEM.containsKey(portion))continue;
+            if (PortionOrigins.packedServing(source, portion, allPreparations.get(source))) continue;
             if(!flavorInputs.containsKey(source))for(var preparation:allPreparations.get(source))
                 flavorInputs.computeIfAbsent(source,unused->new ArrayList<>()).addAll(preparation.ingredients());
             ItemStack serving=new ItemStack(BuiltInRegistries.ITEM.get(portion));

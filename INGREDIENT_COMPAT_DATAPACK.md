@@ -4,6 +4,36 @@
 
 merge_tags 现作为「一个条目包含多个真实标签」的特殊标签使用。新增保留原始标签成员以及料理/配方/原料槽/标签分支对应关系，网络同步给 GUI；成员和料理并集去重，不修改配方限制。协议 14。明确分组不受单成员自动溶解影响，空组仍隐藏。IngredientView.tagSources 保存真实标签成员，tagUses 保存料理/配方/原料槽/真实标签/接受物品。风味仅共用元数据，尚无运行时传播。
 
+## 整合包禁用物品
+
+物品标签 `cuisinejournal:disabled_items` 用于明确声明整合包已停用的内容。与是否开启统一模式、是否安装JEI或SOL无关；默认空，不自动读取SOL加血黑名单、JEI隐藏列表或创造栏缺席情况。
+
+加入后从百味纪料理/食材图鉴、标签成员和配方原料显示候选中过滤，显式料理收录也不能绕过。自动交互展示同时检查来源方块物品、实际来源物品和产物，任一被禁用就不生成；不删除作者的普通配方，也不修改真正的方块互动或食用属性。历史记录保留，移出标签后 `/reload` 恢复可见。这个标签不会自动把原物品从JEI普通列表隐藏，整合包已有隐藏脚本仍需保留。
+
+数据包写法：`data/cuisinejournal/tags/items/disabled_items.json`，可选模组物品使用 `required:false`：
+
+```json
+{
+  "replace": false,
+  "values": [
+    {"id": "collectorsreap:portobello_quiche", "required": false},
+    {"id": "collectorsreap:portobello_quiche_slice", "required": false}
+  ]
+}
+```
+
+已有KubeJS清理脚本可直接复用同一份 `removedFoods` 数组。在该数组可访问的作用域内，将下面这行加进现有的 `ServerEvents.tags('item', event => { ... })` 回调末尾：
+
+```javascript
+event.add('cuisinejournal:disabled_items', removedFoods);
+```
+
+务必放在 `removedFoods.forEach(id => event.removeAllTagsFrom(id))` 等清空标签操作之后，且没有后续脚本再移除该标签。数组条目应为有效物品ID；通配清单应先通过KubeJS展开成实际物品，不能把SOL通配字符串原样当标签成员。可选模组成员也可采用上面的 `required:false` 数据包写法。
+
+农场物语的Collectors Reap清理脚本已有上述清空标签回调，只需在其中最后追加 `event.add`，无需复制或由百味纪硬编码名单。本轮未修改实例脚本。
+
+独立 `food-interaction-recipes` 也识别同一标签，不需要安装百味纪；双装时由独立版负责生成，所以也须更新独立版。检查 `food-interaction-recipes-audit.tsv` 中的 `skipped_disabled_item` 可确认自动展示被跳过。
+
 ## 文件与覆盖
 
 服务端读取 data/<namespace>/cuisinejournal/compat/*.json，每次数据包重载重建索引。一个模组可以使用一个兼容包，包内按功能分文件。同资源路径遵循 Minecraft 的高优先级数据包整文件覆盖；不同路径按 priority 从小到大、再按资源 ID 排序。priority 越大越后应用。enabled=false 可禁用被覆盖文件；required_mods 缺任一模组则跳过整文件。

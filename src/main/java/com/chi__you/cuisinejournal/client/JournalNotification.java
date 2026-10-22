@@ -28,14 +28,26 @@ public final class JournalNotification {
             case MILESTONE -> Component.translatable("cuisinejournal.notify.milestone");
             case XP -> Component.translatable("cuisinejournal.notify.xp", notify.amount());
         };
-        Component title = notify.subject() == null ? event
-                : Component.translatable("cuisinejournal.notify.with_subject", event, JournalText.nameOf(notify.subject()));
+        Component subject = notify.subject() == null ? Component.translatable("cuisinejournal.name")
+                : JournalText.nameOf(notify.subject());
         ItemStack icon = notify.subject() == null ? ItemStack.EMPTY : JournalText.stackOf(notify.subject());
         if (icon.isEmpty()) icon = new ItemStack(Items.BOOK);
         // TASK avoids the challenge fanfare, so the existing sound switch remains authoritative.
-        DisplayInfo display = new DisplayInfo(icon, title, event, null, FrameType.TASK, true, false, true);
+        DisplayInfo display = new Display(icon, event, subject);
         return new Advancement(ResourceLocation.parse("cuisinejournal:notification/"
                 + notify.kind().name().toLowerCase(Locale.ROOT)),
                 null, display, AdvancementRewards.EMPTY, Map.of(), new String[0][], false);
+    }
+
+    /** Only these ephemeral notifications replace the vanilla advancement announcement. */
+    public static final class Display extends DisplayInfo {
+        private final Component heading;
+
+        private Display(ItemStack icon, Component heading, Component subject) {
+            super(icon, subject, subject, null, FrameType.TASK, true, false, true);
+            this.heading = heading;
+        }
+
+        public Component heading() { return heading; }
     }
 }

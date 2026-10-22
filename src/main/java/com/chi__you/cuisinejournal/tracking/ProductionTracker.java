@@ -100,7 +100,12 @@ public final class ProductionTracker {
         if (be.getClass().getName().equals("auviotre.enigmatic.delicacy.contents.entities.EtheriumStoveBlockEntity"))
             return new Station(be,new int[]{0,2,3,4,5,6,7},new int[]{1},CookingMethod.SMELTING);
         var verified=VerifiedWorkstations.find(be.getClass());
-        if(verified!=null)return new Station(be,verified.inputs(),verified.outputs(),verified.method());
+        if(verified!=null){
+            CookingMethod method=verified.method();
+            if(method.id().getNamespace().equals("youkaishomecoming"))
+                method=CookingMethod.of(ResourceLocation.parse(YoukaiWorkstations.method(be,method.id().getPath())));
+            return new Station(be,verified.inputs(),verified.outputs(),method);
+        }
         if (be instanceof AbstractFurnaceBlockEntity)
             return new Station(be,new int[]{0},new int[]{2},be instanceof BlastFurnaceBlockEntity?CookingMethod.of("minecraft","blasting"):
                     be instanceof SmokerBlockEntity?CookingMethod.SMOKING:CookingMethod.SMELTING);

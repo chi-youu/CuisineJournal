@@ -14,12 +14,13 @@ ForgeGradle 6.0.54 与 MixinGradle 0.7.38 使用固定版本。
 
 ## 编译依赖
 
-Modrinth Maven 坐标使用不可变版本 ID，与原编译依赖版本一致：
+Modrinth Maven 坐标使用不可变版本 ID：
 
 | 项目 | 版本 | 坐标 | 用途 |
 | --- | --- | --- | --- |
 | JEI | 15.49.0.188 | maven.modrinth:u6dRKJwZ:hVXQAD0D | 可选 API，compileOnly |
 | Pufferfish's Skills | 0.19.2，1.20 Forge | maven.modrinth:hqQqvaa4:zfbPzmtb | 必需技能 API，重映射 |
+| Pufferfish's Skills | 0.18.3，1.20 Forge | maven.modrinth:skills:eLDXb816 | 旧版回归专用，不参与正式编译或打包 |
 | JEED | 1.20-2.2.6 | maven.modrinth:EO27GKs1:6zbEptBe | 可选 API，compileOnly |
 
 依赖从发布者下载，不提交或嵌套第三方 JAR。Skills 为自定义许可，JEED 保留所有权利，
@@ -27,6 +28,10 @@ JEI 为 MIT。编译使用不等于获得任意打包许可。
 
 Youkai适配使用可选类名/反射，不直接引用宿主编译类型；已移除无必要的整份模组编译依赖。
 其运行支持仍保留，宿主专项检查仍可通过已有实例目录执行。
+
+Skills运行范围为`[0.18.3,0.20)`；编译仍使用0.19.2。build会隔离两版classpath，分别运行同一组双树解析、路线互斥、点数/退款与存取测试，并对两版核对全部生产API及lambda方法句柄。
+测试检查实际载入的版本，避免旧版回归误用编译版。旧版测试使用发布者slug别名区分ForgeGradle重映射输入，不改版本ID、不引入本地JAR依赖；不保证0.18.3之前或0.20及之后版本。
+这些自动检查不等于整合包实机已验收；Skills客户端与服务端还须彼此匹配，整合包技能桥等附属也须满足其自身版本要求。
 
 ## 测试边界
 
@@ -42,6 +47,7 @@ $env:CUISINEJOURNAL_COMPAT_MODS = 'E:/Minecraft/test-instance/mods'
 以测试源码为准。调查工具生成的 build/ 证据不是基础构建前提。
 
 可选宿主注入有契约预检，方法或调用点漂移时会明确警告并跳过对应适配，不意味着该版本完整支持。
+另有通用共享目标冲突检查，识别第三方Overwrite与争用指令的Redirect后整组避让；原版/Forge和必需注入不降级。verifyOptionalMixinConflicts核所用Mixin库准备顺序与目标映射契约；CUISINEJOURNAL_CONFLICT_MODS可给实际冲突实例mods目录，读取直接及内嵌JAR作回归，不改实例或启动游戏。
 CUISINEJOURNAL_LEGACY_MODS可给旧代宿主目录，核预期降级；新版检查不应因容错而被静默跳过。
 涉及注入/专服隔离的新改动必须再编译及启动验证，不能以源码语法检查代替。
 

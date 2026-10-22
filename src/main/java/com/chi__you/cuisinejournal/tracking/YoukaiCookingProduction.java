@@ -30,6 +30,7 @@ public final class YoukaiCookingProduction {
         for(int i=0;i<container.getContainerSize();i++){var stack=container.getItem(i);ledger.syncInput(i,identity(stack),stack.getCount(),player==null?null:player.getUUID());}save(be,ledger);
     }
     public static void begin(BlockEntity be,String method) {
+        if(method.startsWith("youkaishomecoming:"))method=YoukaiWorkstations.method(be,method.substring(method.indexOf(':')+1));
         if(be.getLevel()==null||be.getLevel().isClientSide){COMPLETIONS.get().push(new Completion(be,null));return;}
         Object raw=HostReflection.field(be,"items");var ledger=ledger(be);Map<Integer,Integer> consumed=new TreeMap<>();
         if(raw instanceof Container container)for(int i=0;i<container.getContainerSize();i++){var item=container.getItem(i);ledger.syncInput(i,identity(item),item.getCount(),null);if(!item.isEmpty())consumed.put(i,item.getCount());}
@@ -46,7 +47,7 @@ public final class YoukaiCookingProduction {
         if(used<=0||be.getLevel()==null||be.getLevel().isClientSide||!boardAllows(be,WorkstationDefinitions.Capability.ITEM_INPUT))return;
         var ledger=ledger(be);ServerPlayer player=ProductionTracker.actor();
         ledger.syncInput(0,identity(input),used,player==null?null:player.getUUID());
-        var batch=ledger.produce(Map.of(0,used),"board",1,"youkaishomecoming:cuisine");ledger.append(1,batch);save(be,ledger);
+        var batch=ledger.produce(Map.of(0,used),"board",1,YoukaiWorkstations.method(be,"cuisine"));ledger.append(1,batch);save(be,ledger);
     }
     public static ItemStack boardResult(BlockEntity be,ServerPlayer player,ItemStack item) {
         if(item.isEmpty()||be.getLevel()==null||be.getLevel().isClientSide||!boardAllows(be,WorkstationDefinitions.Capability.ITEM_OUTPUT))return item;

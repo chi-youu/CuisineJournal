@@ -4,6 +4,7 @@ def regressionTests = [
     verifySolMigration: 'com.chi__you.cuisinejournal.food.CuisineSolMigrationTest',
     verifyJournalBrowser: 'com.chi__you.cuisinejournal.network.JournalBrowserTest',
     verifyDishExclusionRules: 'com.chi__you.cuisinejournal.recipe.DishExclusionRuleTest',
+    verifyDisabledItems: 'com.chi__you.cuisinejournal.recipe.DisabledItemsTest',
     verifyConfiguredCatalogue: 'com.chi__you.cuisinejournal.recipe.ConfiguredCatalogueTest',
     verifyDrinkClassification: 'com.chi__you.cuisinejournal.food.CuisineDrinkClassificationTest',
     verifyEdibilityContract: 'com.chi__you.cuisinejournal.food.CuisineEdibilityContractTest',
@@ -35,6 +36,7 @@ def regressionTests = [
     verifyBundledSchemes: 'com.chi__you.cuisinejournal.recipe.BundledSchemesTest',
     verifyTemporaryFood: 'com.chi__you.cuisinejournal.food.TemporaryFoodTest',
     verifyCuisineEffects: 'com.chi__you.cuisinejournal.food.CuisineEffectsTest',
+    verifyRegenCombatSync: 'com.chi__you.cuisinejournal.food.RegenCombatSyncTest',
     verifyDiscovery: 'com.chi__you.cuisinejournal.progression.DiscoveryTest',
     verifyFoodModeDefaults: 'com.chi__you.cuisinejournal.config.FoodModeDefaultsTest',
     verifyHonors: 'com.chi__you.cuisinejournal.challenge.HonorsTest',
@@ -42,6 +44,7 @@ def regressionTests = [
     verifyDailyChallenges: 'com.chi__you.cuisinejournal.challenge.DailyChallengeTest',
     verifyDailyCalendar: 'com.chi__you.cuisinejournal.culinary.DailyCalendarTest',
     verifyCookingSkills: 'com.chi__you.cuisinejournal.skills.CookingSkillsTest',
+    verifySkillsApiContracts: 'com.chi__you.cuisinejournal.skills.SkillsApiContractTest',
     verifyJournalFeatures: 'com.chi__you.cuisinejournal.progression.JournalFeaturesTest',
     verifyEditVersions: 'com.chi__you.cuisinejournal.network.EditVersionsTest',
     verifyEditProtection: 'com.chi__you.cuisinejournal.network.EditProtectionTest',
@@ -65,6 +68,7 @@ def regressionTests = [
     verifyCompatibilityArchitecture: 'com.chi__you.cuisinejournal.compat.CompatibilityArchitectureTest',
     verifyLayerDependencies: 'com.chi__you.cuisinejournal.compat.LayerDependenciesTest',
     verifyOptionalMixinContracts: 'com.chi__you.cuisinejournal.compat.OptionalMixinContractsTest',
+    verifyOptionalMixinConflicts: 'com.chi__you.cuisinejournal.compat.OptionalMixinConflictsTest',
     verifyProductionFrames: 'com.chi__you.cuisinejournal.tracking.ProductionFramesTest',
     verifyFoodVariantIdentity: 'com.chi__you.cuisinejournal.food.FoodVariantIdentityTest',
     verifyCatalogueEditCoordinator: 'com.chi__you.cuisinejournal.data.CatalogueEditCoordinatorTest',
@@ -74,6 +78,7 @@ def regressionTests = [
     verifyMilkshakePortions: 'com.chi__you.cuisinejournal.tracking.MilkshakePortionsTest',
     verifyCompatFallback: 'com.chi__you.cuisinejournal.compat.CompatFallbackTest',
     verifyWorkstationDisplay: 'com.chi__you.cuisinejournal.compat.WorkstationDisplayTest',
+    verifyYoukaiWorkstations: 'com.chi__you.cuisinejournal.tracking.YoukaiWorkstationsTest',
     verifySquidLootCompatibility: 'com.chi__you.cuisinejournal.compat.SquidLootCompatTest',
     verifyProductionCodeHygiene: 'com.chi__you.cuisinejournal.compat.ProductionCodeHygieneTest',
     verifyCookingContext: 'com.chi__you.cuisinejournal.tracking.CookingContextTest'
@@ -87,6 +92,14 @@ regressionTests.each { taskName, entryPoint ->
             // The verifier reads optional compile-only API headers, never initializes their classes.
             classpath += sourceSets.main.compileClasspath
         }
+        if (taskName == 'verifyCookingSkills') {
+            systemProperty 'cuisinejournal.skillsVersion', '0.19.2'
+        }
+        if (taskName == 'verifySkillsApiContracts') {
+            doFirst {
+                systemProperty 'cuisinejournal.skillsLegacyJar', configurations.skillsLegacy.singleFile.absolutePath
+            }
+        }
         mainClass = entryPoint
         if (taskName == 'verifyProductionCodeHygiene') {
             systemProperty 'cuisinejournal.productionClasses', sourceSets.main.java.classesDirectory.get().asFile.absolutePath
@@ -98,6 +111,17 @@ regressionTests.each { taskName, entryPoint ->
 }
 
 tasks.named('check').configure { dependsOn regressionTests.keySet() }
+
+tasks.register('verifyLegacyCookingSkills', JavaExec) {
+    dependsOn tasks.named('testClasses')
+    mainClass = 'com.chi__you.cuisinejournal.skills.CookingSkillsTest'
+    systemProperty 'cuisinejournal.skillsVersion', '0.18.3'
+    doFirst {
+        // Replace, never combine, the two versions on the parser's runtime classpath.
+        classpath = files(sourceSets.test.runtimeClasspath.files.findAll { !it.name.startsWith('hqQqvaa4-') }) + configurations.skillsLegacy
+    }
+}
+tasks.named('check').configure { dependsOn 'verifyLegacyCookingSkills' }
 tasks.named('test', Test).configure {
     dependsOn 'verifyFoodMath', 'verifySolMigration'
 }

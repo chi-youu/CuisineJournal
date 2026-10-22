@@ -173,6 +173,8 @@ public final class ClientSettingsScreen extends Screen {
         });
         y = segmentRow(g, tr("icons"), null, x, y, w, new String[]{"icons.large", "icons.small"},
                 config.foodHud.useLargeFoodIcons ? 0 : 1, mx, my, i -> { config.foodHud.useLargeFoodIcons = i == 0; save(); });
+        y = toggleRow(g, tr("regen"), null, x, y, w, config.foodHud.showRegenRate, mx, my,
+                () -> { config.foodHud.showRegenRate = !config.foodHud.showRegenRate; save(); });
         ClientConfig.SidePanel[] panels = {ClientConfig.SidePanel.OFF, ClientConfig.SidePanel.CULINARY, ClientConfig.SidePanel.ALWAYS};
         int panel = java.util.Arrays.asList(panels).indexOf(config.journal.sidePanel);
         y = segmentRow(g, tr("panel"), tr("panel.hint"), x, y, w, new String[]{"off", "panel.culinary", "panel.always"},

@@ -23,6 +23,10 @@ public final class ClientPacketHandler {
     }
 
     public static void handle(CuisineJournalPacket packet) {
+        if(packet instanceof com.chi__you.cuisinejournal.food.CuisineRegenPackets.Combat combat) {
+            com.chi__you.cuisinejournal.client.hud.CuisineRegenHud.acceptCombat(combat.ticksLeft(),combat.intervalTicks());
+            return;
+        }
         if(packet instanceof com.chi__you.cuisinejournal.network.SyncFailure failure) {
             ClientJournalState.syncFailed(failure.failedPacket());
             return;
@@ -44,6 +48,7 @@ public final class ClientPacketHandler {
             CuisineFoodTooltip.accept(info);
         } else if (packet instanceof CuisineFoodSnapshot food) {
             if (!food.active()) {
+                com.chi__you.cuisinejournal.client.hud.CuisineRegenHud.clear();
                 CuisineFoodTooltip.clear();
             }
             CuisineFoodClientState.accept(food);

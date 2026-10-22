@@ -30,9 +30,9 @@ public final class FluidProductionTracker {
             switch(type.getName()) {
                 case "umpaz.brewinandchewin.common.block.entity.KegBlockEntity":return "brewinandchewin:fermenting";
                 case "umpaz.farmersrespite.common.block.entity.KettleBlockEntity":return "farmersrespite:brewing";
-                case "dev.xkmc.youkaishomecoming.content.pot.kettle.KettleBlockEntity":return "youkaishomecoming:kettle";
-                case "dev.xkmc.youkaishomecoming.content.pot.ferment.FermentationTankBlockEntity":return "youkaishomecoming:fermentation";
-                case "dev.xkmc.youkaishomecoming.content.pot.basin.BasinBlockEntity":return "youkaishomecoming:basin";
+                case "dev.xkmc.youkaishomecoming.content.pot.kettle.KettleBlockEntity":return YoukaiWorkstations.method(be,"kettle");
+                case "dev.xkmc.youkaishomecoming.content.pot.ferment.FermentationTankBlockEntity":return YoukaiWorkstations.method(be,"fermentation");
+                case "dev.xkmc.youkaishomecoming.content.pot.basin.BasinBlockEntity":return YoukaiWorkstations.method(be,"basin");
             }
         }
         return null;

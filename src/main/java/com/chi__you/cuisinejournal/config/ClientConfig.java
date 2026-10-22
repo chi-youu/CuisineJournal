@@ -54,6 +54,8 @@ public final class ClientConfig {
     public static final class FoodHud {
         @Comment("Use the larger SOL-style food slot icons.")
         public boolean useLargeFoodIcons = true;
+        @Comment("Show the current health regeneration per second right of the hotbar.")
+        public boolean showRegenRate = true;
     }
 
     @Comment("Optional cooking level and experience bar, not vanilla enchanting XP. Off by default.")
@@ -137,7 +139,7 @@ public final class ClientConfig {
         var food = (java.util.Map<String, Object>) source.computeIfAbsent("foodHud",
                 ignored -> new java.util.LinkedHashMap<String, Object>());
         values.forEach((key, value) -> {
-            if ("useLargeFoodIcons".equals(key)) food.putIfAbsent(key.toString(), value);
+            if ("useLargeFoodIcons".equals(key) || "showRegenRate".equals(key)) food.putIfAbsent(key.toString(), value);
             else cooking.putIfAbsent(key.toString(), value);
         });
     }

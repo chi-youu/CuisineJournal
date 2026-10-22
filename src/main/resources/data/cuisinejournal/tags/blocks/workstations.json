@@ -85,6 +85,16 @@
     {"id": "youkaishomecoming:fermentation_tank", "required": false},
     {"id": "youkaishomecoming:kettle", "required": false},
     {"id": "youkaishomecoming:moka_pot", "required": false},
-    {"id": "youkaishomecoming:wood_basin", "required": false}
+    {"id": "youkaishomecoming:wood_basin", "required": false},
+    {"id": "youkaisfeasts:cuisine_board", "required": false},
+    {"id": "youkaisfeasts:drying_rack", "required": false},
+    {"id": "youkaisfeasts:kettle", "required": false},
+    {"id": "youkaisfeasts:fermentation_tank", "required": false},
+    {"id": "youkaisfeasts:wood_basin", "required": false},
+    {"id": "youkaisfeasts:cooking_small_iron_pot", "required": false},
+    {"id": "youkaisfeasts:cooking_short_iron_pot", "required": false},
+    {"id": "youkaisfeasts:cooking_stockpot", "required": false},
+    {"id": "youkaisfeasts:steamer_pot", "required": false},
+    {"id": "youkaisfeasts:steamer_rack", "required": false}
   ]
 }

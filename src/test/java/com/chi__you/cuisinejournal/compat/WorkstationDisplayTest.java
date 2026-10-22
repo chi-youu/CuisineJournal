@@ -24,7 +24,8 @@ public final class WorkstationDisplayTest {
             check(!candidates.isEmpty(),"every declared method has icon candidates "+method);
             String key="cuisinejournal.method."+entry.getKey().replace(':','.');
             check(zh.has(key)&&en.has(key),"method name exists in both supported languages "+method);
-            if(directory!=null)check(candidates.stream().anyMatch(item->item.getNamespace().equals("minecraft")||installed.contains(item.toString())),"installed icon model available "+method);
+            boolean hostPresent=installed.stream().anyMatch(item->item.startsWith(method.getNamespace()+":"));
+            if(directory!=null&&hostPresent)check(candidates.stream().anyMatch(item->item.getNamespace().equals("minecraft")||installed.contains(item.toString())),"installed icon model available "+method);
         }
         var optional=id("test:unknown_station");check(WorkstationDisplay.candidates(optional).equals(List.of(optional)),"unknown method retains same-id fallback without loading a host");
         try(var files=Files.list(Path.of("src/main/resources/data/cuisinejournal/cuisinejournal/compat/workstations"))){

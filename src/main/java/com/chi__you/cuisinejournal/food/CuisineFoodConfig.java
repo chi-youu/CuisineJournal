@@ -39,7 +39,7 @@ public final class CuisineFoodConfig {
                         "           the journal, cooking mastery and stars still work.",
                         "Takes effect after rejoining the world or /reload. Cannot use valheim while",
                         "sol_valheim is installed.")
-                .define("foodSystem", "valheim",
+                .define("foodSystem", "vanilla",
                         value -> "valheim".equals(value) || "vanilla".equals(value));
         MAX_FOOD_SLOTS = builder.comment("Number of ordinary food slots.")
                 .defineInRange("maxFoodSlots", 2, 1, 12);

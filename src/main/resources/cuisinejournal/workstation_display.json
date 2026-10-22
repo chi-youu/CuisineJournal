@@ -303,5 +303,13 @@
   ],
   "youkaishomecoming:moka_pot": [
     "youkaishomecoming:moka_pot"
-  ]
+  ],
+  "youkaisfeasts:cuisine": ["youkaisfeasts:cuisine_board"],
+  "youkaisfeasts:drying_rack": ["youkaisfeasts:drying_rack"],
+  "youkaisfeasts:kettle": ["youkaisfeasts:kettle"],
+  "youkaisfeasts:fermentation": ["youkaisfeasts:fermentation_tank"],
+  "youkaisfeasts:basin": ["youkaisfeasts:wood_basin"],
+  "youkaisfeasts:pot_cooking": ["youkaisfeasts:short_iron_pot", "youkaisfeasts:small_iron_pot", "youkaisfeasts:stockpot"],
+  "youkaisfeasts:soup_base": ["youkaisfeasts:stockpot"],
+  "youkaisfeasts:steaming": ["youkaisfeasts:steamer_pot", "youkaisfeasts:steamer_rack"]
 }
