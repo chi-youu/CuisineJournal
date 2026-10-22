@@ -82,8 +82,16 @@ public final class PlacedMealProduction extends SavedData {
         var data=get(server);Entry entry=data.entries.get(pos.asLong());if(entry==null)return;
         if(expected==null||!entry.block.equals(BuiltInRegistries.BLOCK.getKey(expected.getBlock()).toString()))return;
         String source=entry.batch.identity();int split=source.indexOf('|');if(split>=0)source=source.substring(0,split);
-        if(CulinaryRegistries.current().isPortionOf(net.minecraft.resources.ResourceLocation.tryParse(source),
-                BuiltInRegistries.ITEM.getKey(output.getItem()))&&entry.stamp!=null)entry.stamp.write(output);
+        if((CulinaryRegistries.current().isPortionOf(net.minecraft.resources.ResourceLocation.tryParse(source),
+                BuiltInRegistries.ITEM.getKey(output.getItem()))
+                ||com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.returnedStage(expected,output))&&entry.stamp!=null)entry.stamp.write(output);
+    }
+
+    static MealStamp storedStamp(Level level,BlockPos pos,BlockState expected) {
+        if(!(level instanceof ServerLevel server))return null;
+        var entry=get(server).entries.get(pos.asLong());
+        return entry!=null&&entry.block.equals(BuiltInRegistries.BLOCK.getKey(expected.getBlock()).toString())
+                ?entry.stamp:null;
     }
 
     public static void transferOutput(Level level,BlockPos pos,BlockState expected,ItemStack output,int amount) {
@@ -105,6 +113,8 @@ public final class PlacedMealProduction extends SavedData {
         if(!(level instanceof ServerLevel server))return;
         BlockState after=level.getBlockState(pos);
         if(before.getBlock()==after.getBlock()){
+            if(com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.known(before.getBlock())
+                    &&com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.remaining(after)>com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.remaining(before))remove(level,pos);
             if(com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.known(before.getBlock())
                     &&com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.remaining(after)>com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.remaining(before))remove(level,pos);
             if(com.chi__you.cuisinejournal.food.DelightPlacedFoods.known(before.getBlock())
@@ -113,7 +123,9 @@ public final class PlacedMealProduction extends SavedData {
         }
         var data=get(server);var entry=data.entries.get(pos.asLong());
         if(entry==null||!entry.block.equals(BuiltInRegistries.BLOCK.getKey(before.getBlock()).toString()))return;
-        if(com.chi__you.cuisinejournal.food.DelightPlacedFoods.sameMeal(before,after)
+        if(com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.known(before.getBlock())
+                &&com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.sameMeal(before,after)
+                ||com.chi__you.cuisinejournal.food.DelightPlacedFoods.sameMeal(before,after)
                 ||com.chi__you.cuisinejournal.food.CakeFoodCompat.sameCake(before,after)
                 ||com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.known(before.getBlock())
                     &&com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.sameMeal(before,after))

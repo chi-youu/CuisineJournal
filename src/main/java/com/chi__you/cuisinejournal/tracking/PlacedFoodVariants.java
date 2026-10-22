@@ -64,9 +64,12 @@ public final class PlacedFoodVariants extends SavedData {
         }return result;
     }
     public static List<ItemStack> drops(Level level,BlockPos pos,List<ItemStack> nativeDrops,boolean plate){
+        return drops(level,pos,level.getBlockState(pos),nativeDrops,plate);
+    }
+    public static List<ItemStack> drops(Level level,BlockPos pos,net.minecraft.world.level.block.state.BlockState expected,List<ItemStack> nativeDrops,boolean plate){
         if(!(level instanceof ServerLevel server))return nativeDrops;
         var entry=get(server).items.get(pos.asLong());
-        if(entry==null||!entry.block.equals(BuiltInRegistries.BLOCK.getKey(level.getBlockState(pos).getBlock()).toString()))return nativeDrops;
+        if(entry==null||!entry.block.equals(BuiltInRegistries.BLOCK.getKey(expected.getBlock()).toString()))return nativeDrops;
         return preview(nativeDrops,entry.cups,entry.item,plate,stack->plateOutput(level,pos,stack));
     }
     static List<ItemStack> preview(List<ItemStack> nativeDrops,List<ItemStack> servings,ItemStack original,boolean plate,java.util.function.Predicate<ItemStack> plateOutput){

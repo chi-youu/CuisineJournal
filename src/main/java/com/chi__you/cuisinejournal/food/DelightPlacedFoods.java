@@ -36,6 +36,9 @@ public final class DelightPlacedFoods {
     public static final String PANETTONE="net.brdle.collectorsreap.common.block.PanettoneBlock";
     public static final String FD_FEAST="vectorwing.farmersdelight.common.block.FeastBlock";
     public static final String FD_PIE="vectorwing.farmersdelight.common.block.PieBlock";
+    public static final String KING_CRAB="cloudmeow.untameddelight.block.SteamedKingCrabBlock";
+    public static final String KRABBY="club.someoneice.jellyfishingdelight.block.KrabbyPatty";
+    public static final String COLORFUL_KRABBY="club.someoneice.jellyfishingdelight.block.ColorfulKrabbyPattys";
     private static final java.util.Set<String> MODS=java.util.Set.of("rusticdelight","pineapple_delight","luncheonmeatsdelight","sunflowerdelight","culturaldelights","moredelight","braziliandelight","unusual_delight","oceanic_delight","oceansdelight","corn_delight","seeddelight","vintagedelight","crabbersdelight","ubesdelight","collectorsreap","jadensnetherexpansiondelight","mynethersdelight");
     private DelightPlacedFoods() {}
     public static boolean is(Object object,String... names){
@@ -43,12 +46,26 @@ public final class DelightPlacedFoods {
         for(Class<?> type=object.getClass();type!=null;type=type.getSuperclass())for(String name:names)if(type.getName().equals(name))return true;
         return false;
     }
-    public static boolean known(Block block){return FarmersSpellFoods.known(block)||UnusualServingRelations.get(block)!=null||is(block,PANCAKE,EGGPLANT,DRINK,LEAF,LARGE_LEAF,UNIVERSAL_LEAF,UBE_CAKE,FLAN,BRAZIL_PIE,BRAZIL_CAKE,BRAZIL_CANDLE,BRAZIL_FEAST,EFFECT_CAKE,EFFECT_CANDLE,MAGMA,SPONGE,BREAD,HOGLIN,CAN,EGG,RICE,TOAST,POPCORN,PANETTONE)
+    public static boolean known(Block block){return is(block,KING_CRAB,KRABBY,COLORFUL_KRABBY)||ordinaryAddonFeast(block)||FarmersSpellFoods.known(block)||UnusualServingRelations.get(block)!=null||is(block,PANCAKE,EGGPLANT,DRINK,LEAF,LARGE_LEAF,UNIVERSAL_LEAF,UBE_CAKE,FLAN,BRAZIL_PIE,BRAZIL_CAKE,BRAZIL_CANDLE,BRAZIL_FEAST,EFFECT_CAKE,EFFECT_CANDLE,MAGMA,SPONGE,BREAD,HOGLIN,CAN,EGG,RICE,TOAST,POPCORN,PANETTONE)
             ||(MODS.contains(BuiltInRegistries.BLOCK.getKey(block).getNamespace())||ModFoodCompat.hostNamespace(BuiltInRegistries.BLOCK.getKey(block).getNamespace())
                 ||BuiltInRegistries.BLOCK.getKey(block).getNamespace().equals("farmers_spell"))&&is(block,FD_FEAST,FD_PIE);}
+    private static boolean ordinaryAddonFeast(Block block){
+        String namespace=BuiltInRegistries.BLOCK.getKey(block).getNamespace();
+        return java.util.Set.of("untameddelight","delighto_flight").contains(namespace)&&is(block,FD_FEAST,FD_PIE);
+    }
     public static ItemStack serving(Block block,BlockState state){
+        if(is(block,KING_CRAB))return switch(value(state,"servings")){
+            case 3->item("untameddelight:steamed_king_crab_legs");
+            case 2->item("untameddelight:steamed_king_crab");
+            case 1->item("untameddelight:steamed_egg_with_king_crab_roe");
+            default->ItemStack.EMPTY;};
         if(FarmersSpellFoods.known(block))return FarmersSpellFoods.serving(block,state);
         Object result=null;
+        if(is(block,KRABBY))result=HostReflection.field(block,"mini_burger");
+        else if(is(block,COLORFUL_KRABBY)){
+            Object raw=HostReflection.field(block,"KRABBY_PATTYS");int color=value(state,"color");
+            if(raw instanceof java.util.List<?> items&&color>0&&color<=items.size())result=items.get(color-1);
+        }
         var unusual=UnusualServingRelations.get(block);if(unusual!=null)return UnusualServingRelations.item(unusual.output());
         if(is(block,PANCAKE))result=HostReflection.invoke(block,"getServingItem");
         else if(is(block,EGGPLANT,DRINK,POPCORN,FD_FEAST))result=HostReflection.invoke(block,"getServingItem",state);
@@ -80,9 +97,11 @@ public final class DelightPlacedFoods {
     public static int remaining(BlockState state){
         if(FarmersSpellFoods.known(state.getBlock()))return FarmersSpellFoods.remaining(state);
         Block block=state.getBlock();
+        if(is(block,KRABBY))return Math.max(0,4-value(state,"bites"));
+        if(is(block,COLORFUL_KRABBY))return value(state,"color");
         var unusual=UnusualServingRelations.get(block);if(unusual!=null)return unusual.remaining();
         if(is(block,PANCAKE)){int n=value(state,"servings");return n<6?6-n:n+1;}
-        if(is(block,EGGPLANT,DRINK,LEAF,LARGE_LEAF,UNIVERSAL_LEAF,HOGLIN,POPCORN,FD_FEAST))return value(state,"servings");
+        if(is(block,EGGPLANT,DRINK,LEAF,LARGE_LEAF,UNIVERSAL_LEAF,HOGLIN,POPCORN,FD_FEAST,KING_CRAB))return value(state,"servings");
         if(is(block,CAN))return 4;
         if(is(block,TOAST))return 1;
         if(is(block,RICE))return Math.max(0,value(state,"slice")-1);
@@ -90,6 +109,10 @@ public final class DelightPlacedFoods {
         if(is(block,EFFECT_CANDLE,BRAZIL_CANDLE))return 7;
         if(is(block,BRAZIL_FEAST))return Math.max(0,4-value(state,"uses"));
         int count=is(block,BRAZIL_PIE,SPONGE,PANETTONE,FD_PIE)?4:is(block,FLAN,BREAD)?5:7;
+        if(is(block,FD_PIE)){
+            Object maximum=HostReflection.invoke(block,"getMaxBites");
+            if(maximum instanceof Number value)count=value.intValue();
+        }
         if(is(block,MAGMA)){
             var second=state.getBlock().getStateDefinition().getProperty("second_cake");
             if(second instanceof net.minecraft.world.level.block.state.properties.BooleanProperty flag&&state.getValue(flag))count+=7;

@@ -79,6 +79,9 @@ def regressionTests = [
     verifyCompatFallback: 'com.chi__you.cuisinejournal.compat.CompatFallbackTest',
     verifyWorkstationDisplay: 'com.chi__you.cuisinejournal.compat.WorkstationDisplayTest',
     verifyYoukaiWorkstations: 'com.chi__you.cuisinejournal.tracking.YoukaiWorkstationsTest',
+    verifyFoodHostCompletion: 'com.chi__you.cuisinejournal.compat.FoodHostCompletionTest',
+    verifyDisplayFoodStorage: 'com.chi__you.cuisinejournal.tracking.DisplayFoodStorageTest',
+    verifyPlacedFoodDrops: 'com.chi__you.cuisinejournal.tracking.PlacedFoodDropsTest',
     verifySquidLootCompatibility: 'com.chi__you.cuisinejournal.compat.SquidLootCompatTest',
     verifyProductionCodeHygiene: 'com.chi__you.cuisinejournal.compat.ProductionCodeHygieneTest',
     verifyCookingContext: 'com.chi__you.cuisinejournal.tracking.CookingContextTest'

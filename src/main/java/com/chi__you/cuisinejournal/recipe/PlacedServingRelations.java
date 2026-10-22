@@ -15,6 +15,20 @@ public final class PlacedServingRelations {
     public static List<Relation> read(){
         List<Relation> result=new ArrayList<>();
         for(var block:BuiltInRegistries.BLOCK){
+            if(com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.known(block)){
+                var rule=com.chi__you.cuisinejournal.food.ProcedurePlacedFoods.rule(BuiltInRegistries.BLOCK.getKey(block));
+                var stage=BuiltInRegistries.BLOCK.getKey(block);
+                if(com.chi__you.foodinteractions.CoconutStewServings.known(stage)){
+                    result.add(new Relation(stage,rule.portion(),4));
+                    if(stage.getPath().equals("coconut_crab_stew"))result.add(new Relation(stage,com.chi__you.foodinteractions.CoconutStewServings.claws(),1));
+                    continue;
+                }
+                if(!stage.equals(rule.portion()))
+                    result.add(new Relation(stage,rule.portion(),rule.remaining()));
+                if(com.chi__you.foodinteractions.FestiveServings.remaining(stage)==4)
+                    result.add(new Relation(rule.whole(),rule.portion(),rule.remaining()));
+                continue;
+            }
             if(com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.is(block,com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.TURKEY)){
                 var serving=com.chi__you.cuisinejournal.food.AbnormalsPlacedFoods.serving(block);
                 var whole=BuiltInRegistries.ITEM.getKey(block.asItem());
@@ -71,6 +85,21 @@ public final class PlacedServingRelations {
                     var part=ResourceLocation.fromNamespaceAndPath("mynethersdelight",pair.getKey());
                     if(BuiltInRegistries.ITEM.containsKey(part))result.add(new Relation(whole,part,pair.getValue()));
                 }
+                continue;
+            }
+            if(DelightPlacedFoods.is(block,DelightPlacedFoods.KING_CRAB)){
+                var whole=BuiltInRegistries.ITEM.getKey(block.asItem());
+                for(String output:List.of("steamed_king_crab_legs","steamed_king_crab","steamed_egg_with_king_crab_roe")){
+                    var part=ResourceLocation.fromNamespaceAndPath("untameddelight",output);
+                    if(BuiltInRegistries.ITEM.containsKey(part))result.add(new Relation(whole,part,1));
+                }continue;
+            }
+            if(DelightPlacedFoods.is(block,DelightPlacedFoods.COLORFUL_KRABBY)){
+                var whole=BuiltInRegistries.ITEM.getKey(block.asItem());
+                Object raw=HostReflection.field(block,"KRABBY_PATTYS");
+                if(raw instanceof List<?> items)for(var item:items)
+                    if(item instanceof java.util.function.Supplier<?> supplier&&supplier.get() instanceof net.minecraft.world.item.Item serving)
+                        result.add(new Relation(whole,BuiltInRegistries.ITEM.getKey(serving),1));
                 continue;
             }
             var unusual=com.chi__you.cuisinejournal.food.UnusualServingRelations.get(block);

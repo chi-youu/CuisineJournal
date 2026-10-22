@@ -46,7 +46,9 @@ public final class ProductionTracker {
         if (menu == null || ConfigManager.server().compatibility.excludedMenuClasses.contains(menu.getClass().getName())) return null;
         for (Slot slot : menu.slots) {
             if (slot instanceof ResultSlot && slot instanceof CraftInputs access)
-                return new Station(access.cuisinejournal$inputs(),range(0,access.cuisinejournal$inputs().getContainerSize()),new int[0],CookingMethod.CRAFTING);
+                return new Station(access.cuisinejournal$inputs(),range(0,access.cuisinejournal$inputs().getContainerSize()),new int[0],
+                        menu.getClass().getName().equals("net.firemuffin303.thaidelight.common.menu.MortarMenu")
+                                ?CookingMethod.of("muffins_thaidelight","mortar"):CookingMethod.CRAFTING);
             if (slot.container instanceof BlockEntity be && station(be)!=null)
                 return station(be);
             if(slot instanceof net.minecraftforge.items.SlotItemHandler forge){
@@ -170,7 +172,7 @@ public final class ProductionTracker {
     public static void beginMenu(Player player,AbstractContainerMenu menu) {
         if(player instanceof ServerPlayer server)for(Slot slot:menu.slots)if(slot.container instanceof BlockEntity be&&KaleidoscopeProduction.method(be)!=null){KaleidoscopeProduction.begin(be,server);break;}
         Station station=player instanceof ServerPlayer?menu(menu):null;
-        begin(player,station,station!=null&&station.owner instanceof BlockEntity be?be:null);
+        begin(player,station,station!=null&&station.owner instanceof BlockEntity be?be:BlockheadsKitchen.owner(menu));
     }
     public static void beginBlock(Player player,Level level,BlockPos pos) {
         BlockEntity be=level.isClientSide?null:level.getBlockEntity(pos);
@@ -181,6 +183,7 @@ public final class ProductionTracker {
     private static Station stationOrNull(BlockEntity be) { return be==null?null:station(be); }
     private static void begin(Player player,Station station,BlockEntity be) {
         if(!(player instanceof ServerPlayer server)) return;
+        BlockheadsKitchen.beginInput(server,be);
         if(station != null) {var l=ledger(station);reconcile(station,l);save(station,l);}
         BlockEntity fluidOwner=FluidProductionTracker.supports(be)?be:null;
         OPERATIONS.get().push(new Operation(server,station,station==null?Map.of():snapshot(station,station.inputs),fluidOwner));
@@ -196,6 +199,7 @@ public final class ProductionTracker {
             KaleidoscopeProduction.endOperation(op.player);
             if(op.fluidOwner!=null)FluidProductionTracker.end(op.fluidOwner);
         } finally {
+            BlockheadsKitchen.endInput(op.player);
             operations.pop();if(operations.isEmpty())OPERATIONS.remove();
         }
         if(op.station==null)return;
@@ -430,6 +434,7 @@ public final class ProductionTracker {
     }
     public static Extraction prepare(Player player,AbstractContainerMenu menu,Slot slot,boolean perfect,int count) {
         if(!(player instanceof ServerPlayer server)||slot.getItem().isEmpty())return null;
+        if(DynamicIngredientRecipes.rawProcessing(slot))return null;
         Station s=menu(menu);if(s==null)return null;
         if(!allows(s,WorkstationDefinitions.Capability.MENU_TAKE))return null;
         boolean craft=slot instanceof ResultSlot;
@@ -480,6 +485,15 @@ public final class ProductionTracker {
     }
 
     public static ItemStack quickMoveOutput(ServerPlayer player,AbstractContainerMenu menu,Slot slot){
+        var kitchen=BlockheadsKitchen.owner(menu);
+        if(kitchen!=null&&slot.container==HostReflection.invoke(kitchen,"getInternalContainer")
+                &&slot.getContainerSlot()>=4&&slot.getContainerSlot()<=6){
+            ItemStack original=slot.getItem().copy(),work=original.copy();
+            pickup(player.getInventory(),work);int moved=original.getCount()-work.getCount();
+            if(moved<=0)return ItemStack.EMPTY;
+            var taken=slot.remove(moved);if(!work.isEmpty())slot.set(work);
+            taken.removeTagKey(PENDING);slot.onTake(player,taken);return taken;
+        }
         var tx=prepare(player,menu,slot,true,-1);if(tx==null)return null;
         // Reserve room for either whole-batch quality before rolling, so a full inventory cannot reroll a serving.
         ItemStack normal=tx.original.copy();

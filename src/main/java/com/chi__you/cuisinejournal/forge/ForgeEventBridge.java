@@ -156,7 +156,9 @@ public final class ForgeEventBridge {
             com.chi__you.cuisinejournal.tracking.CheeseMoldProduction.forget(level,event.getPos());
             com.chi__you.cuisinejournal.tracking.BrazilPotProduction.forget(level,event.getPos());
             com.chi__you.cuisinejournal.tracking.MilkshakeCauldronProduction.forget(level,event.getPos());
-            com.chi__you.cuisinejournal.tracking.PlacedMealProduction.remove(level,event.getPos());
+            // Native destruction callbacks/loot still need this stamp; actual removal queues cleanup.
+            if(!com.chi__you.cuisinejournal.tracking.PlacedFoodDrops.supports(event.getState()))
+                com.chi__you.cuisinejournal.tracking.PlacedMealProduction.remove(level,event.getPos());
         }
     }
 

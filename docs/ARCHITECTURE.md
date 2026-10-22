@@ -59,6 +59,7 @@ LayerDependenciesTest约束recipe不指向network/client，并使用ASM SimpleVe
 | 整合包禁用物品 | 物品标签cuisinejournal:disabled_items；recipe/HostItemAvailability保存目录快照，foodinteractions/InteractionAvailability作共享只读判定 |
 | 变体身份和键策略 | food/FoodVariantIdentity：领取、盘子切份、pending输出和忽略记账比较各有明确集合 |
 | 放置完整变体 | tracking/PlacedFoodVariants |
+| 特殊破坏品质继承 | tracking/PlacedFoodDrops，仅核准宿主的原剩余掉落；复用PlacedMealProduction印记，不调用制作奖励 |
 | 菜单/加速上下文 | tracking/CookingContextTracker；不负责真实制作归属 |
 | 原生效果预览 | food/ModFoodCompat；特定算法留宿主类，不进入库存 |
 | 客户端规则读取 | ClientFoodRuleView，由client/JournalFoodRuleView启动时注入 |
@@ -104,10 +105,10 @@ Mixin独立根包为com.chi__you.cuisinejournal.mixin，同一配置以相对子
 
 | 子包 | 负责 | 数量 |
 | --- | --- | --- |
-| production | 投料、完成、领取、归属、份额与存放继承 | 105 |
+| production | 投料、完成、领取、归属、份额与存放继承 | 115 |
 | speed | 进度、等待及厨具加速 | 49 |
 | unification | 物品统一、数据包来源、配方及掉落纠错 | 17 |
-| food | 准入、营养、效果、食用生命周期与访问器 | 33 |
+| food | 准入、营养、效果、食用生命周期与访问器 | 35 |
 | client | 客户端HUD、提示、语言和界面跳转；仅client数组注册 | 15 |
 
 少数森罗处理站在同一对回调里同时追踪产出和修改进度，按事务所有者归production，不为目录迁移拆开其时机。

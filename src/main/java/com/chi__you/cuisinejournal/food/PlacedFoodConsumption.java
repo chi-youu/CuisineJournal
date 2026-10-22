@@ -69,6 +69,7 @@ public final class PlacedFoodConsumption {
     private static final class Frame {
         final Player player; final ItemStack food;
         boolean observed;
+        int procedureNutrition;
         Frame(Player player,ItemStack food) {
             this.player=player;this.food=food.isEmpty()?ItemStack.EMPTY:food.copyWithCount(1);
         }
@@ -160,7 +161,7 @@ public final class PlacedFoodConsumption {
             if(!allowed)return InteractionResult.FAIL;
         }
         InteractionResult result;
-if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomPlacedFoods.known(block)||CakeFoodCompat.cake(block)){
+        if(ProcedurePlacedFoods.known(block)||KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomPlacedFoods.known(block)||CakeFoodCompat.cake(block)){
             FoodUseContext.begin(frame.food);
             CuisineEffectAdapters.beginNativeFood(frame.food,player);
             try{result=FRAMES.run(frame,ignored->block.use(state,level,pos,player,hand,hit));}
@@ -185,6 +186,7 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
     }
 
     public static void itemEntitySpawned(ItemEntity entity) {
+        com.chi__you.cuisinejournal.tracking.PlacedFoodDrops.spawned(entity);
         com.chi__you.cuisinejournal.tracking.LetsDoWorldWork.output(entity.getItem());
         com.chi__you.cuisinejournal.tracking.KaleidoscopeServings.output(entity.getItem());
         com.chi__you.cuisinejournal.tracking.BrazilPotProduction.output(entity);
@@ -198,6 +200,13 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
             item.setTag(inherited.getTag());
         }
         PlacedMealProduction.transferOutput(interaction.level,interaction.pos,interaction.state,entity.getItem());
+    }
+
+    public static void interaction(Level level,BlockPos pos,Runnable action){
+        var previous=INTERACTION.get();var state=level.getBlockState(pos);
+        INTERACTION.set(new Interaction(level,pos,state));
+        try{action.run();}
+        finally{PlacedMealProduction.transition(level,pos,state);if(previous==null)INTERACTION.remove();else INTERACTION.set(previous);}
     }
 
     public static void inventoryOutput(ItemStack stack) {
@@ -220,6 +229,7 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
     }
 
     public static void placed(Level level,BlockPos pos,BlockState state,ItemStack stack) {
+        com.chi__you.cuisinejournal.tracking.DisplayFoodStorage.placed(level,pos,state,stack);
         if(!level.isClientSide&&LetsDoPlacedFoods.known(state.getBlock()))
             com.chi__you.cuisinejournal.tracking.PlacedFoodVariants.store(level,pos,stack);
         if(!level.isClientSide&&FarmersSpellFoods.multiblock(state.getBlock())){
@@ -240,6 +250,7 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
     }
 
     private static int remaining(BlockState state) {
+        if(ProcedurePlacedFoods.known(state.getBlock()))return ProcedurePlacedFoods.remaining(state);
         if(CustomPlacedFoods.known(state.getBlock()))return CustomPlacedFoods.remaining(state);
         if(LetsDoPlacedFoods.known(state.getBlock()))return LetsDoPlacedFoods.remaining(state);
         if(AbnormalsPlacedFoods.known(state.getBlock()))return AbnormalsPlacedFoods.remaining(state);
@@ -254,6 +265,7 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
     }
 
     private static boolean known(Block block) {
+        if(ProcedurePlacedFoods.known(block))return true;
         if(CustomPlacedFoods.known(block))return true;
         return CakeFoodCompat.cake(block)||LetsDoPlacedFoods.known(block)||KaleidoscopePlacedFoods.known(block)||AbnormalsPlacedFoods.known(block)||DelightPlacedFoods.known(block)||is(block,MELONS)||is(block,PIES)||is(block,
                 "io.github.rcneg.legendarydelicacies.blocks.CommonCakeBlock","com.starmeow.smc.blocks.CommonCakeBlock",
@@ -325,7 +337,23 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
     public static boolean procedureFood(FoodData data){
         Frame frame=current();if(frame==null||frame.player.getFoodData()!=data||frame.food.isEmpty())return false;
         String id=BuiltInRegistries.ITEM.getKey(frame.food.getItem()).toString();
-        return id.equals("oceanic_delight:sponge_cake_slice")||id.equals("unusual_delight:glow_gummy");
+        return id.equals("oceanic_delight:sponge_cake_slice")||id.equals("unusual_delight:glow_gummy")||ProcedurePlacedFoods.procedure(frame.food);
+    }
+    public static boolean variableProcedureFood(FoodData data) {
+        Frame frame=current();return frame!=null&&frame.player.getFoodData()==data&&ProcedurePlacedFoods.procedure(frame.food);
+    }
+    public static int procedureNutrition(FoodData data,int current,int value) {
+        Frame frame=current();if(frame==null||frame.player.getFoodData()!=data)return value-current;
+        int gained=ProcedurePlacedFoods.nutritionIncrement(current,
+                com.chi__you.cuisinejournal.skills.VanillaSkillNutrition.hungerCap(frame.player),value);
+        int previous=frame.procedureNutrition;frame.procedureNutrition+=gained;
+        return CuisineVanillaBonuses.calculate(frame.procedureNutrition,0,frame.food).nutrition()
+                -CuisineVanillaBonuses.calculate(previous,0,frame.food).nutrition();
+    }
+    public static float procedureSaturation(FoodData data,float gain) {
+        Frame frame=current();if(frame==null||frame.player.getFoodData()!=data||frame.procedureNutrition<=0)return gain;
+        var adjusted=CuisineVanillaBonuses.calculate(frame.procedureNutrition,gain/(2*frame.procedureNutrition),frame.food);
+        return adjusted.nutrition()*adjusted.saturationModifier()*2;
     }
     private static Frame current(){return FRAMES.current();}
     public static ItemStack vanillaServing(FoodData data) {
@@ -339,6 +367,7 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
     public static boolean eatingContext() { return current()!=null; }
 
     private static ItemStack resolve(Block block,BlockState state,Player player,ItemStack held,boolean sneaking) {
+        if(ProcedurePlacedFoods.known(block))return ProcedurePlacedFoods.eating(state,player,held,sneaking);
         if(CustomPlacedFoods.known(block))return CustomPlacedFoods.eating(block,state,held);
         if(LetsDoPlacedFoods.known(block))return LetsDoPlacedFoods.eating(block,state,held,sneaking);
         if(KaleidoscopePlacedFoods.known(block))return KaleidoscopePlacedFoods.serving(block,state);
@@ -351,6 +380,7 @@ if(KaleidoscopePlacedFoods.known(block)||LetsDoPlacedFoods.known(block)||CustomP
             return AbnormalsPlacedFoods.serving(block);
         }
         if(DelightPlacedFoods.known(block)) {
+            if(is(block,DelightPlacedFoods.KING_CRAB,DelightPlacedFoods.COLORFUL_KRABBY))return ItemStack.EMPTY;
             if(FarmersSpellFoods.multiblock(block))return ItemStack.EMPTY;
             var unusual=UnusualServingRelations.get(block);if(unusual!=null)return unusual.direct()?UnusualServingRelations.item(unusual.output()):ItemStack.EMPTY;
             if(is(block,DelightPlacedFoods.PANCAKE,DelightPlacedFoods.EGGPLANT,DelightPlacedFoods.DRINK,DelightPlacedFoods.HOGLIN,DelightPlacedFoods.UNIVERSAL_LEAF,DelightPlacedFoods.CAN,DelightPlacedFoods.TOAST,DelightPlacedFoods.POPCORN,DelightPlacedFoods.FD_FEAST))return ItemStack.EMPTY;

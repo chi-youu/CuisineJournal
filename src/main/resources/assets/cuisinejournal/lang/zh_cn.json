@@ -1,5 +1,7 @@
 {
   "cuisinejournal.method.muffins_thaidelight.mortar": "研钵",
+  "cuisinejournal.method.cookingforblockheads.oven": "厨房烤箱",
+  "cuisinejournal.method.cookingforblockheads.toaster": "烤面包机",
   "cuisinejournal.method.kaleidoscope_cookery.flex_pot": "炒锅（灵活配方）",
   "cuisinejournal.method.kaleidoscope_cookery.flex_stockpot": "汤锅（灵活配方）",
   "cuisinejournal.method.kaleidoscope_cookery.rice_bowl": "盖饭组合",
@@ -462,6 +464,7 @@
   "cuisinejournal.effect.nourishment.description": "脱战生命恢复量增加25%；战斗中仍可获得未加滋养时脱战生命恢复量的50%。不增强临时食物槽回血或其他独立治疗。剩余滋养时长可被其他效果消耗。",
   "cuisinejournal.method.youkaishomecoming.cuisine": "料理台",
   "cuisinejournal.method.youkaisfeasts.cuisine": "料理台",
+  "cuisinejournal.method.muffins_thaidelight.mortar": "研钵",
   "cuisinejournal.method.youkaisfeasts.drying_rack": "晒干架",
   "cuisinejournal.method.youkaisfeasts.kettle": "茶壶",
   "cuisinejournal.method.youkaisfeasts.fermentation": "发酵桶",

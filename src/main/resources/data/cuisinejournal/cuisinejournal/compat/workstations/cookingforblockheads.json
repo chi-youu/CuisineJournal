@@ -1,0 +1,9 @@
+{
+  "required_mods": ["cookingforblockheads"],
+  "priority": -100,
+  "workstations": [
+    {"block":"cookingforblockheads:cooking_table","adapter":"auto","method":"minecraft:crafting","recipe_types":["minecraft:crafting"],"capabilities":["item_input","item_output","menu_take"]},
+    {"block":"cookingforblockheads:oven","adapter":"auto","method":"cookingforblockheads:oven","capabilities":["item_input","item_output","fuel_processing","menu_take"]},
+    {"block":"cookingforblockheads:toaster","adapter":"auto","method":"cookingforblockheads:toaster","capabilities":["item_input","item_output","timed_processing","direct_interaction","direct_drop"]}
+  ]
+}

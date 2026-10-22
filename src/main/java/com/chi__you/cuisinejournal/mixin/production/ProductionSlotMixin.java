@@ -16,6 +16,7 @@ public abstract class ProductionSlotMixin {
     @Inject(method="onTake",at=@At("HEAD"))
     private void cuisinejournal$hostTake(Player player,ItemStack stack,org.spongepowered.asm.mixin.injection.callback.CallbackInfo ci){
         com.chi__you.cuisinejournal.tracking.KaleidoscopeProduction.claim(player,stack);
+        com.chi__you.cuisinejournal.tracking.BlockheadsKitchen.claim(player,stack);
     }
     @Unique private ProductionTracker.Extraction cuisinejournal$take;
     @Inject(method="tryRemove",at=@At("HEAD"))

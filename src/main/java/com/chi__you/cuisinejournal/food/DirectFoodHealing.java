@@ -18,6 +18,10 @@ public final class DirectFoodHealing {
 
     private static float nativePoints(ItemStack stack) {
         var item = stack.getItem();
+        if(BuiltInRegistries.ITEM.getKey(item).toString().equals("abnormals_delight:strawberry_cake_slice"))return 1;
+        String id=BuiltInRegistries.ITEM.getKey(item).toString();
+        if(id.equals("aetherdelight:ambrosia_glazed_apple"))return 3;
+        if(id.equals("aetherdelight:ambrosia_dew"))return 2;
         if(com.chi__you.cuisinejournal.compat.HostClasses.matches(item,"lekavar.lma.drinkbeer.items.MixedBeerBlockItem"))return DrinkBeerFoodCompat.healing(stack);
         if(com.chi__you.cuisinejournal.compat.HostClasses.matches(item,"com.sihenzhang.crockpot.item.food.CrockPotFoodItem")){
             Object props=HostReflection.field(item,"foodProperties"),heal=HostReflection.field(props,"heal");

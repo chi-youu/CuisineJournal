@@ -90,6 +90,10 @@ public final class RecipeClassifier {
     }
 
     public static List<ItemStack> outputs(Recipe<?> recipe, RegistryAccess access) {
+        if(DynamicIngredientRecipes.dough(recipe)){
+            var result=DynamicIngredientRecipes.output(recipe);return result.isEmpty()?List.of():List.of(result);
+        }
+        if(DynamicIngredientRecipes.rawProcessing(recipe))return List.of();
         String host=recipe.getClass().getName();
         if(host.equals("com.github.ysbbbbbb.kaleidoscopecookery.crafting.recipe.ChoppingBoardRecipe")){
             Object raw=HostReflection.invoke(recipe,"getResults");
@@ -193,7 +197,7 @@ public final class RecipeClassifier {
                 slots.add(new RecipeEntry.IngredientSlot(List.of(source),List.of(source),List.of()));
             return slots;
         }
-        for (Ingredient ingredient : FluidRecipeBridge.inputs(recipe)) {
+        for (Ingredient ingredient : DynamicIngredientRecipes.dough(recipe)?DynamicIngredientRecipes.inputs(recipe):FluidRecipeBridge.inputs(recipe)) {
             if (ingredient == null || ingredient.isEmpty()) {
                 continue;
             }

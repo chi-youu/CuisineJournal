@@ -36,6 +36,11 @@ public abstract class FoodDataMixin implements VanillaSkillNutrition.NutritionOw
     private void cuisinejournal$procedureFood(int value,CallbackInfo ci){
         if(!com.chi__you.cuisinejournal.food.PlacedFoodConsumption.procedureFood((FoodData)(Object)this))return;
         com.chi__you.cuisinejournal.food.PlacedFoodConsumption.foodApplied((FoodData)(Object)this);
+        if(com.chi__you.cuisinejournal.food.PlacedFoodConsumption.variableProcedureFood((FoodData)(Object)this)){
+            if(!CuisineFoodRuntime.activeForCurrentThread())foodLevel=Math.min(VanillaSkillNutrition.hungerCap(cuisinejournal$player),foodLevel
+                    +com.chi__you.cuisinejournal.food.PlacedFoodConsumption.procedureNutrition((FoodData)(Object)this,foodLevel,value));
+            ci.cancel();return;
+        }
         if(!CuisineFoodRuntime.activeForCurrentThread()){
             ItemStack serving=com.chi__you.cuisinejournal.food.PlacedFoodConsumption.vanillaServing((FoodData)(Object)this);
             var adjusted=com.chi__you.cuisinejournal.food.CuisineVanillaBonuses.calculate(3,
@@ -47,6 +52,11 @@ public abstract class FoodDataMixin implements VanillaSkillNutrition.NutritionOw
     @Inject(method="setSaturation",at=@At("HEAD"),cancellable=true)
     private void cuisinejournal$procedureSaturation(float value,CallbackInfo ci){
         if(!com.chi__you.cuisinejournal.food.PlacedFoodConsumption.procedureFood((FoodData)(Object)this))return;
+        if(com.chi__you.cuisinejournal.food.PlacedFoodConsumption.variableProcedureFood((FoodData)(Object)this)){
+            if(!CuisineFoodRuntime.activeForCurrentThread())saturationLevel=Math.min(Math.min(foodLevel,VanillaSkillNutrition.saturationCap(cuisinejournal$player)),
+                    saturationLevel+com.chi__you.cuisinejournal.food.PlacedFoodConsumption.procedureSaturation((FoodData)(Object)this,Math.max(0,value-saturationLevel)));
+            ci.cancel();return;
+        }
         if(!CuisineFoodRuntime.activeForCurrentThread()){
             ItemStack serving=com.chi__you.cuisinejournal.food.PlacedFoodConsumption.vanillaServing((FoodData)(Object)this);
             float gain=net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(serving.getItem()).toString().equals("unusual_delight:glow_gummy")?.2F:1F;

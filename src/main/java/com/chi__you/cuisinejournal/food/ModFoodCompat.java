@@ -13,7 +13,8 @@ public final class ModFoodCompat {
             "simple_cream","muffins_thaidelight","alexsmobsdelight","cavedelight","undergardendelight",
             "seasonals","peculiars","abnormals_delight","arsdelight","festive_delight","dumplings_delight",
             "slime_delight","jellyfishingdelight","crabbers_delight_expand","veggiesdelight","vanillacookbook",
-            "natures_delight","ramadandelight","mineraldelight","galospheric_delight","onion_onion","sniffer","kaleidoscope_grilling");
+            "natures_delight","ramadandelight","mineraldelight","galospheric_delight","onion_onion","sniffer","kaleidoscope_grilling",
+            "untameddelight","delighto_flight","lendersdelight","aetherdelight","cornexpansion");
     private ModFoodCompat() {}
 
     public static boolean host(ItemStack stack){return !stack.isEmpty()&&HOSTS.contains(BuiltInRegistries.ITEM.getKey(stack.getItem()).getNamespace());}
@@ -30,6 +31,7 @@ public final class ModFoodCompat {
     }
 
     public static FoodProperties properties(ItemStack stack, FoodProperties original) {
+        original=ProcedurePlacedFoods.properties(stack,original);
         original=CustomPlacedFoods.properties(stack,original);
         original=KitchenKarrotFoodCompat.properties(stack,original);
         return DrinkBeerFoodCompat.properties(stack,original);

@@ -1,0 +1,7 @@
+{
+  "required_mods": ["jellyfishingdelight"],
+  "priority": -100,
+  "workstations": [
+    {"block":"jellyfishingdelight:grill","adapter":"campfire","method":"minecraft:campfire_cooking","recipe_types":["minecraft:campfire_cooking"],"capabilities":["item_input","item_output","timed_processing","direct_interaction","direct_drop"]}
+  ]
+}

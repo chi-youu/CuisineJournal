@@ -116,16 +116,21 @@ public final class CakeTeaCompatibilityTest {
     private static void installed()throws Exception{
         String dir=System.getenv("CUISINEJOURNAL_COMPAT_MODS");if(dir==null)return;
         Map<String,ClassNode> classes=new HashMap<>();
+        Map<String,String> parents=new HashMap<>();
+        var inspected=List.of("com/morallenplay/vanillacookbook/block/CheesecakeBlock","net/mehdinoui/veggiesdelight/common/block/CarrotCakeBlock",
+                "dev/xkmc/twilightdelight/content/block/TwilightCakeBlock","net/hibiscus/naturespirit/blocks/CheeseBlock",
+                "umpaz/farmersrespite/common/block/CoffeeCakeBlock");
         try(var files=Files.list(Path.of(dir))){for(var p:files.filter(f->f.toString().endsWith(".jar")&&!f.getFileName().toString().startsWith("cuisinejournal-")).toList())
             try(var jar=new JarFile(p.toFile())){for(var entry:Collections.list(jar.entries()))if(entry.getName().endsWith(".class")){
                 try(var input=jar.getInputStream(entry)){
-                    var node=new ClassNode();new ClassReader(input).accept(node,ClassReader.SKIP_DEBUG|ClassReader.SKIP_FRAMES);classes.put(node.name,node);
+                    var reader=new ClassReader(input);parents.put(reader.getClassName(),reader.getSuperName());
+                    if(inspected.contains(reader.getClassName())){
+                        var node=new ClassNode();reader.accept(node,ClassReader.SKIP_DEBUG|ClassReader.SKIP_FRAMES);classes.put(node.name,node);
+                    }
                 }
             }}
         }
-        for(String name:List.of("com/morallenplay/vanillacookbook/block/CheesecakeBlock","net/mehdinoui/veggiesdelight/common/block/CarrotCakeBlock",
-                "dev/xkmc/twilightdelight/content/block/TwilightCakeBlock","net/hibiscus/naturespirit/blocks/CheeseBlock",
-                "umpaz/farmersrespite/common/block/CoffeeCakeBlock")){
+        for(String name:inspected){
             var host=classes.get(name);if(host==null)continue;
             check(host.superName.equals("net/minecraft/world/level/block/CakeBlock"),"verified misleading vanilla superclass "+name);
             boolean nutrition=false;for(var method:host.methods)for(var insn:method.instructions)
@@ -133,11 +138,11 @@ public final class CakeTeaCompatibilityTest {
             check(nutrition,"per-bite food signal remains observable "+name);
         }
         int cakes=0;
-        for(var host:classes.values()){
-            var next=host.superName;var visited=new HashSet<String>();
+        for(var parent:parents.values()){
+            var next=parent;var visited=new HashSet<String>();
             while(next!=null&&visited.add(next)){
                 if(next.equals("net/minecraft/world/level/block/CakeBlock")){cakes++;break;}
-                var parent=classes.get(next);next=parent==null?null:parent.superName;
+                next=parents.get(next);
             }
         }
         check(cakes>=20,"installed cake subclass audit covers whole family, not two screenshots");

@@ -1,0 +1,7 @@
+{
+  "required_mods": ["muffins_thaidelight"],
+  "priority": -100,
+  "workstations": [
+    {"block":"muffins_thaidelight:mortar","adapter":"crafting","method":"muffins_thaidelight:mortar","recipe_types":["muffins_thaidelight:mortar"],"capabilities":["item_input","item_output","menu_take","direct_interaction"]}
+  ]
+}

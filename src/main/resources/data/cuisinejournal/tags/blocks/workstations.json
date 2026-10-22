@@ -95,6 +95,11 @@
     {"id": "youkaisfeasts:cooking_short_iron_pot", "required": false},
     {"id": "youkaisfeasts:cooking_stockpot", "required": false},
     {"id": "youkaisfeasts:steamer_pot", "required": false},
-    {"id": "youkaisfeasts:steamer_rack", "required": false}
+    {"id": "youkaisfeasts:steamer_rack", "required": false},
+    {"id": "muffins_thaidelight:mortar", "required": false},
+    {"id": "cookingforblockheads:cooking_table", "required": false},
+    {"id": "cookingforblockheads:oven", "required": false},
+    {"id": "cookingforblockheads:toaster", "required": false},
+    {"id": "jellyfishingdelight:grill", "required": false}
   ]
 }

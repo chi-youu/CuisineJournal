@@ -17,6 +17,8 @@ public final class VerifiedWorkstations {
                 WorkstationDefinitions.Adapter.ITEM_RECIPE_CONTAINER, false);
     }
     private static final Map<String, Layout> LAYOUTS = Map.ofEntries(
+            Map.entry("club.someoneice.jellyfishingdelight.block.GrillTile",
+                    new Layout(range(6),new int[0],-1,CookingMethod.CAMPFIRE,WorkstationDefinitions.Adapter.CAMPFIRE,false)),
             Map.entry("net.ribs.vintagedelight.block.entity.FermentingJarBlockEntity",
                     new Layout(range(7),new int[]{7,8},6,CookingMethod.of("vintagedelight","fermenting"),WorkstationDefinitions.Adapter.ITEM_RECIPE_CONTAINER,false)),
             Map.entry("com.soytutta.mynethersdelight.common.block.entity.BlazierBlockEntity",
@@ -54,6 +56,8 @@ public final class VerifiedWorkstations {
         if(object instanceof net.minecraft.world.level.block.entity.BlockEntity be){var virtual=LetsDoStations.virtual(be,slot);if(virtual!=null)return virtual;}
         if(object instanceof net.minecraft.world.level.block.entity.BlockEntity be){var virtual=ItemRecipeWorkstations.virtual(be,slot);if(virtual!=null)return virtual;}
         Object inventory=object instanceof Container||object instanceof IItemHandler?object:inventory(object);
+        if(inventory==null&&object.getClass().getName().equals("club.someoneice.jellyfishingdelight.block.GrillTile"))
+            inventory=com.chi__you.cuisinejournal.compat.HostReflection.field(object,"container");
         if(inventory instanceof Container container)return slot<container.getContainerSize()?container.getItem(slot):ItemStack.EMPTY;
         if(inventory instanceof IItemHandler handler)return slot<handler.getSlots()?handler.getStackInSlot(slot):ItemStack.EMPTY;
         if(inventory instanceof java.util.List<?> list&&slot<list.size()&&list.get(slot) instanceof ItemStack stack)return stack;

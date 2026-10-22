@@ -25,9 +25,37 @@ final class B001InteractionAdapter {
             Map.entry("com.soytutta.mynethersdelight.common.block.BreadLoafBlock","getBreadSliceItem"));
     private B001InteractionAdapter() {}
     static List<InteractionDisplay> read(Block block)throws ReflectiveOperationException {
+        var undergarden=UndergardenServings.displays(block);if(!undergarden.isEmpty())return undergarden;
+        var slime=SlimeFoodServings.displays(block);if(!slime.isEmpty())return slime;
+        var festive=FestiveServings.displays(block);if(!festive.isEmpty())return festive;
+        var coconut=CoconutStewServings.displays(block);if(!coconut.isEmpty())return coconut;
         var exquisito=ExquisitoServingRelations.displays(block);if(!exquisito.isEmpty())return exquisito;
         var milkshake=NeapolitanCauldronDisplays.read(block);if(!milkshake.isEmpty())return milkshake;
         String name=block.getClass().getName();var id=BuiltInRegistries.BLOCK.getKey(block);
+        if(name.equals("club.someoneice.jellyfishingdelight.block.KrabbyPatty")){
+            var field=block.getClass().getDeclaredField("mini_burger");field.setAccessible(true);
+            var output=stack(field.get(block));
+            return output.isEmpty()?List.of():List.of(display(block,BuiltInRegistries.ITEM.getKey(output.getItem()),"#farmersdelight:tools/knives",Map.of("bites","0")));
+        }
+        if(name.equals("club.someoneice.jellyfishingdelight.block.ColorfulKrabbyPattys")){
+            List<InteractionDisplay> result=new ArrayList<>();
+            Object raw=block.getClass().getField("KRABBY_PATTYS").get(null);
+            if(raw instanceof List<?> items)for(int i=0;i<items.size();i++){
+                var output=stack(items.get(i));
+                if(!output.isEmpty())result.add(display(block,BuiltInRegistries.ITEM.getKey(output.getItem()),"minecraft:air",Map.of("color",Integer.toString(i+1))));
+            }
+            return result;
+        }
+        if(name.equals("cloudmeow.untameddelight.block.DonerKebabBlock")){
+            var output=stack(block.getClass().getMethod("getServingItem",net.minecraft.world.level.block.state.BlockState.class).invoke(block,block.defaultBlockState()));
+            return output.isEmpty()?List.of():List.of(display(block,BuiltInRegistries.ITEM.getKey(output.getItem()),"#farmersdelight:tools/knives",Map.of("servings","5")));
+        }
+        if(name.equals("cloudmeow.untameddelight.block.SteamedKingCrabBlock")){
+            List<InteractionDisplay> result=new ArrayList<>();
+            for(var row:Map.of(3,"steamed_king_crab_legs",2,"steamed_king_crab",1,"steamed_egg_with_king_crab_roe").entrySet())
+                result.add(display(block,ResourceLocation.fromNamespaceAndPath("untameddelight",row.getValue()),"minecraft:bowl",Map.of("servings",row.getKey().toString())));
+            return result;
+        }
         for(Class<?> type=block.getClass();type!=null;type=type.getSuperclass())if(METHODS.containsKey(type.getName())
                 ||type.getName().equals("com.dannbrown.braziliandelight.common.content.blocks.PlaceableFoodBlock")
                 ||type.getName().equals("com.chefmooon.ubesdelight.common.block.leaf_feast.base.SimpleLeafFeastBlock")

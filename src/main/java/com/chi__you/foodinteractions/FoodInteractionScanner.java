@@ -31,6 +31,7 @@ public final class FoodInteractionScanner {
     private static final String COSMIC_CAKE="com.aizistral.enigmaticlegacy.blocks.BlockCosmicCake";
     // Verified overrides preserve portion/container semantics; bamboo additionally requires an open lid.
     private static final java.util.Set<String> VERIFIED_SERVING_OVERRIDES=java.util.Set.of(
+            "cloudmeow.untameddelight.block.PizzaBlock",
             "show.tatd.mod.block.StuffedEggSnifferEggBlock",
             "show.tatd.mod.block.SnifferEggSoupBlock",
             "show.tatd.mod.block.BambooTubeRiceBlock",
@@ -57,6 +58,11 @@ public final class FoodInteractionScanner {
                 report.add(id+"	skipped	datapack exclusion");continue;
             }
             try {
+                String own=block.getClass().getName();
+                if(rule==null&&(own.equals("cloudmeow.untameddelight.block.DonerKebabBlock")||own.equals("cloudmeow.untameddelight.block.SteamedKingCrabBlock"))){
+                    for(var entry:B001InteractionAdapter.read(block))if(InteractionAvailability.visible(entry,InteractionAvailability::disabled))entries.putIfAbsent(entry.recipeId(),entry);
+                    continue;
+                }
                 String inheritedFamily=family(block,FEAST)!=null?FEAST:family(block,SMC_FEAST)!=null?SMC_FEAST:family(block,PIE)!=null?PIE:
                         family(block,STACKED)!=null?STACKED:family(block,COMMON_CAKE)!=null?COMMON_CAKE:null;
                 if((rule==null||!rule.has("output"))&&inheritedFamily!=null
@@ -207,6 +213,12 @@ public final class FoodInteractionScanner {
     }
     public static ResourceLocation source(Block block) {
         var id=BuiltInRegistries.BLOCK.getKey(block);
+        if(SlimeFoodServings.remaining(id)>0)return SlimeFoodServings.whole();
+        if(FestiveServings.remaining(id)>0)return FestiveServings.whole();
+        if(SlimeFoodServings.stewRemaining(id)>0)return ResourceLocation.parse("slime_delight:nether_stew_1");
+        if(block.getClass().getName().startsWith("net.mcreator.undergardendelight.block.")){
+            var relation=UndergardenServings.relation(id);if(relation!=null)return relation.whole();
+        }
         if(id.getNamespace().equals("unusual_delight")){
             String base=switch(id.getPath()){case "dragonloaf_2","dragonloaf_3"->"dragon_loaf";case "snowhead_2","snowhead_3","snowhead_4","snowhead_5"->"snow_head";default->null;};
             if(base!=null)return ResourceLocation.fromNamespaceAndPath(id.getNamespace(),base);

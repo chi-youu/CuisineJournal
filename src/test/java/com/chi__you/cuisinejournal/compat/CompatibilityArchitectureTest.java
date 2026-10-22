@@ -44,7 +44,7 @@ public final class CompatibilityArchitectureTest {
             check(Files.isRegularFile(Path.of("src/main/java/"+ROOT+"mixin/"+path+".java")),"registered source exists: "+name);
             check(own("mixin/"+path).name.equals(ROOT+"mixin/"+path),"registered compiled class exists: "+name);
         }
-        check(names.size()==219,"original Mixin identities and two journal notification bridges registered");
+        check(names.size()==231,"original identities, notification bridges and verified food-host adapters registered");
         try(var files=Files.walk(Path.of("src/main/java/"+ROOT+"mixin"))){
             for(var file:files.filter(path->path.toString().endsWith(".java")).toList()){
                 String registered=Path.of("src/main/java/"+ROOT+"mixin").relativize(file).toString()
