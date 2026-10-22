@@ -11,6 +11,7 @@ import com.chi__you.cuisinejournal.network.Packets;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import com.chi__you.cuisinejournal.client.journal.edit.JournalToast;
 import com.chi__you.cuisinejournal.client.compat.CuisineUiSoundCompat;
 
@@ -20,7 +21,7 @@ import java.util.List;
 /**
  * The culinary journal.
  *
- * <p>A persistent sidebar on the left, a clean header with the player's level,
+ * <p>A persistent sidebar on the left, a header with the pixel wordmark,
  * and one page's content on the right. Pages manage their own search fields.
  * Panels are drawn in code; icons are item icons from registered mods or small
  * textures where those look better.</p>
@@ -37,6 +38,10 @@ public final class JournalScreen extends Screen {
     private static final int SIDEBAR_WIDTH = 92;
     private static final int HEADER_HEIGHT = 26;
     private static final int PADDING = 8;
+    private static final ResourceLocation TITLE_TEXTURE =
+            new ResourceLocation("cuisinejournal", "textures/gui/journal_title.png");
+    private static final int TITLE_WIDTH = 152;
+    private static final int TITLE_HEIGHT = 16;
 
     private final List<JournalPage> pages = new ArrayList<>();
     private JournalPage active;
@@ -197,13 +202,10 @@ public final class JournalScreen extends Screen {
     }
 
     private void renderHeader(GuiGraphics graphics) {
-        graphics.drawString(font, Component.translatable("cuisinejournal.journal.title"),
-                frameX + PADDING, frameY + 9, JournalTheme.TEXT_ACCENT, false);
-
-        Component level = Component.translatable("cuisinejournal.overview.level")
-                .append(" " + ClientJournalState.cookingLevel());
-        int right = frameX + frameWidth - PADDING;
-        JournalTheme.value(graphics, font, level, right, frameY + 9, JournalTheme.TEXT);
+        // Pixel wordmark: gold 百味纪, a diamond, then CUISINE JOURNAL (design: 百味纪手账标题栏设计稿.html).
+        // Drawn at its native size so the pixels stay crisp; the level lives in the sidebar card.
+        graphics.blit(TITLE_TEXTURE, frameX + 7, frameY + 5, 0, 0, TITLE_WIDTH, TITLE_HEIGHT,
+                TITLE_WIDTH, TITLE_HEIGHT);
 
         JournalTheme.divider(graphics, frameX + 1, frameY + HEADER_HEIGHT - 1, frameWidth - 2);
     }
